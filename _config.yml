@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
+title: 项浅
+subtitle: 不知道写什么
+description: HTML,JavaScript,github,自我管理，时间管理
+author: eva1963
+language: zh-cn
 timezone:
 
 # URL
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: hexo-theme-tranquilpeak
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
