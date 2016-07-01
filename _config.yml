@@ -4,8 +4,8 @@
 
 # Site
 title: 项浅
-subtitle: 不知道写什么
-description: HTML,JavaScript,github,自我管理，时间管理
+subtitle: 程序媛上辈子都是折翼的天使
+description: HTML,JavaScript,github
 author: eva1963
 language: zh-cn
 timezone:
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-tranquilpeak
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
