@@ -5,7 +5,7 @@
 # Site
 title: eva
 subtitle: 程序媛上辈子都是折翼的天使
-description: HTML,JavaScript,github
+description: hexo,huno主题,JavaScript,github，个人博客
 author: eva1963
 language: zh-cn
 timezone:
@@ -75,6 +75,10 @@ deploy:
 # Social
 social:
   github: eva1963
+  qqZone: eva
+  douban: eva
+  weibo: 阳光照不到的哀伤
+  zhihu: 刘欢
 
 duoshuo_shortname: eva1963
 # disqus_shortname: eva
