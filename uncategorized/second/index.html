@@ -4,17 +4,32 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>eva</title>
+  <title>h5页面启动本地应用 | eva</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo,huno主题,JavaScript,github，个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="eva">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="前段时间遇到一个小需求：要求在分享出来的h5页面中，有一个立即打开的按钮，如果本地安装了我们的app，那么点击就直接唤起本地app，如果没有安装，则跳转到下载。
+因为从来没有做过这个需求，因此这注定是一个苦逼的调研过程。
+我们最开始就面临2个问题：一是如何唤起本地app，二是如何判断浏览器是否安装了对应app。
+如何唤起本地app
+首先，想要实现这个需求，肯定是必须要客户端同学的配合才行，因此我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="h5页面启动本地应用">
+<meta property="og:url" content="http://yoursite.com/uncategorized/second/index.html">
 <meta property="og:site_name" content="eva">
-<meta property="og:description" content="hexo,huno主题,JavaScript,github，个人博客">
+<meta property="og:description" content="前段时间遇到一个小需求：要求在分享出来的h5页面中，有一个立即打开的按钮，如果本地安装了我们的app，那么点击就直接唤起本地app，如果没有安装，则跳转到下载。
+因为从来没有做过这个需求，因此这注定是一个苦逼的调研过程。
+我们最开始就面临2个问题：一是如何唤起本地app，二是如何判断浏览器是否安装了对应app。
+如何唤起本地app
+首先，想要实现这个需求，肯定是必须要客户端同学的配合才行，因此我">
+<meta property="og:image" content="http://yoursite.com/../../public/images/background-cover.jpg">
+<meta property="og:updated_time" content="2016-09-20T08:09:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="eva">
-<meta name="twitter:description" content="hexo,huno主题,JavaScript,github，个人博客">
+<meta name="twitter:title" content="h5页面启动本地应用">
+<meta name="twitter:description" content="前段时间遇到一个小需求：要求在分享出来的h5页面中，有一个立即打开的按钮，如果本地安装了我们的app，那么点击就直接唤起本地app，如果没有安装，则跳转到下载。
+因为从来没有做过这个需求，因此这注定是一个苦逼的调研过程。
+我们最开始就面临2个问题：一是如何唤起本地app，二是如何判断浏览器是否安装了对应app。
+如何唤起本地app
+首先，想要实现这个需求，肯定是必须要客户端同学的配合才行，因此我">
+<meta name="twitter:image" content="http://yoursite.com/../../public/images/background-cover.jpg">
   
     <link rel="alternative" href="/atom.xml" title="eva" type="application/atom+xml">
   
@@ -140,9 +155,7 @@
 </nav>
 
       <div class="body-wrap">
-        
-  
-    <article id="post-middle" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-second" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -151,55 +164,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/uncategorized/middle/">好事近·汴京赐宴闻教坊乐有感</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>好事近·汴京赐宴闻教坊乐有感<br>朝代：宋代</p>
-<p>作者：韩元吉</p>
-<p>原文：<br>凝碧旧池头，一听管弦凄切。多少梨园声在，总不堪华发。<br>杏花无处避春愁，也傍野烟发。惟有御沟声断，似知人呜咽。 </p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/uncategorized/middle/" class="archive-article-date">
-  	<time datetime="2016-09-20T07:29:15.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-20</time>
-</a>
-      
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-second" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/uncategorized/second/">h5页面启动本地应用</a>
+    <h1 class="article-title" itemprop="name">
+      h5页面启动本地应用
     </h1>
   
 
@@ -499,17 +465,48 @@ setTimeout(function(){
   </div>
 </article>
 
-
-
-
-
-
-
-
-
-
+  
+<nav id="article-nav">
+  
+    <a href="/uncategorized/middle/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          好事近·汴京赐宴闻教坊乐有感
+        
+      </div>
+    </a>
   
   
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
 
 
       </div>
@@ -531,8 +528,8 @@ setTimeout(function(){
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
