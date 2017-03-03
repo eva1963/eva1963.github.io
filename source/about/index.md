@@ -1,24 +1,26 @@
 ---
 date: 2017-03-03 16:15:07
-title: 分类
+title: 
 type: "about"
+comments: false
 ---
 
-HTML5中提供了localStorage对象可以将数据长期保存在客户端，直到人为清除。
-localStorage提供了几个方法:
-1、存储：localStorage.setItem(key,value)
-如果key存在时，更新value
+###关于我
 
-2、获取：localStorage.getItem(key)
-如果key不存在返回null
+名：刘欢
 
-3、删除：localStorage.removeItem(key)
-一旦删除，key对应的数据将会全部删除
+特长：热爱前端
 
-4、全部清除：localStorage.clear()
-某些时候使用removeItem逐个删除太麻烦，可以使用clear,执行的后果是会清除所有localStorage对象保存的数据
+职业：前端工程师
 
-5、遍历localStorage存储的key
-.length 数据总量，例：localStorage.length
-.key(index) 获取key，例：var key=localStorage.key(index);
+坐标：上海市徐汇区徐家汇
+
+爱好：跑步，听歌，喝茶，看书，对一切新事物充满好奇
+
+缺点：对代码有强烈的洁癖，喜欢任何长得好看的东西，表面动物==
+
+###关于文章
+
+此站发表的所有文章都是本人的个人看法，不代表其他任何组织，如有更好地建议可以联系本人，WeChat： 15210148380
+
 
