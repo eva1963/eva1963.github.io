@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -91,15 +109,15 @@
 首先，想要实现这个需求，肯定是必须要客户端同学的配合才行，因此我">
 <meta property="og:type" content="article">
 <meta property="og:title" content="h5页面启动本地应用">
-<meta property="og:url" content="http://yoursite.com/技术模块/second/index.html">
+<meta property="og:url" content="http://eva1963.win/技术模块/second/index.html">
 <meta property="og:site_name" content="eva">
 <meta property="og:description" content="前段时间遇到一个小需求：要求在分享出来的h5页面中，有一个立即打开的按钮，如果本地安装了我们的app，那么点击就直接唤起本地app，如果没有安装，则跳转到下载。
 因为从来没有做过这个需求，因此这注定是一个苦逼的调研过程。
 我们最开始就面临2个问题：一是如何唤起本地app，二是如何判断浏览器是否安装了对应app。
 如何唤起本地app
 首先，想要实现这个需求，肯定是必须要客户端同学的配合才行，因此我">
-<meta property="og:image" content="http://yoursite.com/../../public/images/background-cover.jpg">
-<meta property="og:updated_time" content="2017-03-02T10:21:09.000Z">
+<meta property="og:image" content="http://eva1963.win/../../public/images/background-cover.jpg">
+<meta property="og:updated_time" content="2017-03-03T08:43:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="h5页面启动本地应用">
 <meta name="twitter:description" content="前段时间遇到一个小需求：要求在分享出来的h5页面中，有一个立即打开的按钮，如果本地安装了我们的app，那么点击就直接唤起本地app，如果没有安装，则跳转到下载。
@@ -107,7 +125,7 @@
 我们最开始就面临2个问题：一是如何唤起本地app，二是如何判断浏览器是否安装了对应app。
 如何唤起本地app
 首先，想要实现这个需求，肯定是必须要客户端同学的配合才行，因此我">
-<meta name="twitter:image" content="http://yoursite.com/../../public/images/background-cover.jpg">
+<meta name="twitter:image" content="http://eva1963.win/../../public/images/background-cover.jpg">
 
 
 
@@ -128,16 +146,26 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/技术模块/second/"/>
+  <link rel="canonical" href="http://eva1963.win/技术模块/second/"/>
 
   <title> h5页面启动本地应用 | eva </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?4c1cc7ebea1a70b10dc949505f9221f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -198,7 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            分类页
+            分类
           </a>
         </li>
       
@@ -208,7 +236,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            关于我
+            关于
           </a>
         </li>
       
@@ -218,7 +246,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            历史文章
+            归档
           </a>
         </li>
       
@@ -281,7 +309,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-09-19T15:43:21+08:00" content="2016-09-19">
               2016-09-19
             </time>
@@ -293,7 +321,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/技术模块/" itemprop="url" rel="index">
@@ -353,7 +381,10 @@
 <p>使用location.href的同学可能会面临一个担忧，在有的浏览器中，当我们尝试激活schema link的时候，若本地没有安装app，则会跳转到一个浏览器默认的错误页面去了。因此大多数人采用的解决方案都是使用iframe</p>
 <p>测试了很多浏览器，没有发现过这种情况</p>
 <p>后来观察了网易新闻，今日头条，YY等的实现方案，发现大家都采用的是iframe来实现。好吧，面对这种情况，只能屈服。</p>
-<p>整理一下目前的思路，得到下面的解决方案<br>&gt;<br>var url = {<br>  open: ‘app://xxxxx’,<br>  down: ‘xxxxxxxx’<br>};<br>var iframe = document.createElement(‘iframe’);<br>var body = document.body;<br>iframe.style.cssText=’display:none;width=0;height=0’;<br>var timer = null;</p>
+<p>整理一下目前的思路，得到下面的解决方案</p>
+<blockquote>
+<p>var url = {<br>  open: ‘app://xxxxx’,<br>  down: ‘xxxxxxxx’<br>};<br>var iframe = document.createElement(‘iframe’);<br>var body = document.body;<br>iframe.style.cssText=’display:none;width=0;height=0’;<br>var timer = null;</p>
+</blockquote>
 <p>// 立即打开的按钮<br>var openapp = document.getElementById(‘openapp’);<br>openapp.addEventListener(‘click’, function() {<br>  if(/MicroMessenger/gi.test(navigator.userAgent) {<br>    // 引导用户在浏览器中打开<br>  }) else{<br>    body.appendChild(iframe);<br>    iframe.src = url.open;<br>    timer = setTimeout(function() {<br>      wondow.location.href = url.down;<br>    }, 500);<br>  }<br>}, false)<br>想法很美好，现实很残酷。一测试，就发现简单的这样实现有许多的问题。</p>
 <p>第一个问题在于，当页面成功唤起app之后，我们再切换回来浏览器，发现跳转到了下载页面。</p>
 <p>为了解决这个问题，发现各个公司都进行了不同方式的尝试。</p>
@@ -363,19 +394,34 @@
 <p>visibilitychange： 页面隐藏没有在当前显示时触发，比如切换tab，也会触发该事件</p>
 <p>document.hidden 当页面隐藏时，该值为true，显示时为false</p>
 <p>由于各个浏览器的支持情况不同，我们需要将这些事件都给绑定上，即使这样，也不一定能够保证所有的浏览器都能够解决掉这个小问题，实在没办法的事情就不管了。</p>
-<p>因此需要扩充一下上面的方案，当本地app被唤起，则页面会隐藏掉，就会触发pagehide与visibilitychange事件<br>&gt;<br>$(document).on(‘visibilitychange<br>webkitvisibilitychange’, function() {<br>    var tag = document.hidden || document.webkitHidden;<br>    if (tag) {<br>        clearTimeout(timer);<br>    }<br>})<br>$(window).on(‘pagehide’, function() {<br>    clearTimeout(timer);<br>})</p>
+<p>因此需要扩充一下上面的方案，当本地app被唤起，则页面会隐藏掉，就会触发pagehide与visibilitychange事件</p>
+<blockquote>
+<p>$(document).on(‘visibilitychange<br>webkitvisibilitychange’, function() {<br>    var tag = document.hidden || document.webkitHidden;<br>    if (tag) {<br>        clearTimeout(timer);<br>    }<br>})<br>$(window).on(‘pagehide’, function() {<br>    clearTimeout(timer);<br>})</p>
+</blockquote>
 <p>而另外一个问题就是IOS9+下面的问题了。ios9的Safari，根本不支持通过iframe跳转到其他页面去。也就是说，在safari下，我的整体方案被全盘否决！</p>
 <p>于是我就只能尝试使用location.href的方式，这个方式能够唤起app，但是有一个坑爹的问题，使用schema协议唤起app会有弹窗而不会直接跳转去app！甚至当本地没有app时，会被判断为链接无效，然后还有一个弹窗。</p>
 <p>这个弹窗会造成什么问题呢？如果用户不点确认按钮，根据上面的逻辑，这个时候就会发现页面会自动跳转到下载去了。而且无效的弹窗提示在用户体验上是不允许出现的。</p>
 <p>好吧，继续扒别人的代码，看看别人是如何实现的。然后我又去观摩了其他公司的实现结果，发现网易新闻，今日头条都可以在ios直接从微信中唤起 app。真是神奇了，可是今日头条在Android版微信上也没办法直接唤起的，他们在Android上都是直接到腾讯应用宝的下载里去。所以按道理来说 这不是添加了白名单。</p>
 <p>为了找到这个问题的解决方案，我在网易新闻的页面中扒出了他们的代码，并整理如下，添加了部分注释</p>
-<p>&gt;<br>window.NRUM = window.NRUM || {};<br>window.NRUM.config = {<br>    key:’27e86c0843344caca7ba9ea652d7948d’,<br>    clientStart: +new Date()<br>};<br>(function() {<br>    var n = document.getElementsByTagName(‘script’)[0],<br>        s = document.createElement(‘script’);</p>
-<pre><code>s.type = &apos;text/javascript&apos;;
+<blockquote>
+<p>window.NRUM = window.NRUM || {};</p>
+<p>window.NRUM.config = {</p>
+</blockquote>
+<pre><code>key:&apos;27e86c0843344caca7ba9ea652d7948d&apos;,
+
+clientStart: +new Date()
+</code></pre><p>};</p>
+<p>(function() {</p>
+<pre><code>var n = document.getElementsByTagName(&apos;script&apos;)[0],
+
+    s = document.createElement(&apos;script&apos;);
+
+s.type = &apos;text/javascript&apos;;
 s.async = true;
 s.src = &apos;//nos.netease.com/apmsdk/napm-web-min-1.1.3.js&apos;;
 n.parentNode.insertBefore(s, n);
-</code></pre><p>})();</p>
-<p>;<br>(function(window,doc){</p>
+</code></pre><p>})();;</p>
+<p>(function(window,doc){</p>
 <pre><code>// http://apm.netease.com/manual?api=web
 NRUM.mark &amp;&amp; NRUM.mark(&apos;pageload&apos;, true)
 
@@ -598,8 +644,21 @@ setTimeout(function(){
 <p>ios9推行的一个新的协议！</p>
 <p>关于本文的这个问题，国内的论坛有许许多多的文章来解决，但是提到universal  links的文章少之又少，而我想吐槽的是，我们的ios开发也尼玛不知道这个名词，搞什么鬼。他改变了用户体验的关键在于，微信没有屏蔽这个协议。因此 如果我们的app注册了这个协议，那么我们就能够从微信中直接唤起app。</p>
 <p>这个时候我就发现，上面贴的网易新闻代码中的jsonp请求的内容，就是这个协议必须的一个叫做apple-app-site-association的JSON文件</p>
-<p>{<br>   “applinks”: {<br>       “apps”: [ ],<br>       “details”: {<br>           “TEAM-IDENTIFIER.YOUR.BUNDLE.IDENTIFIER”: {<br>               “paths”: [<br>                   “*”<br>               ]<br>           }<br>       }<br>   }<br>}<br>大家可以直接访问这个<a href="http://active.163.com/service/form/v1/5847/view/1047.jsonp" target="_blank" rel="external">链接</a>，查看里面的内容</p>
-<p>至于universal links具体如何实现，让ios的同学去搞定吧，这里提供两个参考文章<br><a href="http://www.cocoachina.com/bbs/read.php?tid-1486368.html" target="_blank" rel="external">第一篇</a><br><a href="https://blog.branch.io/how-to-setup-universal-links-to-deep-link-on-apple-ios-9" target="_blank" rel="external">第二篇</a><br>支持了这个协议之后，我们又可以通过iframe来唤起app了，因此基本逻辑就是这样了。最终的调研结果是<code>没有完美的解决方案</code>就算是网易新闻，这个按钮在使用过程中也会有一些小bug，无法做到完美的状态。</p>
+<blockquote>
+<p>{  “applinks”: {</p>
+</blockquote>
+<pre><code>&quot;apps&quot;: [ ],
+
+&quot;details&quot;: {
+
+    &quot;TEAM-IDENTIFIER.YOUR.BUNDLE.IDENTIFIER&quot;: {
+        &quot;paths&quot;: [
+            &quot;*&quot;
+        ]
+    }
+}
+</code></pre><p>   }<br>}<br>大家可以直接访问这个<a href="http://active.163.com/service/form/v1/5847/view/1047.jsonp" target="_blank" rel="external">链接</a>，查看里面的内容</p>
+<p>至于universal links具体如何实现，让ios的同学去搞定吧，这里提供两个参考文章<br><a href="http://www.cocoachina.com/bbs/read.php?tid-1486368.html" target="_blank" rel="external">第一篇</a><br><a href="https://blog.branch.io/how-to-setup-universal-links-to-deep-link-on-apple-ios-9" target="_blank" rel="external">第二篇</a><br>支持了这个协议之后，我们又可以通过iframe来唤起app了，因此基本逻辑就是这样了。最终的调研结果是没有完美的解决方案就算是网易新闻，这个按钮在使用过程中也会有一些小bug，无法做到完美的状态。</p>
 <p>因为我们面临许多没办法解决的问题，比如无法真正意义上的判断本地是否安装了app，pageshow，pagehide并不是所有的浏览器都支持等。很多其他博客里面，什么计算时间差等方案，根！本！没！有！用！我还花了很久的时间去研究这个方案。</p>
 <p>老实说，从微信中跳转到外部浏览器，并不是一个好的解决方案，这样会导致很多用户流失，因此大家都在ios上实现了universal links，而我更加倾向的方案是知乎的解决，他们从设计上避免了在一个按钮上来判断这个逻辑，而采用了两个按钮的方式。</p>
 <p>网易新闻的逻辑是，点击打开会调整到一个下载页面，这个下载页面一加载完成就尝试打开app，如果打开了就直接跑到app里面去了，如果没有就在页面上有一个立即下载的按钮，按钮行只有下载处理。</p>
@@ -662,7 +721,7 @@ setTimeout(function(){
         <div class="ds-share flat" data-thread-key="技术模块/second/"
      data-title="h5页面启动本地应用"
      data-content=""
-     data-url="http://yoursite.com/技术模块/second/">
+     data-url="http://eva1963.win/技术模块/second/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -690,7 +749,7 @@ setTimeout(function(){
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="技术模块/second/"
-           data-title="h5页面启动本地应用" data-url="http://yoursite.com/技术模块/second/">
+           data-title="h5页面启动本地应用" data-url="http://eva1963.win/技术模块/second/">
       </div>
     
   </div>
@@ -716,10 +775,10 @@ setTimeout(function(){
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -730,13 +789,13 @@ setTimeout(function(){
                src="/images/photo.jpeg"
                alt="eva1963" />
           <p class="site-author-name" itemprop="name">eva1963</p>
-          <p class="site-description motion-element" itemprop="description">hexo,huno主题,JavaScript,github，个人博客</p>
+          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
@@ -744,7 +803,7 @@ setTimeout(function(){
             <div class="site-state-item site-state-categories">
               <a href="/categories">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
@@ -753,7 +812,7 @@ setTimeout(function(){
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">标签</span>
               </a>
             </div>
           
@@ -766,38 +825,38 @@ setTimeout(function(){
           
             
               <span class="links-of-author-item">
-                <a href="eva1963" target="_blank" title="github">
+                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-fw fa-globe"></i>
+                    <i class="fa fa-fw fa-github"></i>
                   
-                  github
+                  GitHub
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="sias_xg_eva" target="_blank" title="douban">
+                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
                   
-                    <i class="fa fa-fw fa-globe"></i>
+                    <i class="fa fa-fw fa-weibo"></i>
                   
-                  douban
+                  微博
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="1431434742" target="_blank" title="weibo">
+                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
-                  weibo
+                  豆瓣
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="liuhuan1963" target="_blank" title="zhihu">
+                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
-                  zhihu
+                  知乎
                 </a>
               </span>
             
@@ -821,7 +880,7 @@ setTimeout(function(){
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://github.com/eva1963" title="github" target="_blank">github</a>
+                  <a href="https://zhangyufeng.win" title="张玉凤" target="_blank">张玉凤</a>
                 </li>
               
             </ul>
@@ -837,7 +896,7 @@ setTimeout(function(){
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
@@ -855,7 +914,7 @@ setTimeout(function(){
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -864,11 +923,11 @@ setTimeout(function(){
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>

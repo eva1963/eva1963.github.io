@@ -45,17 +45,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -87,7 +105,7 @@
 <meta name="description" content="关于this这一块，在之前我也都是一笔带过，没有很认真的研究过，但是不久前的一次交流，发现自己对闭包的理解稍微有些偏差，于是乎决定自己再去看一遍深入的理解一下闭包的概念，然后在学习闭包的过程中涉及到this关键字的理解，一连串的蝴蝶效应让我深深的认识到自己学习的马虎，总是为求快的一笔带过，结果到最后自己也没能很深入的去了解那些看似浅显却需要很细心和耐心去理解的知识点，所以在这里我借用阮大大的几个例">
 <meta property="og:type" content="article">
 <meta property="og:title" content="this 函数">
-<meta property="og:url" content="http://yoursite.com/技术模块/this/index.html">
+<meta property="og:url" content="http://eva1963.win/技术模块/this/index.html">
 <meta property="og:site_name" content="eva">
 <meta property="og:description" content="关于this这一块，在之前我也都是一笔带过，没有很认真的研究过，但是不久前的一次交流，发现自己对闭包的理解稍微有些偏差，于是乎决定自己再去看一遍深入的理解一下闭包的概念，然后在学习闭包的过程中涉及到this关键字的理解，一连串的蝴蝶效应让我深深的认识到自己学习的马虎，总是为求快的一笔带过，结果到最后自己也没能很深入的去了解那些看似浅显却需要很细心和耐心去理解的知识点，所以在这里我借用阮大大的几个例">
 <meta property="og:updated_time" content="2017-03-02T10:44:16.000Z">
@@ -114,16 +132,26 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/技术模块/this/"/>
+  <link rel="canonical" href="http://eva1963.win/技术模块/this/"/>
 
   <title> this 函数 | eva </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?4c1cc7ebea1a70b10dc949505f9221f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -184,7 +212,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            分类页
+            分类
           </a>
         </li>
       
@@ -194,7 +222,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            关于我
+            关于
           </a>
         </li>
       
@@ -204,7 +232,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            历史文章
+            归档
           </a>
         </li>
       
@@ -267,7 +295,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2017-03-02T18:26:48+08:00" content="2017-03-02">
               2017-03-02
             </time>
@@ -279,7 +307,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/技术模块/" itemprop="url" rel="index">
@@ -388,7 +416,7 @@
         <div class="ds-share flat" data-thread-key="技术模块/this/"
      data-title="this 函数"
      data-content=""
-     data-url="http://yoursite.com/技术模块/this/">
+     data-url="http://eva1963.win/技术模块/this/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -416,7 +444,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="技术模块/this/"
-           data-title="this 函数" data-url="http://yoursite.com/技术模块/this/">
+           data-title="this 函数" data-url="http://eva1963.win/技术模块/this/">
       </div>
     
   </div>
@@ -442,10 +470,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -456,13 +484,13 @@
                src="/images/photo.jpeg"
                alt="eva1963" />
           <p class="site-author-name" itemprop="name">eva1963</p>
-          <p class="site-description motion-element" itemprop="description">hexo,huno主题,JavaScript,github，个人博客</p>
+          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
@@ -470,7 +498,7 @@
             <div class="site-state-item site-state-categories">
               <a href="/categories">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
@@ -479,7 +507,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">标签</span>
               </a>
             </div>
           
@@ -492,38 +520,38 @@
           
             
               <span class="links-of-author-item">
-                <a href="eva1963" target="_blank" title="github">
+                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-fw fa-globe"></i>
+                    <i class="fa fa-fw fa-github"></i>
                   
-                  github
+                  GitHub
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="sias_xg_eva" target="_blank" title="douban">
+                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
                   
-                    <i class="fa fa-fw fa-globe"></i>
+                    <i class="fa fa-fw fa-weibo"></i>
                   
-                  douban
+                  微博
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="1431434742" target="_blank" title="weibo">
+                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
-                  weibo
+                  豆瓣
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="liuhuan1963" target="_blank" title="zhihu">
+                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
-                  zhihu
+                  知乎
                 </a>
               </span>
             
@@ -547,7 +575,7 @@
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://github.com/eva1963" title="github" target="_blank">github</a>
+                  <a href="https://zhangyufeng.win" title="张玉凤" target="_blank">张玉凤</a>
                 </li>
               
             </ul>
@@ -563,7 +591,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
@@ -581,7 +609,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -590,11 +618,11 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
