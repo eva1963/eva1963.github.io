@@ -1,7 +1,8 @@
 ---
 title: h5页面启动本地应用
 date: 2016-09-19 15:43:21
-tags:
+categories: 技术模块
+tags: 相关技术
 ---
 
 ![Mou icon](../../public/images/background-cover.jpg)
@@ -41,8 +42,7 @@ newsapp://xxxxx
 后来观察了网易新闻，今日头条，YY等的实现方案，发现大家都采用的是iframe来实现。好吧，面对这种情况，只能屈服。
 
 整理一下目前的思路，得到下面的解决方案
-
-var url = {
+>var url = {
   open: 'app://xxxxx',
   down: 'xxxxxxxx'
 };
@@ -83,17 +83,17 @@ document.hidden 当页面隐藏时，该值为true，显示时为false
 由于各个浏览器的支持情况不同，我们需要将这些事件都给绑定上，即使这样，也不一定能够保证所有的浏览器都能够解决掉这个小问题，实在没办法的事情就不管了。
 
 因此需要扩充一下上面的方案，当本地app被唤起，则页面会隐藏掉，就会触发pagehide与visibilitychange事件
-
-$(document).on('visibilitychange webkitvisibilitychange', function() {
+>$(document).on('visibilitychange 
+webkitvisibilitychange', function() {
     var tag = document.hidden || document.webkitHidden;
     if (tag) {
         clearTimeout(timer);
     }
 })
-
 $(window).on('pagehide', function() {
     clearTimeout(timer);
 })
+
 而另外一个问题就是IOS9+下面的问题了。ios9的Safari，根本不支持通过iframe跳转到其他页面去。也就是说，在safari下，我的整体方案被全盘否决！
 
 于是我就只能尝试使用location.href的方式，这个方式能够唤起app，但是有一个坑爹的问题，使用schema协议唤起app会有弹窗而不会直接跳转去app！甚至当本地没有app时，会被判断为链接无效，然后还有一个弹窗。
@@ -104,24 +104,27 @@ $(window).on('pagehide', function() {
 
 为了找到这个问题的解决方案，我在网易新闻的页面中扒出了他们的代码，并整理如下，添加了部分注释
 
-
-window.NRUM = window.NRUM || {};
+>window.NRUM = window.NRUM || {};
+>
 window.NRUM.config = {
+
     key:'27e86c0843344caca7ba9ea652d7948d',
+    
     clientStart: +new Date()
 };
+
 (function() {
+
     var n = document.getElementsByTagName('script')[0],
+    
         s = document.createElement('script');
 
     s.type = 'text/javascript';
     s.async = true;
     s.src = '//nos.netease.com/apmsdk/napm-web-min-1.1.3.js';
     n.parentNode.insertBefore(s, n);
-})();
+})();;
 
-
-;
 (function(window,doc){
 
     // http://apm.netease.com/manual?api=web
@@ -357,10 +360,12 @@ ios9推行的一个新的协议！
 
 这个时候我就发现，上面贴的网易新闻代码中的jsonp请求的内容，就是这个协议必须的一个叫做apple-app-site-association的JSON文件
 
-{
-   "applinks": {
+>{  "applinks": {
+   
        "apps": [ ],
+       
        "details": {
+       
            "TEAM-IDENTIFIER.YOUR.BUNDLE.IDENTIFIER": {
                "paths": [
                    "*"
@@ -369,21 +374,12 @@ ios9推行的一个新的协议！
        }
    }
 }
-大家可以直接访问这个链接，查看里面的内容
-
-http://active.163.com/service/form/v1/5847/view/1047.jsonp
+大家可以直接访问这个[链接](http://active.163.com/service/form/v1/5847/view/1047.jsonp)，查看里面的内容
 
 至于universal links具体如何实现，让ios的同学去搞定吧，这里提供两个参考文章
-
-http://www.cocoachina.com/bbs/read.php?tid-1486368.html
-
-https://blog.branch.io/how-to-setup-universal-links-to-deep-link-on-apple-ios-9
-
-支持了这个协议之后，我们又可以通过iframe来唤起app了，因此基本逻辑就是这样了。最终的调研结果是
-
-没有完美的解决方案
-
-就算是网易新闻，这个按钮在使用过程中也会有一些小bug，无法做到完美的状态。
+[第一篇](http://www.cocoachina.com/bbs/read.php?tid-1486368.html)
+[第二篇](https://blog.branch.io/how-to-setup-universal-links-to-deep-link-on-apple-ios-9)
+支持了这个协议之后，我们又可以通过iframe来唤起app了，因此基本逻辑就是这样了。最终的调研结果是没有完美的解决方案就算是网易新闻，这个按钮在使用过程中也会有一些小bug，无法做到完美的状态。
 
 因为我们面临许多没办法解决的问题，比如无法真正意义上的判断本地是否安装了app，pageshow，pagehide并不是所有的浏览器都支持等。很多其他博客里面，什么计算时间差等方案，根！本！没！有！用！我还花了很久的时间去研究这个方案。
 

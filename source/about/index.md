@@ -1,7 +1,7 @@
 ---
-title: about
-
-HTML5中的localStorage对象
+date: 2017-03-03 16:15:07
+title: 分类
+type: "about"
 ---
 
 HTML5中提供了localStorage对象可以将数据长期保存在客户端，直到人为清除。

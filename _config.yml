@@ -5,16 +5,16 @@
 # Site
 title: eva
 subtitle: 程序媛上辈子都是折翼的天使
-description: hexo,huno主题,JavaScript,github，个人博客
+description: hexo,JavaScript,github，个人博客
 author: eva1963
-language: zh-cn
+language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://eva1963.win
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :category/:title/
 permalink_defaults:
 
 # Directory
@@ -40,7 +40,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
 
 # Category & Tag
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: huno
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -75,13 +75,12 @@ deploy:
 # Social
 social:
   github: eva1963
-  qqZone: eva
-  douban: eva
-  weibo: 阳光照不到的哀伤
-  zhihu: 刘欢
+  douban: sias_xg_eva
+  weibo: 1431434742
+  zhihu: liuhuan1963
 
+#多说评论
 duoshuo_shortname: eva1963
-# disqus_shortname: eva
 
 
 
