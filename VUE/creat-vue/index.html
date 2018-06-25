@@ -1,0 +1,771 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="vue,js,node,webpack," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="执行vue init webpack shoppingmall构建一个完整的vue脚手架项目；安装axios -S安装vant -S
+
+在main.js中引入vant插件，可以使用官方文档推荐的装入npm i babel-plugin-import -D按需引入你所需要的插件；
+先写一个公用组件，然后其他的模块组件也都写好，在去router里面去配置路由；
+配置路由首先要把路由所用的组件都引进去">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue脚手架搭建项目整体流程">
+<meta property="og:url" content="http://eva1963.win/VUE/creat-vue/index.html">
+<meta property="og:site_name" content="eva">
+<meta property="og:description" content="执行vue init webpack shoppingmall构建一个完整的vue脚手架项目；安装axios -S安装vant -S
+
+在main.js中引入vant插件，可以使用官方文档推荐的装入npm i babel-plugin-import -D按需引入你所需要的插件；
+先写一个公用组件，然后其他的模块组件也都写好，在去router里面去配置路由；
+配置路由首先要把路由所用的组件都引进去">
+<meta property="og:updated_time" content="2018-06-25T14:18:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue脚手架搭建项目整体流程">
+<meta name="twitter:description" content="执行vue init webpack shoppingmall构建一个完整的vue脚手架项目；安装axios -S安装vant -S
+
+在main.js中引入vant插件，可以使用官方文档推荐的装入npm i babel-plugin-import -D按需引入你所需要的插件；
+先写一个公用组件，然后其他的模块组件也都写好，在去router里面去配置路由；
+配置路由首先要把路由所用的组件都引进去">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'eva1963'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://eva1963.win/VUE/creat-vue/"/>
+
+  <title> vue脚手架搭建项目整体流程 | eva </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?4c1cc7ebea1a70b10dc949505f9221f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">eva</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                vue脚手架搭建项目整体流程
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-11T21:49:35+08:00" content="2018-03-11">
+              2018-03-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/VUE/" itemprop="url" rel="index">
+                    <span itemprop="name">VUE</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/VUE/creat-vue/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="VUE/creat-vue/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li>执行<code>vue init webpack shoppingmall</code>构建一个完整的vue脚手架项目；<br>安装axios -S<br>安装vant -S</li>
+</ol>
+<p>在main.js中引入vant插件，可以使用官方文档推荐的装入<code>npm i babel-plugin-import -D</code>按需引入你所需要的插件；</p>
+<p>先写一个公用组件，然后其他的模块组件也都写好，在去router里面去配置路由；</p>
+<p>配置路由首先要把路由所用的组件都引进去，VueRouter也要作为插件引进去，就是vue.use(router);</p>
+<p>组件通用注册：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Icon, Tabbar, TabbarItem, Lazyload &#125; <span class="keyword">from</span> <span class="string">'vant'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Vue.use(Vant);</span></span><br><span class="line">Vue.use(Icon).use(Tabbar).use(TabbarItem).use(Lazyload);</span><br></pre></td></tr></table></figure>
+<p>组件用的次数比较少：直接在在vue里面写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; getSlidesData &#125; <span class="keyword">from</span> <span class="string">"../api"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;Swipe, SwipeItem&#125; <span class="keyword">from</span> <span class="string">'vant'</span>;</span><br><span class="line"></span><br><span class="line">components: &#123;</span><br><span class="line">    <span class="comment">/* 如果轮播图这个插件只用了这一次，我们可以直接在这个文件里面注册，注册方法如下： */</span></span><br><span class="line">    <span class="comment">/* 如果插件用的比较频繁，就直接main里面用vue.use的方式注册 */</span></span><br><span class="line">  [Swipe.name] : Swipe,</span><br><span class="line">  [SwipeItem.name] : SwipeItem</span><br><span class="line">&#125;,</span><br><span class="line">  <span class="keyword">async</span> created() &#123;</span><br><span class="line">    <span class="keyword">let</span> slideData = <span class="keyword">await</span> getSlidesData();</span><br><span class="line">    <span class="keyword">this</span>.slides = slideData.slides;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>自定义的iconfont字体，放到asset文件里面，然后在App.vue里面引入iconfont.css文件，使用的时候直接用字体文件的class名字即可</p>
+<ul>
+<li><strong> Vue.use(Router)</strong>是在router的index.js里面作为插件使用的；</li>
+</ul>
+<ul>
+<li><strong>main.js</strong>里面是把<strong>vue相关的使用的插件用use写进去</strong>，两者不同；</li>
+</ul>
+<p>你在router里面路由参数配置了之后，在页面中想使用就是方法就是$router.pash(),使用属性就是$route.params.XXX;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//两种路由导航方式：</span></span><br><span class="line">&lt;div @click=<span class="string">"$router.push('/order/daifukuan')"</span>&gt;</span><br><span class="line">    &lt;van-col span="6"&gt;</span><br><span class="line">      &lt;p&gt;&lt;van-icon name="daifukuan"&gt;&lt;/van-icon&gt;&lt;/p&gt;</span><br><span class="line">      &lt;p&gt;代付款&lt;/p&gt;</span><br><span class="line">    &lt;/van-col&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div @click="$router.push(&#123;name: 'order',params: &#123;type:'daifahuo'&#125;&#125;)"&gt;</span><br><span class="line">    &lt;van-col span="6"&gt;</span><br><span class="line">      &lt;p&gt;&lt;van-icon name="daifahuo" info="9"&gt;&lt;/van-icon&gt;&lt;/p&gt;</span><br><span class="line">      &lt;p&gt;代发货&lt;/p&gt;</span><br><span class="line">    &lt;/van-col&gt;</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue-js-node-webpack/" rel="tag">#vue,js,node,webpack</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/webpack/webpack/" rel="next" title="webpack安装">
+                <i class="fa fa-chevron-left"></i> webpack安装
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/JS/Storage/" rel="prev" title="本地存储 VS 服务器存储">
+                本地存储 VS 服务器存储 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="VUE/creat-vue/"
+     data-title="vue脚手架搭建项目整体流程"
+     data-content=""
+     data-url="http://eva1963.win/VUE/creat-vue/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="VUE/creat-vue/"
+           data-title="vue脚手架搭建项目整体流程" data-url="http://eva1963.win/VUE/creat-vue/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/photo.jpeg"
+               alt="eva1963" />
+          <p class="site-author-name" itemprop="name">eva1963</p>
+          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com" title="张大大" target="_blank">张大大</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://http://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://zhangyufeng.win" title="张玉凤" target="_blank">张玉凤</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.mapan.win/" title="马攀" target="_blank">马攀</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">eva1963</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"eva1963"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

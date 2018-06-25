@@ -1,0 +1,866 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="node,js,commonJS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="npm是从npm官网下载包的；
+yarn
+bower是从github上面下载安装包的；
+
+在本地项目当中基于npm/yarn安装第三方模块1231. 在本地项目中创建一个package.json的文件，目的是把当前项目所有依赖的第三方模块信息(包含模块名称以及版本信息)都记录下来，可以在这里配置一些可执行的命令脚本等2. 安装3. 跑环境，部署的时候
+package.json基于yarn安装会默">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CommonJS及其内置模块的使用">
+<meta property="og:url" content="http://eva1963.win/NODE/commonJS/index.html">
+<meta property="og:site_name" content="eva">
+<meta property="og:description" content="npm是从npm官网下载包的；
+yarn
+bower是从github上面下载安装包的；
+
+在本地项目当中基于npm/yarn安装第三方模块1231. 在本地项目中创建一个package.json的文件，目的是把当前项目所有依赖的第三方模块信息(包含模块名称以及版本信息)都记录下来，可以在这里配置一些可执行的命令脚本等2. 安装3. 跑环境，部署的时候
+package.json基于yarn安装会默">
+<meta property="og:updated_time" content="2018-06-25T14:21:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CommonJS及其内置模块的使用">
+<meta name="twitter:description" content="npm是从npm官网下载包的；
+yarn
+bower是从github上面下载安装包的；
+
+在本地项目当中基于npm/yarn安装第三方模块1231. 在本地项目中创建一个package.json的文件，目的是把当前项目所有依赖的第三方模块信息(包含模块名称以及版本信息)都记录下来，可以在这里配置一些可执行的命令脚本等2. 安装3. 跑环境，部署的时候
+package.json基于yarn安装会默">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'eva1963'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://eva1963.win/NODE/commonJS/"/>
+
+  <title> CommonJS及其内置模块的使用 | eva </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?4c1cc7ebea1a70b10dc949505f9221f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">eva</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CommonJS及其内置模块的使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-07-06T19:03:19+08:00" content="2017-07-06">
+              2017-07-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/NODE/" itemprop="url" rel="index">
+                    <span itemprop="name">NODE</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/NODE/commonJS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="NODE/commonJS/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li>npm是从npm官网下载包的；</li>
+<li>yarn</li>
+<li>bower是从github上面下载安装包的；</li>
+</ol>
+<h4 id="在本地项目当中基于npm-yarn安装第三方模块"><a href="#在本地项目当中基于npm-yarn安装第三方模块" class="headerlink" title="在本地项目当中基于npm/yarn安装第三方模块"></a>在本地项目当中基于npm/yarn安装第三方模块</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>在本地项目中创建一个package.json的文件，目的是把当前项目所有依赖的第三方模块信息(包含模块名称以及版本信息)都记录下来，可以在这里配置一些可执行的命令脚本等</span><br><span class="line"><span class="bullet">2. </span>安装</span><br><span class="line"><span class="bullet">3. </span>跑环境，部署的时候</span><br></pre></td></tr></table></figure>
+<h5 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h5><p>基于yarn安装会默认生成一个package.json，只是信息没有手动创建的全面，所以我们一般都手动创建：</p>
+<p><code>npm init -y</code>        //加Y是为了一路都走默认值，无需询问</p>
+<p><strong>意义：</strong>开发项目的时候我们首先生成一个package.json，当我们安装第三方模块的时候把安装的模块信息记录到配置清单当中，这样以后不管是团队协作开发还是项目部署上线，我们都没有必要上传node_modules大文件上传，只需要上传配置清单，别人在使用的时候在自己的电脑中跑下环境即可</p>
+<p>创建配置清单的时候不能出现中文，这样有可能识别不了</p>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>开发依赖：只有在项目开发阶段依赖的第三方模块</p>
+<p>生产环境：项目部署实施的时候，也需要依赖的第三方模块</p>
+<p>npm install xxx —save     //保存到配置清单的生产依赖中</p>
+<p>npm install XXX —save-dev    //保存到配置清单的开发依赖中</p>
+<p>yarn add XXX     //默认安装到生产依赖中</p>
+<p>yarn add XXX —dev/-D    //安装到开发依赖中</p>
+<h5 id="跑环境"><a href="#跑环境" class="headerlink" title="跑环境"></a>跑环境</h5><p>直接<strong>npm install /yarn install</strong>，npm会自己先检测目录中是否有package.json文件，如果有就会按照文件中的配置清单依次安装；</p>
+<h4 id="安装到本地和全局的区别："><a href="#安装到本地和全局的区别：" class="headerlink" title="安装到本地和全局的区别："></a>安装到本地和全局的区别：</h4><p>安装到全局的特点：</p>
+<ul>
+<li>所有的项目都可以使用这个模块，容易导致版本冲突</li>
+<li>安装在全局的模块，不能基于CommonJS模块规范调取使用</li>
+</ul>
+<p>安装到本地的特点：</p>
+<ul>
+<li>只能当前项目使用这个模块</li>
+<li>可以基于CommonJS模块规范调取使用</li>
+<li>不能直接使用命令操作，全局的可以使用命令</li>
+</ul>
+<p>为什么安装在全局下可以使用命令？</p>
+<p>npm root /-g 查看本地项目或者全局环境下，npm的安装目录</p>
+<p><strong>nvm切换node版本；（nvm ls;nvm use 8;）</strong></p>
+<p>安装在全局目录下的模块，大部分都会生成一个XXX.cmd的文件，只要有这个文件，那么XXX就是一个可以执行的（例如：yarn.cmd=&gt;yarn就是命令）</p>
+<p>既可以安装在本地，也可以使用命令操作：</p>
+<ol>
+<li>配置package文件中的执行脚本</li>
+<li>把模块安装在本地，如果是支持命令操作的（会在node_modules的bin中生成一个xxx.cmd的命令文件，只不过这个文件无法在全局下执行，所以不能直接用命令）</li>
+<li>安装完成后，在package.json中的scripts中配置需执行的命令脚本，“eva”:”lessc -v”属性名自己设置即可，属性值是需要执行的命令脚本，根据需要自己编写即可（可以配置很多命令）</li>
+<li>npm  run  eva/yarn eva这样的操作就是把配置脚本执行</li>
+</ol>
+<ul>
+<li>首先到配置清单中的script中查找</li>
+<li>找到把后面对应的属性值（脚本）执行</li>
+<li>执行脚本的时候回到node_modules中的bin文件中查找,没有的话，再向npm安装的全局目录中去找</li>
+</ul>
+<h3 id="node入门"><a href="#node入门" class="headerlink" title="node入门"></a>node入门</h3><p>node本身就是基于CommonJS模块规范设计的，所以模块是node的组成</p>
+<ul>
+<li>内置模块：NODE天生提供给js调取使用的</li>
+<li>第三方模块：别人写好的，我们可以基于npm安装使用</li>
+<li>自定义模块：自己创建的一些模块</li>
+</ul>
+<p>CommonJs模块化设计思想（AMD/CMD/ES6 MODULE都是模块设计思想）</p>
+<ul>
+<li><strong>规定每一个JS都是一个单独的模块</strong>===&gt;模块是私有的，里面涉及的值和变量以及函数等都是私有的，和其他的js文件是不冲突的</li>
+<li>CommonJS 中可以允许模块中的方法互相调用；<ul>
+<li>B模块想导入A模块的方法<ul>
+<li>A导出</li>
+<li>B导入</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>【导出】：</p>
+<p>CommonJS给每一个模块都设置了内置的变量/属性/方法</p>
+<ul>
+<li><strong>module：代表当前这个模块对象</strong></li>
+<li><strong>module.exports：提供的一个属性</strong>，用来导出属性方法的</li>
+<li><strong>exports：是内置的变量</strong>，也是用来导出当前模块属性方法的，虽然和module.exports不是一个东西，但是他俩代表的值是同一个，值都是对象（module.exports === exports）,指向的是同一个堆内存地址</li>
+</ul>
+<p>【导入】：</p>
+<p><strong>require</strong>： CommonJS提供的内置变量，用来导入模块（其实导入的就是module.exports暴露出来的东西，导入的值也是[object]类型的）</p>
+<p><strong>require是一个同步操作</strong>： let temp1 = require(‘./temp1.js’)；首先是把temp1中的代码从上到下执行一遍，吧exports对应的对内存导入进来，只有把导入的模块代码执行完成，才可以获取值，然后继续执行本模块下面的代码；</p>
+<h3 id="CommonJS特点"><a href="#CommonJS特点" class="headerlink" title="CommonJS特点"></a>CommonJS特点</h3><ol>
+<li><strong>所有代码都运行在模块作用域</strong>，不会污染全局作用域（每一个模块都是私有的，包括里面的东西都是私有的，不会和其他模块产生干扰）</li>
+<li><strong>模块可以多次加载，但是只会在第一次加载时运行一次</strong>，然后运行结果就被缓存了，以后在加载，就直接地取缓存结果，要想让模块再次运行，必须清理缓存；<strong>为了保证性能</strong>，减少模块代码重复执行的次数</li>
+<li>模块加载的顺序，按照其在在代码中出现的循序；<strong>CommonJS规范加载模块是同步的</strong>，也就是说，只有加载完成，才能执行后面的操作，而AMD是非同步的</li>
+</ol>
+<p>默认和module.exports是同一个堆内存，但是exports= {}是让exports指向一个新的内存，module.exports不受影响</p>
+<p>require(‘XXX’)</p>
+<p>require(‘XXX’),首先到当前项目node_modules下去找，不存在去找node提供的内置模块（导入第三方或者内置的）</p>
+<p>__dirname:表示当前模块所在的绝对路径（物理路径）；</p>
+<p>__filename: 相对于__dirname来说，多了模块名称；</p>
+<h3 id="内置模块："><a href="#内置模块：" class="headerlink" title="内置模块："></a>内置模块：</h3><h4 id="FS-实现I-O操作"><a href="#FS-实现I-O操作" class="headerlink" title="FS[实现I/O操作]"></a>FS[实现I/O操作]</h4><p>let fs = require(‘fs’);</p>
+<p><strong>fs.readdir/readdirSync</strong>:读取文件夹操作</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fs.readdirSync(<span class="string">'./'</span>);    <span class="regexp">//</span>同步读取</span><br><span class="line">fs.readdir(<span class="string">'./'</span>, <span class="function"><span class="params">(err,files)</span> =&gt;</span> &#123;</span><br><span class="line">    err ? <span class="built_in">console</span>.log(err) : <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(files); <span class="regexp">//</span>返回的结果是一个数组[ <span class="string">'a.js'</span>, <span class="string">'b.js'</span>, <span class="string">'c.js'</span>, <span class="string">'fs.js'</span>, <span class="string">'js'</span> ]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>fs.mkdir/fs.mkdirSync：创建文件夹/同步创建</strong>，带sync是同步，不带就是异步操作，想要是先无阻塞的I/O操作，我们一般都是用异步操作来完成要处理的事情</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 读取文件中的内容</span><br><span class="line"><span class="built_in">fs</span>.readFile()<span class="comment">;</span></span><br><span class="line"><span class="built_in">fs</span>.writeFile()<span class="comment">; //向文件中写入内容（覆盖写入：写入新的内容会替换原有的内容）</span></span><br><span class="line"><span class="built_in">fs</span>.appendFile()<span class="comment">;//追加写入新内容，原有内容还在</span></span><br><span class="line"><span class="built_in">fs</span>.watchFile()<span class="comment">;</span></span><br><span class="line"><span class="built_in">fs</span>.copyFile()<span class="comment">;  //拷贝文件到新的位置</span></span><br><span class="line"><span class="built_in">fs</span>.unlink()<span class="comment">;//删除文件</span></span><br><span class="line"><span class="symbol">fs.access:</span>用来验证权限</span><br><span class="line"><span class="built_in">fs</span>.rmdir()<span class="comment">;  //如果目录有文件，则不能直接删除</span></span><br><span class="line"><span class="built_in">fs</span>.rmdirSync()<span class="comment">;*/</span></span><br></pre></td></tr></table></figure>
+<h4 id="PATH模块"><a href="#PATH模块" class="headerlink" title="PATH模块"></a>PATH模块</h4><h4 id="URL模块"><a href="#URL模块" class="headerlink" title="URL模块"></a>URL模块</h4><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="built_in">url</span> = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">url</span>.parse(<span class="string">'http://www.zhufengpeixun.cn/main/guide/index.html?from=qq&amp;ls=stu#video'</span>, <span class="literal">true</span>));</span><br></pre></td></tr></table></figure>
+<p>parse()第二个参数设置为true：<br>query参数是一个对象，里面是对象键值对的模式，常用的都是加true </p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Url &#123;</span><br><span class="line"><span class="string">protocol:</span> <span class="string">'http:'</span>, 协议</span><br><span class="line"><span class="string">slashes:</span> <span class="literal">true</span>, 是否有双斜线</span><br><span class="line"><span class="string">auth:</span> <span class="literal">null</span>,作者</span><br><span class="line"><span class="string">host:</span> <span class="string">'www.zhufengpeixun.cn'</span>,域名+端口</span><br><span class="line"><span class="string">port:</span> <span class="literal">null</span>,端口</span><br><span class="line"><span class="string">hostname:</span> <span class="string">'www.zhufengpeixun.cn'</span>,  域名</span><br><span class="line"><span class="string">hash:</span> <span class="string">'#video'</span>,    <span class="comment">//hash值</span></span><br><span class="line"><span class="string">search:</span> <span class="string">'?from=qq&amp;ls=stu'</span>, 问号传参</span><br><span class="line"><span class="string">query:</span> <span class="string">'from=qq&amp;ls=stu'</span>,   问号传参的不带问号</span><br><span class="line"><span class="string">pathname:</span> <span class="string">'/main/guide/index.html'</span>, 请求资源的路径名称</span><br><span class="line"><span class="string">path:</span> <span class="string">'/main/guide/index.html?from=qq&amp;ls=stu'</span>,</span><br><span class="line"><span class="string">href:</span> <span class="string">'http://www.zhufengpeixun.cn/main/guide/index.html?from=qq&amp;ls=stu#video'</span> &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="HTTP模块"><a href="#HTTP模块" class="headerlink" title="HTTP模块"></a>HTTP模块</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">let</span> server = http.createServer();<span class="comment">//创建服务</span></span><br><span class="line">server.listen();<span class="comment">//监听端口号</span></span><br></pre></td></tr></table></figure>
+<p>对应好协议域名，端口等信息，</p>
+<p>http:localhost:8080/…服务在电脑上，localhost本机域名了，也就是本机的客户端浏览器，访问本机的服务端程序</p>
+<p><a href="http://ip:8686/" target="_blank" rel="external">http://ip:8686/</a>…</p>
+<p>IP做域名访问，如果是内网IP，相同局域网下的用户可以访问这个服务，如果是外网IP，所有能联网的基本上都可以访问这个服务,局域网下访问需要互相关掉防火墙</p>
+<h4 id="createServer"><a href="#createServer" class="headerlink" title="createServer"></a>createServer</h4><ul>
+<li>当服务创建成功，并且客户端相当前服务器发送了请求，才会执行回调函数，并且发送一次请求，回调函数会被处罚执行一次</li>
+<li>服务器上有一堆项目代码，这对代码既可能有服务端的程序代码，也有可能有客户端的程序代码，而客户端程序代码一般我们都放到static这个文件夹中</li>
+<li>我们创建的web服务，需要处理两类请求，第一类属于静态资源文件的请求处理，第二类属于API 接口的请求处理，一个是要文件，一个是要数据，区别在于是否有后缀名，</li>
+</ul>
+<p><strong>req.url</strong>请求资源的路径地址及问号传参,不包含hash值</p>
+<p><strong>req.methods</strong> 客户端的请求方式，如GET</p>
+<p><strong>req.headers</strong>客户端的请求头信息，是一个对象</p>
+<p><strong>res.write</strong>基于这个方法服务器端可以向客户端返回内容</p>
+<p><strong>res.end</strong>结束响应</p>
+<p><strong>res.writeHead</strong>重写响应头信息</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: res.<span class="keyword">end</span>(<span class="symbol">'hello</span> word');服务器端返回给客户端的内容一般都是<span class="built_in">String</span>或者<span class="keyword">Buffer</span>格式的数据</span><br></pre></td></tr></table></figure>
+<p>如果是JSON格式的，使用JSON.stringify()转成json格式的字符串；</p>
+<p>如果响应主体是汉字，做处理：</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">res.writeHead(<span class="number">200</span>, &#123;</span><br><span class="line"></span><br><span class="line">        <span class="string">'content-type'</span>: <span class="string">'text/plain;charset=utf-8'</span></span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    res.<span class="keyword">end</span>(<span class="string">'我我我'</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let &#123; pathname, <span class="keyword">query</span> &#125; = url.<span class="keyword">parse</span>(req.url, true);</span><br><span class="line">console.<span class="built_in">log</span>(pathname, <span class="keyword">query</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let <span class="comment">&#123; url, method, headers &#125;</span> = req;</span><br><span class="line">let <span class="comment">&#123; url, method, headers &#125;</span> = res;</span><br><span class="line">console.log(url, <span class="function"><span class="keyword">method</span>, <span class="title">headers</span>);</span></span><br><span class="line">console.log(req);</span><br><span class="line">console.log(res);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/node-js-commonJS/" rel="tag">#node,js,commonJS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JS/ES6/" rel="next" title="ES6新增的一些方法">
+                <i class="fa fa-chevron-left"></i> ES6新增的一些方法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/JS/String/" rel="prev" title="字符串常用方法 && Math常用方法">
+                字符串常用方法 && Math常用方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="NODE/commonJS/"
+     data-title="CommonJS及其内置模块的使用"
+     data-content=""
+     data-url="http://eva1963.win/NODE/commonJS/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="NODE/commonJS/"
+           data-title="CommonJS及其内置模块的使用" data-url="http://eva1963.win/NODE/commonJS/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/photo.jpeg"
+               alt="eva1963" />
+          <p class="site-author-name" itemprop="name">eva1963</p>
+          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com" title="张大大" target="_blank">张大大</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://http://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://zhangyufeng.win" title="张玉凤" target="_blank">张玉凤</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.mapan.win/" title="马攀" target="_blank">马攀</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#在本地项目当中基于npm-yarn安装第三方模块"><span class="nav-number">1.</span> <span class="nav-text">在本地项目当中基于npm/yarn安装第三方模块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#package-json"><span class="nav-number">1.1.</span> <span class="nav-text">package.json</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#跑环境"><span class="nav-number">1.3.</span> <span class="nav-text">跑环境</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装到本地和全局的区别："><span class="nav-number">2.</span> <span class="nav-text">安装到本地和全局的区别：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node入门"><span class="nav-number"></span> <span class="nav-text">node入门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS特点"><span class="nav-number"></span> <span class="nav-text">CommonJS特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置模块："><span class="nav-number"></span> <span class="nav-text">内置模块：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FS-实现I-O操作"><span class="nav-number">1.</span> <span class="nav-text">FS[实现I/O操作]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PATH模块"><span class="nav-number">2.</span> <span class="nav-text">PATH模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL模块"><span class="nav-number">3.</span> <span class="nav-text">URL模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP模块"><span class="nav-number">4.</span> <span class="nav-text">HTTP模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#createServer"><span class="nav-number">5.</span> <span class="nav-text">createServer</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">eva1963</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"eva1963"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,825 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="react,JSX," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="JSX渲染机制：
+基于babel中的语法解析模块(babel-preset-react)把JSX语法编译为REACT.createElement(…)结构
+执行React.createElement(type,props,children)，创建一个对象，这个对象就叫虚拟dom，type:’div’标签名ref:keyprops:{id:’titleBox’,className:’titleBox">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react基于JSX语法渲染的核心原理">
+<meta property="og:url" content="http://eva1963.win/react/react4/index.html">
+<meta property="og:site_name" content="eva">
+<meta property="og:description" content="JSX渲染机制：
+基于babel中的语法解析模块(babel-preset-react)把JSX语法编译为REACT.createElement(…)结构
+执行React.createElement(type,props,children)，创建一个对象，这个对象就叫虚拟dom，type:’div’标签名ref:keyprops:{id:’titleBox’,className:’titleBox">
+<meta property="og:updated_time" content="2018-06-25T14:15:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react基于JSX语法渲染的核心原理">
+<meta name="twitter:description" content="JSX渲染机制：
+基于babel中的语法解析模块(babel-preset-react)把JSX语法编译为REACT.createElement(…)结构
+执行React.createElement(type,props,children)，创建一个对象，这个对象就叫虚拟dom，type:’div’标签名ref:keyprops:{id:’titleBox’,className:’titleBox">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'eva1963'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://eva1963.win/react/react4/"/>
+
+  <title> react基于JSX语法渲染的核心原理 | eva </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?4c1cc7ebea1a70b10dc949505f9221f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">eva</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                react基于JSX语法渲染的核心原理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-02-24T22:11:35+08:00" content="2018-02-24">
+              2018-02-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/react/react4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="react/react4/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="JSX渲染机制："><a href="#JSX渲染机制：" class="headerlink" title="JSX渲染机制："></a>JSX渲染机制：</h4><ol>
+<li>基于babel中的语法解析模块(babel-preset-react)把JSX语法编译为REACT.createElement(…)结构</li>
+<li>执行<strong>React.createElement(type,props,children)</strong>，创建一个对象，这个对象就叫虚拟dom，type:’div’标签名ref:keyprops:{id:’titleBox’,className:’titleBox’,style:…children:’coyote’//存放的是元素中的内容}<strong>proto</strong>:Object.prototype</li>
+<li><strong>ReactDom.render(JSX愈发声称的对象，容器)</strong>，基于RENDER方法把生成的对象动态创建为DOM元素，插入到指定的容器中；</li>
+</ol>
+<p>不管是vue还是react框架，设计之初都是期望我们按照‘组件、模块管理‘的方式构建程序的，也就是吧一个程序花费为一个个组件来单独处理</p>
+<p>【优势】</p>
+<ol>
+<li>有助于多人协作开发</li>
+<li>我们开发的组件可以被复用</li>
+</ol>
+<h4 id="react中创建组件有两种方式："><a href="#react中创建组件有两种方式：" class="headerlink" title="react中创建组件有两种方式："></a>react中创建组件有两种方式：</h4><ol>
+<li><p>函数声明式组件</p>
+</li>
+<li><p>基于继承component类来创建组件</p>
+</li>
+</ol>
+<ul>
+<li>我们常常会单独建一个component文件夹，来专门放组件；</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 因为解析的时候要用到React.createElement所以，react是必须要引用的 */</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="comment">/* 1. 函数式声明组件：函数的返回结果是一个新的JSX</span><br><span class="line"> 2. props变量存储的值是一个对象，包含了调取组建的时候传递的属性值</span><br><span class="line"> *  */</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Dialog</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> title = props.lx === <span class="number">0</span> ? <span class="string">'系统警告'</span> : <span class="string">'系统提示'</span>;</span><br><span class="line">    <span class="keyword">let</span> &#123;children&#125; = props;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*children可能有也可能没有，可能是字符串也可能是一个数组，都代表组件里的祖孙元素*/</span></span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;title&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;props.con&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        &#123;/*把属性中传递的子元素放到组件中的指定位置*/&#125;</span><br><span class="line">        &#123;/*基于react中提供专门遍历children 的方法完成便利操作*/&#125;</span><br><span class="line">        &#123;React.Children.map(children,item=&gt;item)&#125;</span><br><span class="line">        &#123;/*&#123;children&#125;*/&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'./self_JSX.js'</span>;</span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">    &#123;/* JSX 中调去组建只需要把组件当做一个标签调取即可 */&#125;</span><br><span class="line">    &#123;/*如果属性值是数字就必要要大括号包住*/&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">Dialog</span> <span class="attr">con</span>=<span class="string">"哈哈"</span> <span class="attr">lx</span>=<span class="string">&#123;2&#125;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;color:</span> '<span class="attr">red</span>'&#125;&#125;/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Dialog</span> <span class="attr">con</span>=<span class="string">"嘿嘿嘿"</span> <span class="attr">lx</span>=<span class="string">&#123;0&#125;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>123<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>456<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Dialog</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span>,root)</span></span><br></pre></td></tr></table></figure>
+<p><strong>createElement在处理的时候遇见一个组件，返回的对象中，type就不在是字符串标签名了，而是一个函数（类），单数属性还是存在props里面的</strong></p>
+<ol>
+<li>render渲染的时候我们需要做处理，首先判断type的类型，如果是字符串就创建一个元素标签，如果是函数/类，就把函数执行，把props的每一项（包含children）传递给函数</li>
+</ol>
+<ol>
+<li>在执行函数的时候把函数中return的JSX转化成新对象，通过createElement方法，把方法的结果也就是那个对象返回，紧接着按照以往的渲染方式创建DOM元素插入到指定容器当中即可</li>
+</ol>
+<h4 id="基于继承Component类来创建组件"><a href="#基于继承Component类来创建组件" class="headerlink" title="基于继承Component类来创建组件"></a>基于继承Component类来创建组件</h4><blockquote>
+<p> 基于createElement把jsx转化为一个对象，当render渲染这个对象的时候，遇到type是一个函数或者类，不是直接创建元素，而是先把方法执行</p>
+<p> 如果就是函数式声明组件，就把它当做普通方法执行，方法中的this是undefined，把函数返回的jsx元素，其实也是解析后的对象进行渲染。</p>
+<p> 如果是类声明式的组件会把当前类new它执行，创建类的一个实例（当前本次调取的也就是他的实例），执行<strong>constructor之后，会执行this.render()</strong>，把render中返回的jsx拿过来渲染，所以<strong>“类声明式组件，必须有一个render的方法，方法中需要返回一个jsx元素”</strong>但是不管是哪一种方式，最后都会把解析出来的props属性对象作为实参传递给对应的函数或者类，而且每一个组件中都要导入react，需要React.createElement把jsx进行解析渲染</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">/* 类继承 */</span><br><span class="line">class Dialog extends React.Component &#123;</span><br><span class="line">     /* this.props是只读的，我们无法在方法中修改他的值，但是给其设置默认值或者设置一些规则，例如，设置是否必须传递，以及传递值的类型等 */</span><br><span class="line">  //这个是react自带的，名字都是固定的defaultProps，不能改变，专门设置默认值的</span><br><span class="line">    static defaultProps = &#123;</span><br><span class="line">        lx: &apos;系统提示&apos;</span><br><span class="line">    &#125;;</span><br><span class="line">//这个需要安装插件yarn add prop-types，然后用来检验某个字段的必传，类型什么的</span><br><span class="line">    static propTypes = &#123;</span><br><span class="line">        /* 必传项且只能传递字符串或者只检验传入字符串，PropTypes.string</span><br><span class="line">		设置的规则不会影响数据的渲染但是会在控制台抛出警告 */</span><br><span class="line">        con: PropTypes.string.isRequired</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        /* 继承了一些私有属性：this.props/this.refs/this.context */</span><br><span class="line">      /* props:当render渲染并且把当前类执行创建实例的时候，会把之前JSX解析出来的props对象中的信息(可能有children)传递给参数props，‘调去组件传递的属性’ */</span><br><span class="line">      /* 如果只写super()；虽然创建实例的时候把属性传递进来看了，但是并没有传递父组件，也就是没有把属性挂在到实力上，使用this.prop获取的结果是undefined */</span><br><span class="line">     /* 如果super(props)在继承父类私有的时候，就把传递的属性挂载到了子类的实例上，constructor中就可以使用this.props了 */</span><br><span class="line">        super(props);</span><br><span class="line">        /* 相当于React.Component.call(this)*/</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">// 即使在constructor中不设置形参props接收属性，执行supper的时候也不传这个属性，除了当前constructor里面不能直接使用this.props之外，其他的生命周期函数都可以使用this.props，（也就是执行完成constructor，react已经帮我们把传递的属性接收并且挂在到实例上）</span><br><span class="line">    render() &#123;</span><br><span class="line">      //组件中的属性是调去组建的时候传递给组建的信息，而这部分信息是只读的(只能获取不能修改)，比如：this.props.con = &apos;嘿嘿嘿&apos;，就会报错</span><br><span class="line">      console.lod(this.props);  //&#123;name: &quot;eva&quot;, className: &quot;box&quot;, style: &#123;…&#125;, children: Array(2)&#125;</span><br><span class="line">        return &lt;div&gt;珠峰培训&lt;/div&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//使用组件</span><br><span class="line">ReactDOM.render(&lt; div &gt;</span><br><span class="line">        &lt;Dialog name=&quot;eva&quot; className=&quot;box&quot; style=&#123;&#123;color: &apos;red&apos;&#125;&#125; con=&apos;哈哈哈&apos;&gt;</span><br><span class="line">            &lt;span className=&quot;span&quot;&gt; i am a span1 &lt;/span&gt;</span><br><span class="line">            &lt;span className=&quot;span2&quot;&gt; i am a span2 &lt;/span&gt;</span><br><span class="line">        &lt;/Dialog&gt;</span><br><span class="line">    &lt;/div&gt;,,root);</span><br></pre></td></tr></table></figure>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>创建组件有两种方式：</p>
+<ol>
+<li>函数式</li>
+</ol>
+<ul>
+<li>操作非常简单</li>
+<li>能实现的功能也很简单，只是简单的调取和返回JSX而已</li>
+</ul>
+<ol>
+<li>类式</li>
+</ol>
+<ul>
+<li>操作相对复杂一些，但是可以实现更为复杂的功能</li>
+<li>能够使用<strong>生命周期函数</strong>操作业务</li>
+<li>函数式可以理解为静态组件（组件中的内容调取的时候就已经固定的，很难再修改），而类可以基于组件内部的状态来动态更新渲染的内容</li>
+<li>…</li>
+</ul>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* propTypes是Facebook开发的插件，基于这个插件我们可以给组件传递的属性设置规则 */</span></span><br><span class="line"><span class="keyword">import</span> propTypes <span class="keyword">from</span> <span class="string">'prop-types'</span>;</span><br></pre></td></tr></table></figure>
+<p>REACT中的组件有两个非常重要的概念：</p>
+<ol>
+<li>组建的属性：调去组件的时候传递进来的信息</li>
+<li>组件的状态：自己在组件中设定和规划的（只有类声明式才有状态的管控，函数式组件声明不存在状态的管理）</li>
+</ol>
+<h4 id="函数式："><a href="#函数式：" class="headerlink" title="函数式："></a>函数式：</h4><blockquote>
+<p> <strong>所谓的函数式组件，是静态组件</strong>，和执行普通方法一样调去一次组件就把组件中内容获取到插入到页面当中，如果不重新调组件，显示的内容是不会发生任何改变的</p>
+</blockquote>
+<p>真实项目中，只有调取组件，组件内容不会再次改变的情况下，我们才可能使用函数式组件；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 所以这个例子是很不好的！*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Clock</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>当前北京时间是：&#123;new Date().toLocaleString()&#125;<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line">setInterval(()=&gt;&#123;</span><br><span class="line">    <span class="comment">/* 每隔一秒钟重新嗲奥曲一次组件渲染到页面中 */</span></span><br><span class="line">    ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Clock</span>&gt;</span><span class="tag">&lt;/<span class="name">Clock</span>&gt;</span></span>,root);</span><br><span class="line">&#125;,<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="类式"><a href="#类式" class="headerlink" title="类式"></a>类式</h4><blockquote>
+<p> 组件状态类似于vue中的数据驱动，我们数据绑定的时候是基于状态值来绑定的，当修改组件内部状态的时候，对应的JSX元素也会跟着重新渲染（差异渲染：只把数据改变的部分重新渲染，基于DOM-DIFF算法完成的）</p>
+<p> 当代框架最重要的核心思想就是数据操控视图，也有视图影响数据，我们以后只需要改变数据，框架会帮我们重新渲染视图，告别手动操作DOM的时代，从而减少直接操作DOM，提高性能，有助于开发效率</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="comment">/* 初始化组建的状态(状态都是对象类型的):要求我们在constructor中把后期使用的状态信息全部初始化一下，约定俗成的语法规范 */</span></span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            time: <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleString()</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        <span class="comment">/*react的生命周期函数之一，第一次组件渲染完成后触发（我们在这里只需要间隔1秒把state.time改变，这样react会自动帮我们把组件中的部分内容进行重新渲染）*/</span></span><br><span class="line">        setInterval(() =&gt; &#123;</span><br><span class="line">            <span class="comment">/* react中虽然下面方式可以修改状态，但是并不会通知react重新渲染页面，所以不要这么操作 */</span></span><br><span class="line">            <span class="comment">/*this.state.time = new Date().toLocaleString();*/</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">/* 修改组件的状态：</span><br><span class="line">             * 1. 修改部分状态，会用我们传递的对象和初始化的state进行匹配，只把我们传递的属性进行修改，没有传递的依然保留原始的状态信息</span><br><span class="line">             * 2. 当状态修改完成，会通知react把组件JSX中的部分元素进行重新渲染</span><br><span class="line">             */</span></span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                time: <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleString()</span><br><span class="line">            &#125;, () =&gt; &#123;</span><br><span class="line">                <span class="comment">/* 当通知react把需要重新渲染的JSX元素渲染完成后，执行的回调操作，类似于生命周期函数的componentDidUpdate,项目中一般使用钩子函数，而不是在这里使用回调 */</span></span><br><span class="line">              <span class="comment">/* 设置回调的原因：setState是异步操作 */</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;, <span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h3</span>&gt;</span>当前北京时间是：&#123;this.state.time&#125;<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Clock</span>&gt;</span><span class="tag">&lt;/<span class="name">Clock</span>&gt;</span></span>, root);</span><br></pre></td></tr></table></figure>
+<p>让类中的方法中的this变成当前实例，这样可以操作属性和状态等信息</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line"> return (</span><br><span class="line">//    但是这种比较麻烦</span><br><span class="line">   &lt;button className='btn btn-success' onClick=&#123;this.support.bind(this)&#125;&gt;支持&lt;/button&gt;</span><br><span class="line"> )</span><br><span class="line"></span><br><span class="line">support(ev)&#123;</span><br><span class="line"> //    this是undefined，不是我们理解的当前操作的元素</span><br><span class="line"> ev.target//通过事件源我们可以获取当前操作的元素,但是我们一般不会去操作Dom，我们保证数据驱动页面</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>真实项目中，我们一般绑定的事件方法还是this.support ,但是这个方法我们用箭头函数，目的是为了保障函数中的this还是当前实例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">className</span>=<span class="string">'btn btn-success'</span> <span class="attr">onClick</span>=<span class="string">&#123;this.support&#125;</span>&gt;</span>支持<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">)</span><br><span class="line">support = ev =&gt; &#123;</span><br><span class="line">  <span class="comment">//    this是当前函数，不是我们理解的当前操作的元素</span></span><br><span class="line">   <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">n: ++<span class="keyword">this</span>.state.n</span><br><span class="line">      &#125;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="REFS"><a href="#REFS" class="headerlink" title="REFS"></a>REFS</h3><h5 id="refs是react中专门提供通过操作Dom来实现需求的方式"><a href="#refs是react中专门提供通过操作Dom来实现需求的方式" class="headerlink" title="refs是react中专门提供通过操作Dom来实现需求的方式"></a>refs是react中专门提供通过操作Dom来实现需求的方式</h5><blockquote>
+<p>refs是一个对象，存储了当前组件当中所有设置ref属性的元素，且属性值是啥，refs对象中存储的元素的属性名就啥</p>
+</blockquote>
+<h3 id="受控组件"><a href="#受控组件" class="headerlink" title="受控组件"></a>受控组件</h3><ol>
+<li>基于数据驱动（修改状态数据，react帮助我们重新渲染视图）基于数据驱动完成的组件叫做“受控组件（受数据控制的组件）”</li>
+<li>基于ref操作DOM 实现视图更新的叫做’非受控组件’</li>
+<li>真实项目中，建议使用受控组件</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react-JSX/" rel="tag">#react,JSX</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/react/react1/" rel="next" title="JSX语法">
+                <i class="fa fa-chevron-left"></i> JSX语法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/react/react2/" rel="prev" title="react的周期函数">
+                react的周期函数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="react/react4/"
+     data-title="react基于JSX语法渲染的核心原理"
+     data-content=""
+     data-url="http://eva1963.win/react/react4/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="react/react4/"
+           data-title="react基于JSX语法渲染的核心原理" data-url="http://eva1963.win/react/react4/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/photo.jpeg"
+               alt="eva1963" />
+          <p class="site-author-name" itemprop="name">eva1963</p>
+          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com" title="张大大" target="_blank">张大大</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://http://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://zhangyufeng.win" title="张玉凤" target="_blank">张玉凤</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.mapan.win/" title="马攀" target="_blank">马攀</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSX渲染机制："><span class="nav-number">1.</span> <span class="nav-text">JSX渲染机制：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react中创建组件有两种方式："><span class="nav-number">2.</span> <span class="nav-text">react中创建组件有两种方式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于继承Component类来创建组件"><span class="nav-number">3.</span> <span class="nav-text">基于继承Component类来创建组件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结："><span class="nav-number"></span> <span class="nav-text">总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数式："><span class="nav-number">1.</span> <span class="nav-text">函数式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类式"><span class="nav-number">2.</span> <span class="nav-text">类式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REFS"><span class="nav-number"></span> <span class="nav-text">REFS</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#refs是react中专门提供通过操作Dom来实现需求的方式"><span class="nav-number">0.1.</span> <span class="nav-text">refs是react中专门提供通过操作Dom来实现需求的方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#受控组件"><span class="nav-number"></span> <span class="nav-text">受控组件</span></a></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">eva1963</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"eva1963"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
