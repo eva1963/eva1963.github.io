@@ -1,0 +1,799 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="http," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="TCP协议中的三次握手和四次挥手(图解)【注意】中断连接端可以是Client端，也可以是Server端。
+建立连接–三次握手浏览器获得 IP 地址后，就会对目标服务器发起建立连接的请求，建立连接主要有三个步骤，一般称为客户端与服务器端的三次握手：
+
+浏览器向服务器发送想建立连接的请求 (你好，可以认识一下吗)；
+服务器向浏览器发送同意建立连接的响应 (你好，当然可以啊)；
+浏览器向服务器发送确认收">
+<meta property="og:type" content="article">
+<meta property="og:title" content="http的传输详细知识点">
+<meta property="og:url" content="http://eva1963.win/HTTP/http1/index.html">
+<meta property="og:site_name" content="Eva">
+<meta property="og:description" content="TCP协议中的三次握手和四次挥手(图解)【注意】中断连接端可以是Client端，也可以是Server端。
+建立连接–三次握手浏览器获得 IP 地址后，就会对目标服务器发起建立连接的请求，建立连接主要有三个步骤，一般称为客户端与服务器端的三次握手：
+
+浏览器向服务器发送想建立连接的请求 (你好，可以认识一下吗)；
+服务器向浏览器发送同意建立连接的响应 (你好，当然可以啊)；
+浏览器向服务器发送确认收">
+<meta property="og:image" content="http://eva1963.win/Users/Eva/Library/Containers/com.tencent.qq/Data/Library/Application Support/QQ/Users/1710735731/QQ/Temp.db/32FD874A-CAF0-4695-B323-C519F881B088.png">
+<meta property="og:updated_time" content="2018-06-26T03:05:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="http的传输详细知识点">
+<meta name="twitter:description" content="TCP协议中的三次握手和四次挥手(图解)【注意】中断连接端可以是Client端，也可以是Server端。
+建立连接–三次握手浏览器获得 IP 地址后，就会对目标服务器发起建立连接的请求，建立连接主要有三个步骤，一般称为客户端与服务器端的三次握手：
+
+浏览器向服务器发送想建立连接的请求 (你好，可以认识一下吗)；
+服务器向浏览器发送同意建立连接的响应 (你好，当然可以啊)；
+浏览器向服务器发送确认收">
+<meta name="twitter:image" content="http://eva1963.win/Users/Eva/Library/Containers/com.tencent.qq/Data/Library/Application Support/QQ/Users/1710735731/QQ/Temp.db/32FD874A-CAF0-4695-B323-C519F881B088.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'eva1963'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://eva1963.win/HTTP/http1/"/>
+
+  <title> http的传输详细知识点 | Eva </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?4c1cc7ebea1a70b10dc949505f9221f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Eva</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                http的传输详细知识点
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-26T11:04:22+08:00" content="2017-03-26">
+              2017-03-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/HTTP/http1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="HTTP/http1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="TCP协议中的三次握手和四次挥手-图解"><a href="#TCP协议中的三次握手和四次挥手-图解" class="headerlink" title="TCP协议中的三次握手和四次挥手(图解)"></a>TCP协议中的三次握手和四次挥手(图解)</h4><p><strong>【注意】中断连接端可以是Client端，也可以是Server端。</strong></p>
+<h5 id="建立连接–三次握手"><a href="#建立连接–三次握手" class="headerlink" title="建立连接–三次握手"></a>建立连接–三次握手</h5><p>浏览器获得 IP 地址后，就会对目标服务器发起建立连接的请求，建立连接主要有三个步骤，一般称为客户端与服务器端的三次握手：</p>
+<ul>
+<li>浏览器向服务器发送想建立连接的请求 (你好，可以认识一下吗)；</li>
+<li>服务器向浏览器发送同意建立连接的响应 (你好，当然可以啊)；</li>
+<li>浏览器向服务器发送确认收到响应的请求，客户端和服务器建立连接 (非常高兴认识你)。</li>
+</ul>
+<h5 id="相互通信"><a href="#相互通信" class="headerlink" title="相互通信"></a>相互通信</h5><p>客户端与服务器建立连接后，便会开始进行通信，本文中主要描述的是客户端向服务器请求网页的过程：</p>
+<ul>
+<li>浏览器向服务器发起一个请求网页资源的请求；</li>
+<li>服务器返回对应网页资源；</li>
+<li>浏览器渲染、构建网页，在构建网页的过程中，可能会继续请求 css、javascript 等资源。</li>
+</ul>
+<h5 id="断开连接–四次挥手"><a href="#断开连接–四次挥手" class="headerlink" title="断开连接–四次挥手"></a>断开连接–四次挥手</h5><p>客户端与服务器的相互通信完成后，便会断开连接，断开连接主要有三个步骤，一般称为客户端与服务器端的四次挥手：</p>
+<ul>
+<li>浏览器向服务器发送想断开连接的请求 (我要走啦)；</li>
+<li>服务器向浏览器发送收到请求的响应 (我知道啦)；</li>
+<li>服务器向浏览器发送断开连接的请求；(可以了，我走啦)</li>
+<li>浏览器断开连接并向服务器发送一个反馈请求，服务器收到后断开连接 (好的，拜拜)。</li>
+</ul>
+<h4 id="TCP-VS-UDP："><a href="#TCP-VS-UDP：" class="headerlink" title="TCP VS UDP："></a>TCP VS UDP：</h4><p>基本区别:</p>
+<ul>
+<li>基于连接与无连接</li>
+<li>TCP要求系统资源较多，UDP较少； </li>
+<li>UDP程序结构较简单 </li>
+<li>流模式（TCP）与数据报模式(UDP); </li>
+<li>TCP保证数据正确性，UDP可能丢包 </li>
+<li>TCP保证数据顺序，UDP不保证 </li>
+</ul>
+<p><strong><code>HTTP，HTTPS，FTP等都属于TCP传输协议</code></strong></p>
+<p><strong><code>DNS等属于UDP传输协议的</code></strong></p>
+<p><img src="/Users/Eva/Library/Containers/com.tencent.qq/Data/Library/Application Support/QQ/Users/1710735731/QQ/Temp.db/32FD874A-CAF0-4695-B323-C519F881B088.png" alt="32FD874A-CAF0-4695-B323-C519F881B088"></p>
+<h4 id="网络七层协议"><a href="#网络七层协议" class="headerlink" title="网络七层协议"></a>网络七层协议</h4><ul>
+<li>应用层：文件传输，电子邮件，文件服务，虚拟终端 TFTP，HTTP，SNMP，FTP，SMTP，DNS，Telnet</li>
+<li>表示层： 数据格式化，代码转换，数据加密 没有协议</li>
+<li>会话层： 解除或建立与别的接点的联系 没有协议</li>
+<li>传输层：提供端对端的接口 TCP，UDP</li>
+<li>网络层：为数据包选择路由 IP，ICMP，RIP，OSPF，BGP，IGMP</li>
+<li>数据链路层： 传输有地址的帧以及错误检测功能 SLIP，CSLIP，PPP，ARP，RARP，MTU</li>
+<li>物理层：以二进制数据形式在物理媒体上传输数据 ISO2110，IEEE802，IEEE802.2</li>
+</ul>
+<h4 id="dns-prefetch"><a href="#dns-prefetch" class="headerlink" title="dns-prefetch"></a>dns-prefetch</h4><p>DNS做缓存的，因为移动端对DNS解析速度要求很高</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/http/" rel="tag">#http</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JS/var-1/" rel="next" title="闭包">
+                <i class="fa fa-chevron-left"></i> 闭包
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/JS/var/" rel="prev" title="VAR && LET">
+                VAR && LET <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="HTTP/http1/"
+     data-title="http的传输详细知识点"
+     data-content=""
+     data-url="http://eva1963.win/HTTP/http1/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="HTTP/http1/"
+           data-title="http的传输详细知识点" data-url="http://eva1963.win/HTTP/http1/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/photo.jpeg"
+               alt="eva1963" />
+          <p class="site-author-name" itemprop="name">eva1963</p>
+          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.mapan.win" title="马攀" target="_blank">马攀</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://zhangyufeng.win" title="张玉凤" target="_blank">张玉凤</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP协议中的三次握手和四次挥手-图解"><span class="nav-number">1.</span> <span class="nav-text">TCP协议中的三次握手和四次挥手(图解)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#建立连接–三次握手"><span class="nav-number">1.1.</span> <span class="nav-text">建立连接–三次握手</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#相互通信"><span class="nav-number">1.2.</span> <span class="nav-text">相互通信</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#断开连接–四次挥手"><span class="nav-number">1.3.</span> <span class="nav-text">断开连接–四次挥手</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-VS-UDP："><span class="nav-number">2.</span> <span class="nav-text">TCP VS UDP：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络七层协议"><span class="nav-number">3.</span> <span class="nav-text">网络七层协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dns-prefetch"><span class="nav-number">4.</span> <span class="nav-text">dns-prefetch</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">eva1963</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"eva1963"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
