@@ -1,0 +1,825 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端，js，localStorage，session，session，cookie," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="本地存储：把一些信息存储到客户端本地（主要目的有很多，其中有一个就是实现多页面之间的信息共享）
+
+离线缓存（XXX.mainfest）    H5处理离线缓存还是存在一些硬伤的，所以真实项目中一般还是传统的native APP来完成这件事情
+localStorage/sessionStorage:H5中新增的API，基于这个API可以把这些数据缓存到客户端本地（常用）
+IndexDB/webSQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="本地存储 VS 服务器存储">
+<meta property="og:url" content="http://eva1963.win/webpack/storage/index.html">
+<meta property="og:site_name" content="Eva">
+<meta property="og:description" content="本地存储：把一些信息存储到客户端本地（主要目的有很多，其中有一个就是实现多页面之间的信息共享）
+
+离线缓存（XXX.mainfest）    H5处理离线缓存还是存在一些硬伤的，所以真实项目中一般还是传统的native APP来完成这件事情
+localStorage/sessionStorage:H5中新增的API，基于这个API可以把这些数据缓存到客户端本地（常用）
+IndexDB/webSQL">
+<meta property="og:updated_time" content="2018-06-26T15:22:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="本地存储 VS 服务器存储">
+<meta name="twitter:description" content="本地存储：把一些信息存储到客户端本地（主要目的有很多，其中有一个就是实现多页面之间的信息共享）
+
+离线缓存（XXX.mainfest）    H5处理离线缓存还是存在一些硬伤的，所以真实项目中一般还是传统的native APP来完成这件事情
+localStorage/sessionStorage:H5中新增的API，基于这个API可以把这些数据缓存到客户端本地（常用）
+IndexDB/webSQL">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'eva1963'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://eva1963.win/webpack/storage/"/>
+
+  <title> 本地存储 VS 服务器存储 | Eva </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?4c1cc7ebea1a70b10dc949505f9221f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Eva</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                本地存储 VS 服务器存储
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-12-15T19:18:18+08:00" content="2017-12-15">
+              2017-12-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/webpack/" itemprop="url" rel="index">
+                    <span itemprop="name">webpack</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/webpack/storage/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="webpack/storage/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本地存储：把一些信息存储到客户端本地（主要目的有很多，其中有一个就是实现多页面之间的信息共享）</p>
+<ul>
+<li>离线缓存（XXX.mainfest）    H5处理离线缓存还是存在一些硬伤的，所以真实项目中一般还是传统的native APP来完成这件事情</li>
+<li><strong>localStorage/sessionStorage</strong>:H5中新增的API，基于这个API可以把这些数据缓存到客户端本地（常用）</li>
+<li>IndexDB/webSQL：本地数据库存储</li>
+<li>cookie：本地存储，和localStorage差不多，比较常用</li>
+<li>CacheStorage、ApplicationCache：本地缓存存储</li>
+</ul>
+<p>用到本地存储的地方:</p>
+<p><strong>【页面之间信息的通信：包括登录注册】</strong></p>
+<p>A存信息 ，B页面中可以使用；比如登录，记住用户密码，购物车，跳转其他页面再回来的时候还停留在上次的位置</p>
+<ul>
+<li>比如记住密码功能：当我们手动完成一次登录注册的时候，下次打开这个网站的时候，首先查看本地信息中是否有用户名和密码，如果已经有了说明上一次记住密码了，这一次我们就直接拿本地存储中的用户名和密码发送服务器完成一次请求，完成一次登录操作，成功就直接进页面，失败了就返回登录页</li>
+<li>下次重新打开登录页面，我们需要先从本地把信息获取到把信息放到对应的文本框中</li>
+</ul>
+<p>需求：A页面有一个列表，点击列表中的每一项，跳转到B页面（详情页面），B页面需要知道点击的是A中的那一条数据，从而展示不同的信息；</p>
+<p>URL问号传参： ‘B.html/id=XXX’</p>
+<p>这种方式实现前提：需要A中的某个操作需要跳转到B的页面，此时才可以问号传参</p>
+<ul>
+<li>本地存储都是存储到当前浏览器指定的地方，所以在google中存储的信息不能再IE中拿到，也就是说<strong>本地存储无法跨浏览器进行传输</strong></li>
+<li>存储的信息是按照于来管理的；访问JD网站把信息都存储到了JD.COM中，其他域的网站中是无法直接获取这些信息的，也就说<strong>本地存储不能直接跨域访问；</strong></li>
+</ul>
+<p>真实项目中的登录注册，是基于session服务器存储的登录信息，而不是本地存储（因为本地存储，不安全）首先是明文存储，直接在浏览器的控制台中就可以查看到</p>
+<p>重要任务：如果是登陆成功，服务器会把用户的一些基本信息以及是否登录成功，在服务器端基于session存储起来（服务器存储）</p>
+<p>把成功或者失败的结果返回给客户端</p>
+<p><strong>【做一些性能优化】</strong></p>
+<p>把一些不经常改变的数据，在第一次从服务器端获取到之后，存储到客户端本地（记录一个存储时间），假设我们设置的有效存储期是10分钟，那么10分钟以内，我们再刷新页面就不用在向服务器发送请求了直接从本地数据中获取展示即可；超过十分钟重新向服务器发送请求，请求回来最新数据参考第一次，也存储到本地中；</p>
+<ol>
+<li>减轻服务器压力</li>
+<li>对于不经常更新的数据我们可以把存储的周期设置的长一些，有助于页面第二次加载的时候渲染的速度（移动端经常做这些处理）</li>
+<li>​</li>
+</ol>
+<h4 id="session和cookie的关联"><a href="#session和cookie的关联" class="headerlink" title="session和cookie的关联"></a>session和cookie的关联</h4><ol>
+<li>session是服务器存储，cookie是客户端存储</li>
+<li>在服务器上建立session之后，服务器和当前客户端之间会建立一个唯一的标识（sessionID），而本次存储的session信息都存放到对应的sessionID下，目的是为了区分不同客户端都在服务器上建立session信息，后期查找的时候能够找到自己当初建立的</li>
+<li>当服务器把一些成功或者失败的结果返回给客户端的时候，在响应头信息中增加cookie这样的字段，把sessionId存储到客户端的cookie当中，httpOnly规定当前的cookie信息只能获取使用，但是不能修改</li>
+<li>当客户端在向服务器发送请求的时候，在请求头当中都会把cookie信息带上传递给服务器，也包含之前存储的sessionID</li>
+<li>服务器响应头信息中增加set-cookie:seesionID</li>
+<li>在客户端本地中下cookie，再发送其他请求的时候再把cookie信息放到请求头中传递过去,服务器校验这个id是否正确</li>
+</ol>
+<h4 id="加入购物车原型"><a href="#加入购物车原型" class="headerlink" title="加入购物车原型"></a>加入购物车原型</h4><p>没登录的时候：</p>
+<ol>
+<li>点击加入购物车，客户端把商品标识传过去，服务器建立session存储当前加入购物车信息（以后再加入购物车直接向这个容器中继续存储即可），存完返回给客户端成功还是失败，也把sessionID带过来给客户端了</li>
+<li>此时本地中已经有sessionID了，我们打开购物车列表页的时候，发送请求的时候浏览器会自动发送携带sessionID的cookie过去，这样服务器就知道返回那些购物车的信息给你了</li>
+</ol>
+<p>登录的状态下:</p>
+<ol>
+<li>未登录状态下，加入购物车的信息都是session中存储，在登录后都要先保存到数据库当中，然后再把session信息清除</li>
+<li>数据库存储的目的就是为了实现购物信息的跨平台共享</li>
+</ol>
+<h4 id="localStorage-vs-cookie"><a href="#localStorage-vs-cookie" class="headerlink" title="localStorage vs cookie"></a>localStorage vs cookie</h4><p><strong>[cookie]</strong></p>
+<ol>
+<li>兼容所有的浏览器</li>
+<li>有存储的大限制，一般一个源里面只能存储4KB，url的长度是2KB（每个域名下的cookie 的大小最大为4KB，每个域名下的cookie数量最多为20个）</li>
+<li>cookie有过期时间（当然我们自己可以手动设置这个时间）</li>
+<li>杀毒软件或者浏览器的垃圾清理都可能会把cookie强制清掉</li>
+<li>在隐私或者无痕浏览模式下，是不记录cookie的</li>
+<li>cookie不是严格的本地存储，因为要和服务器之间来回传输</li>
+</ol>
+<p><strong>[localStorage]</strong></p>
+<ol>
+<li>不兼容低版本浏览器</li>
+<li>也有存储的大小限制，一个源最多只能存储5MB左右；</li>
+<li>本地永久存储，只要不手动删除（但是我们可以基于API如removeIItem/clear手动清除一些想啊哟删除的信息）</li>
+<li>杀毒软件或者浏览器的垃圾清理暂时不会清除localStorage（新版本google会清除）</li>
+<li>在隐私或者无痕浏览模式下，是记录localStorage的</li>
+<li>localStorage跟服务器毫无关系</li>
+</ol>
+<p>真实项目中使用本地存储来完成一些需求的情况不是很多，一般都是基于服务器的session或者数据库存储完成的（服务器的session和本地的cookie是有关联的），如果不考虑兼容，只想基于本地存储来完成一些事情，那么一般都是用localStorage的（尤其是移动端开发）</p>
+<h3 id="localStorage的API："><a href="#localStorage的API：" class="headerlink" title="localStorage的API："></a>localStorage的API：</h3><p>setItem/getItem/removeItem/clear/key(通过指定的索引获取指定的key名)</p>
+<h4 id="cookie设置"><a href="#cookie设置" class="headerlink" title="cookie设置"></a>cookie设置</h4><p>document.cookie = ‘’;//设置cookie</p>
+<p>封装的cookie</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> cookie = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> setValue = (name, value, expires = (<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getTime() + (<span class="number">1000</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>))), path = <span class="string">'/'</span>, domain = <span class="string">''</span>)=&gt; &#123;</span><br><span class="line">        <span class="built_in">document</span>.cookie = <span class="string">`<span class="subst">$&#123;name&#125;</span>=<span class="subst">$&#123;escape(value)&#125;</span>;expires=<span class="subst">$&#123;expires.toGMTString()&#125;</span>;path=<span class="subst">$&#123;path&#125;</span>;domain=<span class="subst">$&#123;domain&#125;</span>`</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> getValue = name=&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> cookieInfo = <span class="built_in">document</span>.cookie,</span><br><span class="line">            reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">`(?:^| )<span class="subst">$&#123;name&#125;</span>=([^;]*)(?:;|$)`</span>),</span><br><span class="line">            ary = cookieInfo.match(reg);</span><br><span class="line">        <span class="keyword">return</span> ary ? <span class="built_in">unescape</span>(ary[<span class="number">1</span>]) : <span class="literal">null</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> removeValue = (name, path = <span class="string">'/'</span>, domain = <span class="string">''</span>)=&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> value = getValue(name);</span><br><span class="line">        <span class="keyword">if</span> (value) &#123;</span><br><span class="line">            <span class="built_in">document</span>.cookie = <span class="string">`<span class="subst">$&#123;name&#125;</span>= ;path=<span class="subst">$&#123;path&#125;</span>;domain=<span class="subst">$&#123;domain&#125;</span>;expires=Fri,02-Jan-1970 00:00:00 GMT`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="keyword">set</span>: setValue,</span><br><span class="line">        <span class="keyword">get</span>: getValue,</span><br><span class="line">        remove: removeValue</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端，js，localStorage，session，session，cookie/" rel="tag">#前端，js，localStorage，session，session，cookie</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JQUERY/Jquery/" rel="next" title="Jquery源码分析">
+                <i class="fa fa-chevron-left"></i> Jquery源码分析
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/JS/Promies-A/" rel="prev" title="Promies_A+">
+                Promies_A+ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="webpack/storage/"
+     data-title="本地存储 VS 服务器存储"
+     data-content=""
+     data-url="http://eva1963.win/webpack/storage/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="webpack/storage/"
+           data-title="本地存储 VS 服务器存储" data-url="http://eva1963.win/webpack/storage/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/photo.jpeg"
+               alt="eva1963" />
+          <p class="site-author-name" itemprop="name">eva1963</p>
+          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.mapan.win" title="马攀" target="_blank">马攀</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://zhangyufeng.win" title="张玉凤" target="_blank">张玉凤</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#session和cookie的关联"><span class="nav-number">1.</span> <span class="nav-text">session和cookie的关联</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加入购物车原型"><span class="nav-number">2.</span> <span class="nav-text">加入购物车原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#localStorage-vs-cookie"><span class="nav-number">3.</span> <span class="nav-text">localStorage vs cookie</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage的API："><span class="nav-number"></span> <span class="nav-text">localStorage的API：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie设置"><span class="nav-number">1.</span> <span class="nav-text">cookie设置</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">eva1963</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"eva1963"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
