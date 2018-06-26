@@ -128,7 +128,7 @@ tips: 查看本地node里面安装了那些全局插件npm root -g
 
 
 执行完第二步才做之后，项目文件目录中会多出两个文件夹">
-<meta property="og:updated_time" content="2018-06-25T14:18:54.000Z">
+<meta property="og:updated_time" content="2018-06-26T02:34:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react脚手架搭建项目整体流程">
 <meta name="twitter:description" content="首先保证在node环境下，全局已经安装了react脚手架，命令如下：
@@ -406,14 +406,37 @@ tips: 查看本地node里面安装了那些全局插件npm root -g
 </ol>
 <ul>
 <li>在src文件中建一个store文件夹，用来存放相关的reducer&amp;&amp;action&amp;&amp;action-types；<ul>
-<li>store文件下有一个index.js：它创建了一个最大的中央管理区，里面可能存放着各种小管理区，然后通过combineReducer方法把这个小管理区的东西全都汇总到中央管理区；然后ES6导出这个中央管理区store给开发用，谁想用就import就成；</li>
-<li>reducer文件夹：文件夹下也有一个自己的index.js,除此之外可能还有vote.js/person.js等文件，这些文件都创建了一个自己的管理区块reducer，然后导出，最后在reducer文件夹下的index.js文件里整个汇总成一个中央管理区，为了区分。每一个模块都有自己的命令空间，防止相互之间冲突；所以使用的时候我们经常会这样写：this.props.store.getState().vote，这就是拿到vote命名空间下的所有变量，也就是vote.js文件中的变量，这样使我们的管理变得十分简便；</li>
-<li>action文件夹：存放的也有index.js/vote.js/person.js等文件，每一个模块里导出自己的方法，方法中return一个对象，这个对象就是以后点击事件中dispatch派发事件的参数，通过这个参数type: VOTE_SUPPROT，派发事件根据这个表示触发管理区reducer的第二个参数action执行对应的操作。这个操作紧接着就会触发事件池subscribe自上而下执行，subscribe在执行之前我们必须手动拉取一下最新值：this.props.store.getState()，接着去执行下面的代码，因为state发生改变，也就触发了render重新渲染整个页面，这样一个完整的点击事件就完成了</li>
-<li>action-types.js：这个文件是一个中间层，他把所有的派发标识都整理在一起，我们使用的</li>
+<li><strong>store文件下有一个index.js：它创建了一个最大的中央管理区；</strong>里面可能存放着各种小管理区，然后通过combineReducer方法把这个小管理区的东西全都汇总到中央管理区；然后ES6导出这个中央管理区store给开发用，谁想用就import就成；</li>
+<li><strong>reducer文件夹：每一个模块的reducer都在这里，最后由index.js文件进行合并；</strong>文件夹下也有一个自己的index.js,除此之外可能还有vote.js/person.js等文件，这些文件都创建了一个自己的管理区块reducer，然后导出，最后在reducer文件夹下的index.js文件里整个汇总成一个中央管理区，为了区分。每一个模块都有自己的命令空间，防止相互之间冲突；所以使用的时候我们经常会这样写：this.props.store.getState().vote，这就是拿到vote命名空间下的所有变量，也就是vote.js文件中的变量，这样使我们的管理变得十分简便；</li>
+<li><strong>action文件夹：每个模块修改redux容器中状态，派发的任务都在这；</strong>存放的也有index.js/vote.js/person.js等文件，每一个模块里导出自己的方法，方法中return一个对象，这个对象就是以后点击事件中dispatch派发事件的参数，通过这个参数type: VOTE_SUPPROT，派发事件根据这个表示触发管理区reducer的第二个参数action执行对应的操作。这个操作紧接着就会触发事件池subscribe自上而下执行，subscribe在执行之前我们必须手动拉取一下最新值：this.props.store.getState()，接着去执行下面的代码，因为state发生改变，也就触发了render重新渲染整个页面，这样一个完整的点击事件就完成了</li>
+<li><strong>action-types.js：统一管理所有派发的标识</strong>，这个文件是一个中间层，他把所有的派发标识都整理在一起，我们使用的时候直接引入使用即可；</li>
 </ul>
 </li>
 </ul>
-<p>时候直接引入使用即可；</p>
+<h1>为什么要使用redux？</h1>
+
+<blockquote>
+<p>进行状态的统一管理的类库（适用于任何技术体系的项目）</p>
+</blockquote>
+<ol>
+<li>只要两个或多个组件之间想要实现信息的共享，都可以基于redux解决，把共享的信息存储到redux中进行管理</li>
+<li>还可以使用redux做临时存储：页面加载的时候，把从服务器中获取的数据临时存储到redux中。组件渲染需要的数据，从redux中获取，这样只要页面不刷新，路由切换的时候，再次渲染组件不需要重新从服务器拉取数据，直接从redux中获取即可，页面刷新，则从头开始;(这套方案代替了本地存储localStorage来实现数据缓存)</li>
+</ol>
+<h3>subscribe是把方法增加到事件池中；</h3>
+
+<blockquote>
+<p>增加的方法一般都是：从重新容器中获取最新的状态信息，然后重新渲染组件；</p>
+</blockquote>
+<h3>reducer函数： 修改容器状态信息的管理员；</h3>
+
+<blockquote>
+<p>state：原有信息</p>
+<p>action:派发的任务</p>
+</blockquote>
+<h3>store.dispatch:</h3>
+
+<p>通过派发任务，告知reducer执行，需要把state和action传递过去，reducer执行，把容器中的状态改变；</p>
+<p>容器中的状态改变会触发事件池执行，执行之前要重新获取最新的state状态信息，用的是store.getState()方法，接下来重新渲染组件；</p>
 
       
     </div>
@@ -651,7 +674,7 @@ tips: 查看本地node里面安装了那些全局插件npm root -g
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">如果想要用less编写做以下处理：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改操作："><span class="nav-number">1.1.</span> <span class="nav-text">修改操作：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">如果想要用less编写做以下处理：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改操作："><span class="nav-number">1.1.</span> <span class="nav-text">修改操作：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">为什么要使用redux？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">subscribe是把方法增加到事件池中；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">reducer函数： 修改容器状态信息的管理员；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">store.dispatch:</span></a></li></ol></div>
             
           </div>
         </section>
