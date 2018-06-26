@@ -1,7 +1,7 @@
 ---
 title: h5页面启动本地应用
 date: 2016-09-19 15:43:21
-categories: 技术模块
+categories: JS
 tags: 相关技术
 ---
 
@@ -43,13 +43,13 @@ newsapp://xxxxx
 
 整理一下目前的思路，得到下面的解决方案
 >var url = {
-  open: 'app://xxxxx',
-  down: 'xxxxxxxx'
-};
-var iframe = document.createElement('iframe');
-var body = document.body;
-iframe.style.cssText='display:none;width=0;height=0';
-var timer = null;
+>  open: 'app://xxxxx',
+>  down: 'xxxxxxxx'
+>};
+>var iframe = document.createElement('iframe');
+>var body = document.body;
+>iframe.style.cssText='display:none;width=0;height=0';
+>var timer = null;
 
 // 立即打开的按钮
 var openapp = document.getElementById('openapp');
@@ -84,7 +84,7 @@ document.hidden 当页面隐藏时，该值为true，显示时为false
 
 因此需要扩充一下上面的方案，当本地app被唤起，则页面会隐藏掉，就会触发pagehide与visibilitychange事件
 >$(document).on('visibilitychange 
-webkitvisibilitychange', function() {
+>webkitvisibilitychange', function() {
     var tag = document.hidden || document.webkitHidden;
     if (tag) {
         clearTimeout(timer);
@@ -106,17 +106,17 @@ $(window).on('pagehide', function() {
 
 >window.NRUM = window.NRUM || {};
 >
-window.NRUM.config = {
+>window.NRUM.config = {
 
     key:'27e86c0843344caca7ba9ea652d7948d',
-    
+
     clientStart: +new Date()
 };
 
 (function() {
 
     var n = document.getElementsByTagName('script')[0],
-    
+
         s = document.createElement('script');
 
     s.type = 'text/javascript';
@@ -129,10 +129,10 @@ window.NRUM.config = {
 
     // http://apm.netease.com/manual?api=web
     NRUM.mark && NRUM.mark('pageload', true)
-
+    
     var list = []
     var config = null
-
+    
     // jsonp
     function jsonp(a, b, c) {
         var d;
@@ -167,9 +167,9 @@ window.NRUM.config = {
         }
         return {search: fn(search,new RegExp( "([^?=&]+)(=([^&]*))?", "g" ))||{},hash: fn(hash,new RegExp( "([^#=&]+)(=([^&]*))?", "g" ))||{}};
     }
-
+    
     jsonp('http://active.163.com/service/form/v1/5847/view/1047.jsonp')
-
+    
     window.search = localParam().search
     window._callback = function(data) {
         window._callback = null
@@ -184,7 +184,7 @@ window.NRUM.config = {
             return item.type === search.s
         })[0]
     }
-
+    
     var isAndroid = !!navigator.userAgent.match(/android/ig),
         isIos = !!navigator.userAgent.match(/iphone|ipod/ig),
         isIpad = !!navigator.userAgent.match(/ipad/ig),
@@ -197,7 +197,7 @@ window.NRUM.config = {
         params = localParam().search,
         url = 'newsapp://',
         iframe = document.getElementById('iframe');
-
+    
     var isIDevicePhone = (/iphone|ipod/gi).test(navigator.platform);
     var isIDeviceIpad = !isIDevicePhone && (/ipad/gi).test(navigator.platform);
     var isIDevice = isIDevicePhone || isIDeviceIpad;
@@ -207,7 +207,7 @@ window.NRUM.config = {
     var ios_url = "http://3g.163.com/links/3615";
     var wphone_url = "http://3g.163.com/links/3614";
     var channel = params.s || 'newsapp'
-
+    
     // 判断在不同环境下app的url
     if(params.docid){
         if(params['boardid'] && params['title']){
@@ -240,31 +240,31 @@ window.NRUM.config = {
     }else{
         url += '?s=' + (params.s || 'sps')
     }
-
+    
     // ios && 易信  用iframe 打开
     if((isIos||isIpad) && navigator.userAgent.match(/yixin/i)) {
         document.getElementById('iframe').src = url;
     }
-
+    
     var height = document.documentElement.clientHeight;
-
+    
     // 通常情况下先尝试使用iframe打开
     document.getElementById('iframe').src = url;
-
+    
     // 移动端浏览器中，将下载页面显示出来
     if(!isWeixin && !isQQ && !isYixin && !isYx){
         document.querySelector('.main-body').style.display = 'block'
         if(isIos9){
             document.querySelector('.main-body').classList.add('showtip')
         }
-
+    
         setTimeout(function(){
             document.body.scrollTop = 0
         },200)
     }else{
         document.getElementById('guide').style.display = 'block'
     }
-
+    
     // Forward To Redirect Url
     // Add by zhanzhixiang 12/28/2015
     if (params.redirect) {
@@ -275,12 +275,12 @@ window.NRUM.config = {
             window.location.href = redirectUrl;
         };
     }
-
+    
     // Forward To Redirect Url End
     if ((isWeixin || isQQ) && isAndroid) {
         window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.netease.newsreader.activity&ckey=CK1331205846719&android_schema=' +　url.match(/(.*)\?/)[1]
     }
-
+    
     if(isIos||isIpad){
         document.getElementById("guide").classList.add('iosguideopen')
     }else if (isAndroid){
@@ -288,12 +288,12 @@ window.NRUM.config = {
     }else{
         // window.location.href = 'http://www.163.com/newsapp'
     }
-
+    
     document.getElementById('link').addEventListener('click', function(){
-
+    
         // 统计
         neteaseTracker && neteaseTracker(false,'http://sps.163.com/func/?func=downloadapp&modelid='+modelid+'&spst='+spst+'&spsf&spss=' + channel,'', 'sps' )
-
+    
         if (config) {
             android_url = config.android
         }
@@ -334,7 +334,7 @@ window.NRUM.config = {
             return;
         }
     }, false)
-
+    
     setTimeout(function(){
         if(isIDevice && params.notdownload != 1 && !isNewsapp && !isIos9){
             document.getElementById('link').click()
@@ -361,11 +361,11 @@ ios9推行的一个新的协议！
 这个时候我就发现，上面贴的网易新闻代码中的jsonp请求的内容，就是这个协议必须的一个叫做apple-app-site-association的JSON文件
 
 >{  "applinks": {
-   
+
        "apps": [ ],
-       
+
        "details": {
-       
+
            "TEAM-IDENTIFIER.YOUR.BUNDLE.IDENTIFIER": {
                "paths": [
                    "*"

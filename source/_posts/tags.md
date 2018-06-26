@@ -1,7 +1,7 @@
 ---
 title: HTML之selected
 date: 2017-03-03 16:12:06
-categories: 技术模块
+categories: JS
 tags: 前端
 ---
 

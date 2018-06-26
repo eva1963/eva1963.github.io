@@ -1,7 +1,7 @@
 ---
 title: 快速安装Emmet插件
 date: 2017-03-02 18:18:26
-categories: 插件模块
+categories: webpack
 tags: 插件
 ---
 

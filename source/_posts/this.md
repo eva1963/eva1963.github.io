@@ -1,7 +1,7 @@
 ---
 title: this 函数
 date: 2017-03-02 18:26:48
-categories: 技术模块
+categories: JS
 tags: 前端
 ---
 
