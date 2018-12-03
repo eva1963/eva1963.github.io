@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,63 +34,38 @@
 
 
 
-  
-  
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
   
   
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -95,100 +77,99 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
-
-
-
-
 
 
 <meta name="description" content="hexo,JavaScript,github，个人博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Eva">
+<meta property="og:title" content="萌小乖">
 <meta property="og:url" content="http://eva1963.win/page/3/index.html">
-<meta property="og:site_name" content="Eva">
+<meta property="og:site_name" content="萌小乖">
 <meta property="og:description" content="hexo,JavaScript,github，个人博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eva">
+<meta name="twitter:title" content="萌小乖">
 <meta name="twitter:description" content="hexo,JavaScript,github，个人博客">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
-    sidebar: {"position":"right","display":"post"},
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
-      userId: 0,
-      author: 'eva1963'
+      userId: '0',
+      author: '萌小乖'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="http://eva1963.win/page/3/"/>
 
-  <title> Eva </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+
+
+  <title>萌小乖</title>
   
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?4c1cc7ebea1a70b10dc949505f9221f5";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
 
 
+</head>
 
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Eva</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">萌小乖</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
+      
   </div>
-  <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -209,7 +190,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -219,21 +200,11 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
           </a>
         </li>
       
@@ -244,6 +215,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -258,13 +231,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/生活/life1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -272,38 +259,359 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/webpack/storage/" itemprop="url">
-                  本地存储 VS 服务器存储
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/生活/life1/" itemprop="url">Mac上如何打包扩展程序给他人</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-12-15T19:18:18+08:00" content="2017-12-15">
-              2017-12-15
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-14T17:23:50+08:00">
+                2018-02-14
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/生活/life1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/生活/life1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>作为一个合格的开发者，google浏览器当然是我们的第一选择，但是很多时候我们想安装一些插件，却苦恼于无法翻墙，我也是因为朋友总是因为这个烦恼，所以每次安装了一个爱好用的插件我都会打包分享给朋友们使用，这样大家以后不用翻墙也可以用到很好用的插件，这个时候，如何使用Mac打包我们想要的扩展程序就需要我们来看一下，为了以后能够方便查阅，所以在这里我也记录一下，方便自己，也方便他人嘛~</p>
+<ol>
+<li><p>进入指定的文件夹，执行以下命令：<br><code>cd ~/Library/Application\ Support/Google/Chrome/Default/Extensions</code></p>
+</li>
+<li><p>复制指定扩展程序的ID：<br>在你安装的扩展程序上都有一个自己的唯一的表示ID，复制下来，例如这个ID是A；</p>
+</li>
+<li><p>执行以下命令进入指定的文件夹：<br>cd A;</p>
+</li>
+<li><p>执行<code>pwd</code>复制当前文件的路径</p>
+</li>
+<li><p>去google中，选择要打包的扩展程序，然后选择打包扩展程序选项，把刚才复制的路径粘贴上去，确定，OK~</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/JS/Promies-A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/JS/Promies-A/" itemprop="url">Promies_A+</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-23T17:08:31+08:00">
+                2017-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/JS/Promies-A/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/JS/Promies-A/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h2>带你手写Promise A源码</h2><br>  <p style="text-indent: 2em">我们都知道，在现代化的前端工程化项目中，由于Promise对异步的管理极其方便，使得其的应用越来越广泛，这也就意味着深度理解掌握Promise原理是我们现代化的前端工程师们必备技能之一，本人刚开始也只是一直使用Promise，没有深究其原理，但是随着项目应用越来越深入，愈发觉得对Promise的理解过于浅薄，所以特意查了下资料，结合自己的理解，写出一版Promise A+规范来加深自己的理解</p><p></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Promise</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(excutorCallBack) &#123;</span><br><span class="line">        <span class="keyword">this</span>.status = <span class="string">'pending'</span>;</span><br><span class="line">        <span class="keyword">this</span>.value = <span class="literal">undefined</span>;</span><br><span class="line">        <span class="keyword">this</span>.fulfilledAry = [];</span><br><span class="line">        <span class="keyword">this</span>.rejectedAry = [];</span><br><span class="line"></span><br><span class="line">        <span class="comment">//=&gt;执行EXCUTOR（异常捕获）</span></span><br><span class="line">        <span class="keyword">let</span> resolveFn = result =&gt; &#123;</span><br><span class="line">            <span class="keyword">let</span> timer = setTimeout(() =&gt; &#123;</span><br><span class="line">                clearTimeout(timer);</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.status !== <span class="string">'pending'</span>) <span class="keyword">return</span>;</span><br><span class="line">                <span class="keyword">this</span>.status = <span class="string">'fulfilled'</span>;</span><br><span class="line">                <span class="keyword">this</span>.value = result;</span><br><span class="line">                <span class="keyword">this</span>.fulfilledAry.forEach(item =&gt; item(<span class="keyword">this</span>.value));</span><br><span class="line">            &#125;, <span class="number">0</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">let</span> rejectFn = reason =&gt; &#123;</span><br><span class="line">            <span class="keyword">let</span> timer = setTimeout(() =&gt; &#123;</span><br><span class="line">                clearTimeout(timer);</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.status !== <span class="string">'pending'</span>) <span class="keyword">return</span>;</span><br><span class="line">                <span class="keyword">this</span>.status = <span class="string">'rejected'</span>;</span><br><span class="line">                <span class="keyword">this</span>.value = reason;</span><br><span class="line">                <span class="keyword">this</span>.rejectedAry.forEach(item =&gt; item(<span class="keyword">this</span>.value));</span><br><span class="line">            &#125;, <span class="number">0</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            excutorCallBack(resolveFn, rejectFn);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">            <span class="comment">//=&gt;有异常信息按照REJECTED状态处理</span></span><br><span class="line">            rejectFn(err);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    then(fulfilledCallBack, rejectedCallBack) &#123;</span><br><span class="line">        <span class="comment">//=&gt;处理不传递的状况</span></span><br><span class="line">        <span class="keyword">typeof</span> fulfilledCallBack !== <span class="string">'function'</span> ? fulfilledCallBack = result =&gt; result : <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">typeof</span> rejectedCallBack !== <span class="string">'function'</span> ? rejectedCallBack = reason =&gt; &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(reason <span class="keyword">instanceof</span> <span class="built_in">Error</span> ? reason.message : reason);</span><br><span class="line">        &#125; : <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//=&gt;返回一个新的PROMISE实例</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject) =&gt; &#123;</span><br><span class="line">            <span class="keyword">this</span>.fulfilledAry.push(() =&gt; &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">let</span> x = fulfilledCallBack(<span class="keyword">this</span>.value);</span><br><span class="line">                    x <span class="keyword">instanceof</span> <span class="built_in">Promise</span> ? x.then(resolve, reject) : resolve(x);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">                    reject(err);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">this</span>.rejectedAry.push(() =&gt; &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">let</span> x = rejectedCallBack(<span class="keyword">this</span>.value);</span><br><span class="line">                    x <span class="keyword">instanceof</span> <span class="built_in">Promise</span> ? x.then(resolve, reject) : resolve(x);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">                    reject(err);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">catch</span> (rejectedCallBack) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.then(<span class="literal">null</span>, rejectedCallBack);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> all(promiseAry = []) &#123; <span class="comment">//=&gt;Promise.all()</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject) =&gt; &#123;</span><br><span class="line">            <span class="comment">//=&gt;INDEX:记录成功的数量 RESULT:记录成功的结果</span></span><br><span class="line">            <span class="keyword">let</span> index = <span class="number">0</span>,</span><br><span class="line">                result = [];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; promiseAry.length; i++) &#123;</span><br><span class="line">                <span class="comment">//=&gt;promiseAry[i]:</span></span><br><span class="line">                <span class="comment">//每一个需要处理的PROMISE实例</span></span><br><span class="line">                promiseAry[i].then(val =&gt; &#123;</span><br><span class="line">                    index++;</span><br><span class="line">                    result[i] = val; <span class="comment">//=&gt;索引需要和promiseAry对应上，保证结果的顺序和数组顺序一致</span></span><br><span class="line">                    <span class="keyword">if</span> (index === promiseAry.length) &#123;</span><br><span class="line">                        resolve(result);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;, reject);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="built_in">Promise</span>;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/webpack/storage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/webpack/storage/" itemprop="url">本地存储 VS 服务器存储</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-15T19:18:18+08:00">
+                2017-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/webpack/" itemprop="url" rel="index">
                     <span itemprop="name">webpack</span>
                   </a>
@@ -311,7 +619,6 @@
 
                 
                 
-
               
             </span>
           
@@ -319,25 +626,33 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/webpack/storage/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="webpack/storage/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/webpack/storage/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -346,30 +661,97 @@
       
         
           
-          本地存储：把一些信息存储到客户端本地（主要目的有很多，其中有一个就是实现多页面之间的信息共享）
+            <p>本地存储：把一些信息存储到客户端本地（主要目的有很多，其中有一个就是实现多页面之间的信息共享）</p>
+<ul>
+<li>离线缓存（XXX.mainfest）    H5处理离线缓存还是存在一些硬伤的，所以真实项目中一般还是传统的native APP来完成这件事情</li>
+<li><strong>localStorage/sessionStorage</strong>:H5中新增的API，基于这个API可以把这些数据缓存到客户端本地（常用）</li>
+<li>IndexDB/webSQL：本地数据库存储</li>
+<li>cookie：本地存储，和localStorage差不多，比较常用</li>
+<li>CacheStorage、ApplicationCache：本地缓存存储</li>
+</ul>
+<p>用到本地存储的地方:</p>
+<p><strong>【页面之间信息的通信：包括登录注册】</strong></p>
+<p>A存信息 ，B页面中可以使用；比如登录，记住用户密码，购物车，跳转其他页面再回来的时候还停留在上次的位置</p>
+<ul>
+<li>比如记住密码功能：当我们手动完成一次登录注册的时候，下次打开这个网站的时候，首先查看本地信息中是否有用户名和密码，如果已经有了说明上一次记住密码了，这一次我们就直接拿本地存储中的用户名和密码发送服务器完成一次请求，完成一次登录操作，成功就直接进页面，失败了就返回登录页</li>
+<li>下次重新打开登录页面，我们需要先从本地把信息获取到把信息放到对应的文本框中</li>
+</ul>
+<p>需求：A页面有一个列表，点击列表中的每一项，跳转到B页面（详情页面），B页面需要知道点击的是A中的那一条数据，从而展示不同的信息；</p>
+<p>URL问号传参： ‘B.html/id=XXX’</p>
+<p>这种方式实现前提：需要A中的某个操作需要跳转到B的页面，此时才可以问号传参</p>
+<ul>
+<li>本地存储都是存储到当前浏览器指定的地方，所以在google中存储的信息不能再IE中拿到，也就是说<strong>本地存储无法跨浏览器进行传输</strong></li>
+<li>存储的信息是按照于来管理的；访问JD网站把信息都存储到了JD.COM中，其他域的网站中是无法直接获取这些信息的，也就说<strong>本地存储不能直接跨域访问；</strong></li>
+</ul>
+<p>真实项目中的登录注册，是基于session服务器存储的登录信息，而不是本地存储（因为本地存储，不安全）首先是明文存储，直接在浏览器的控制台中就可以查看到</p>
+<p>重要任务：如果是登陆成功，服务器会把用户的一些基本信息以及是否登录成功，在服务器端基于session存储起来（服务器存储）</p>
+<p>把成功或者失败的结果返回给客户端</p>
+<p><strong>【做一些性能优化】</strong></p>
+<p>把一些不经常改变的数据，在第一次从服务器端获取到之后，存储到客户端本地（记录一个存储时间），假设我们设置的有效存储期是10分钟，那么10分钟以内，我们再刷新页面就不用在向服务器发送请求了直接从本地数据中获取展示即可；超过十分钟重新向服务器发送请求，请求回来最新数据参考第一次，也存储到本地中；</p>
+<ol>
+<li>减轻服务器压力</li>
+<li>对于不经常更新的数据我们可以把存储的周期设置的长一些，有助于页面第二次加载的时候渲染的速度（移动端经常做这些处理）</li>
+<li>​</li>
+</ol>
+<h4 id="session和cookie的关联"><a href="#session和cookie的关联" class="headerlink" title="session和cookie的关联"></a>session和cookie的关联</h4><ol>
+<li>session是服务器存储，cookie是客户端存储</li>
+<li>在服务器上建立session之后，服务器和当前客户端之间会建立一个唯一的标识（sessionID），而本次存储的session信息都存放到对应的sessionID下，目的是为了区分不同客户端都在服务器上建立session信息，后期查找的时候能够找到自己当初建立的</li>
+<li>当服务器把一些成功或者失败的结果返回给客户端的时候，在响应头信息中增加cookie这样的字段，把sessionId存储到客户端的cookie当中，httpOnly规定当前的cookie信息只能获取使用，但是不能修改</li>
+<li>当客户端在向服务器发送请求的时候，在请求头当中都会把cookie信息带上传递给服务器，也包含之前存储的sessionID</li>
+<li>服务器响应头信息中增加set-cookie:seesionID</li>
+<li>在客户端本地中下cookie，再发送其他请求的时候再把cookie信息放到请求头中传递过去,服务器校验这个id是否正确</li>
+</ol>
+<h4 id="加入购物车原型"><a href="#加入购物车原型" class="headerlink" title="加入购物车原型"></a>加入购物车原型</h4><p>没登录的时候：</p>
+<ol>
+<li>点击加入购物车，客户端把商品标识传过去，服务器建立session存储当前加入购物车信息（以后再加入购物车直接向这个容器中继续存储即可），存完返回给客户端成功还是失败，也把sessionID带过来给客户端了</li>
+<li>此时本地中已经有sessionID了，我们打开购物车列表页的时候，发送请求的时候浏览器会自动发送携带sessionID的cookie过去，这样服务器就知道返回那些购物车的信息给你了</li>
+</ol>
+<p>登录的状态下:</p>
+<ol>
+<li>未登录状态下，加入购物车的信息都是session中存储，在登录后都要先保存到数据库当中，然后再把session信息清除</li>
+<li>数据库存储的目的就是为了实现购物信息的跨平台共享</li>
+</ol>
+<h4 id="localStorage-vs-cookie"><a href="#localStorage-vs-cookie" class="headerlink" title="localStorage vs cookie"></a>localStorage vs cookie</h4><p><strong>[cookie]</strong></p>
+<ol>
+<li>兼容所有的浏览器</li>
+<li>有存储的大限制，一般一个源里面只能存储4KB，url的长度是2KB（每个域名下的cookie 的大小最大为4KB，每个域名下的cookie数量最多为20个）</li>
+<li>cookie有过期时间（当然我们自己可以手动设置这个时间）</li>
+<li>杀毒软件或者浏览器的垃圾清理都可能会把cookie强制清掉</li>
+<li>在隐私或者无痕浏览模式下，是不记录cookie的</li>
+<li>cookie不是严格的本地存储，因为要和服务器之间来回传输</li>
+</ol>
+<p><strong>[localStorage]</strong></p>
+<ol>
+<li>不兼容低版本浏览器</li>
+<li>也有存储的大小限制，一个源最多只能存储5MB左右；</li>
+<li>本地永久存储，只要不手动删除（但是我们可以基于API如removeIItem/clear手动清除一些想啊哟删除的信息）</li>
+<li>杀毒软件或者浏览器的垃圾清理暂时不会清除localStorage（新版本google会清除）</li>
+<li>在隐私或者无痕浏览模式下，是记录localStorage的</li>
+<li>localStorage跟服务器毫无关系</li>
+</ol>
+<p>真实项目中使用本地存储来完成一些需求的情况不是很多，一般都是基于服务器的session或者数据库存储完成的（服务器的session和本地的cookie是有关联的），如果不考虑兼容，只想基于本地存储来完成一些事情，那么一般都是用localStorage的（尤其是移动端开发）</p>
+<h3 id="localStorage的API："><a href="#localStorage的API：" class="headerlink" title="localStorage的API："></a>localStorage的API：</h3><p>setItem/getItem/removeItem/clear/key(通过指定的索引获取指定的key名)</p>
+<h4 id="cookie设置"><a href="#cookie设置" class="headerlink" title="cookie设置"></a>cookie设置</h4><p>document.cookie = ‘’;//设置cookie</p>
+<p>封装的cookie</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">let cookie = (function () &#123;</span><br><span class="line">    let setValue = (name, value, expires = (new Date(new Date().getTime() + (1000 * 60 * 60 * 24))), path = &apos;/&apos;, domain = &apos;&apos;)=&gt; &#123;</span><br><span class="line">        document.cookie = `$&#123;name&#125;=$&#123;escape(value)&#125;;expires=$&#123;expires.toGMTString()&#125;;path=$&#123;path&#125;;domain=$&#123;domain&#125;`;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    let getValue = name=&gt; &#123;</span><br><span class="line">        let cookieInfo = document.cookie,</span><br><span class="line">            reg = new RegExp(`(?:^| )$&#123;name&#125;=([^;]*)(?:;|$)`),</span><br><span class="line">            ary = cookieInfo.match(reg);</span><br><span class="line">        return ary ? unescape(ary[1]) : null;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    let removeValue = (name, path = &apos;/&apos;, domain = &apos;&apos;)=&gt; &#123;</span><br><span class="line">        let value = getValue(name);</span><br><span class="line">        if (value) &#123;</span><br><span class="line">            document.cookie = `$&#123;name&#125;= ;path=$&#123;path&#125;;domain=$&#123;domain&#125;;expires=Fri,02-Jan-1970 00:00:00 GMT`;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    return &#123;</span><br><span class="line">        set: setValue,</span><br><span class="line">        get: getValue,</span><br><span class="line">        remove: removeValue</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 
-离线缓存（XXX.mainfest）    H5处理离线缓存还是存在一些硬伤的，所以真实项目中一般还是传统的native APP来完成这件事情
-localStorage/sessionStorage:H
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/webpack/storage/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -379,6 +761,10 @@ localStorage/sessionStorage:H
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -386,13 +772,27 @@ localStorage/sessionStorage:H
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/js/js3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -400,38 +800,219 @@ localStorage/sessionStorage:H
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/JQUERY/Jquery/" itemprop="url">
-                  Jquery源码分析
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/js/js3/" itemprop="url">call、apply和bind三者之前的区别</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-11-21T19:12:22+08:00" content="2017-11-21">
-              2017-11-21
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-03T14:36:28+08:00">
+                2017-12-03
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/js/js3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/js/js3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>相信大家在做项目的时候或者刚开始学习JS的时候都或多或少的接触过call，本媛也是，但是一直停留在应用层，从来没有真正的研究过其原理，正好得空，本媛就查了一些资料然后根据自己的理解整理笔记放到网站，希望以后自己想不起或者需要用到的时候能够方便查阅：</p>
+<blockquote>
+<p>用来改变某个函数中this关键字指向的</p>
+</blockquote>
+<h4 id="call"><a href="#call" class="headerlink" title="call"></a>call</h4><p><code>[Fn].call([this],[param]...)</code></p>
+<p>fn.call 当前实例fn通过原型链的查找机制找到Function.prototype上的call方法<br>fn.call();把找到的call方法执行</p>
+<ul>
+<li>当call方法执行的时候，内部处理了一些事情</li>
+</ul>
+<ul>
+<li>首先把要操作的函数中的this关键字变为call方法第一个传进去的实参值</li>
+<li>把call方法第二个及第二个以后的实参获取到</li>
+<li>把要操作的函数执行，并且把第二个以后传递进来的实参传给函数</li>
+</ul>
+<h4 id="call细节问题："><a href="#call细节问题：" class="headerlink" title="call细节问题："></a>call细节问题：</h4><ul>
+<li>非严格模式下，如果参数不传，或者第一个传递的是null/undefined，this都指向window</li>
+<li>严格模式下，第一个参数this是谁就指向谁，包括null，undefined，不传也是undefined</li>
+</ul>
+<h4 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h4><ul>
+<li>和call基本上一模一样，唯一区别在于传参方式：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fn.call(obj,<span class="number">10</span>,<span class="number">20</span>);</span><br><span class="line">fn.apply(obj,[<span class="number">10</span>,<span class="number">20</span>])</span><br></pre></td></tr></table></figure>
+<p>apply把需要传递的参数放进一个数组或者类数组中传递，虽然写的是一个数组，但是也相当与给fn一个个的传参</p>
+<h4 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h4><blockquote>
+<p> 语法和call一模一样，唯一区别在于call是立即执行，bind是等待执行，而且bind不兼容IE6~8</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/JQUERY/Jquery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/JQUERY/Jquery/" itemprop="url">Jquery源码分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T19:12:22+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/JQUERY/" itemprop="url" rel="index">
                     <span itemprop="name">JQUERY</span>
                   </a>
@@ -439,7 +1020,6 @@ localStorage/sessionStorage:H
 
                 
                 
-
               
             </span>
           
@@ -447,25 +1027,33 @@ localStorage/sessionStorage:H
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/JQUERY/Jquery/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="JQUERY/Jquery/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/JQUERY/Jquery/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -474,30 +1062,40 @@ localStorage/sessionStorage:H
       
         
           
-          1.12345678//声明过得不会再次声明console.log(foo);function foo()&#123;console.log("foo");&#125;var foo = 1;
+            <p>1.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//声明过得不会再次声明</span><br><span class="line">console.log(foo);</span><br><span class="line"></span><br><span class="line">function foo()&#123;</span><br><span class="line">console.log(&quot;foo&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var foo = 1;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p><a href="undefined">一元正号</a> (+)</p>
+<p>一元正号运算符位于其操作数前面，计算其操作数的数值，如果操作数不是一个数值，会尝试将其转换成一个数值。 尽管一元负号也能转换非数值类型，但是一元正号是转换其他对象到数值的最快方法，也是最推荐的做法，因为它不会对数值执行任何多余操作。它可以将字符串转换成整数和浮点数形式，也可以转换非字符串值 <code>true</code>，<code>false</code> <code>和</code> <code>null</code>。小数和十六进制格式字符串也可以转换成数值。负数形式字符串也可以转换成数值（对于十六进制不适用）。如果它不能解析一个值，则计算结果为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/NaN" target="_blank" rel="external">NaN</a>.</p>
+</li>
+<li><p>判断类型方法</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 判断一个参数是什么类型的</span><br><span class="line">var class2type = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">// 生成class2type映射</span><br><span class="line">&quot;Boolean Number String Function Array Date RegExp Object Error&quot;.split(&quot; &quot;).map(item =&gt; &#123;</span><br><span class="line">  class2type[&quot;[object &quot; + item + &quot;]&quot;] = item.toLowerCase()</span><br><span class="line">&#125;);</span><br><span class="line">// JQ使用自己的each写的</span><br><span class="line">// jQuery.each(&quot;Boolean Number String Function Array Date RegExp Object Error&quot;.split(&quot; &quot;), function(i, name) &#123;</span><br><span class="line">//     class2type[&quot;[object &quot; + name + &quot;]&quot;] = name.toLowerCase();</span><br><span class="line">// &#125;);</span><br><span class="line"></span><br><span class="line">function type(obj) &#123;</span><br><span class="line">  // 一箭双雕</span><br><span class="line">  if (obj == null) &#123;</span><br><span class="line">      return obj + &quot;&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  return typeof obj === &quot;object&quot; || typeof obj === &quot;function&quot; ?</span><br><span class="line">      class2type[Object.prototype.toString.call(obj)] || &quot;object&quot; :</span><br><span class="line"></span><br><span class="line">      typeof obj;</span><br><span class="line">&#125;</span><br><span class="line">// console.log(type([1, 2, 3]));</span><br><span class="line">console.log(class2type);</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><code>var length = &quot;length&quot; in obj &amp;&amp; obj.length</code></p>
+</li>
+<li><p>判断是否是数组：</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">isArray: <span class="built_in">Array</span>.isArray || <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> jQuery.type(obj) === <span class="string">"array"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//原生有一个自带的isArray方法，然后在做兼容</span></span><br></pre></td></tr></table></figure>
 
-一元正号 (+)
-一元正号运算符位于其操作数前面，计算其操作数的数值，如果操作数不是一个数值，会尝试将其
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/JQUERY/Jquery/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -507,6 +1105,10 @@ localStorage/sessionStorage:H
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -514,13 +1116,27 @@ localStorage/sessionStorage:H
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/VUE/2017-04-12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -528,38 +1144,42 @@ localStorage/sessionStorage:H
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/VUE/2017-04-12/" itemprop="url">
-                  VUE中使用动画&&使用过滤器
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/VUE/2017-04-12/" itemprop="url">VUE中使用动画&&使用过滤器</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-10-06T21:57:18+08:00" content="2017-10-06">
-              2017-10-06
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-06T21:57:18+08:00">
+                2017-10-06
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/VUE/" itemprop="url" rel="index">
                     <span itemprop="name">VUE</span>
                   </a>
@@ -567,7 +1187,6 @@ localStorage/sessionStorage:H
 
                 
                 
-
               
             </span>
           
@@ -575,25 +1194,33 @@ localStorage/sessionStorage:H
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/VUE/2017-04-12/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="VUE/2017-04-12/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/VUE/2017-04-12/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -602,34 +1229,39 @@ localStorage/sessionStorage:H
       
         
           
-          filters
+            <h2><strong>filters</strong></h2>
 
-filters里面的方法的实参的第一位是是你要过滤自动传过来的值，第二位才是你传的参数
-过渡动画transition:
+<p>filters里面的方法的实参的第一位是是你要过滤自动传过来的值，第二位才是你传的参数</p>
+<h2><strong>过渡动画transition:</strong></h2>
 
+<ol>
+<li><p>使用name属性配合class自定义动画</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"fadeIn"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span> <span class="attr">v-show</span>=<span class="string">"flag"</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span>&gt;</span>I LOVE YOU<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line">//    对应的class</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>.fadeIn-enter {<br>    opacity: 0;<br>}<br>.fadeIn-enter-active {<br>    transition: all .4s;<br>}<br>.fadeIn-leave-active {<br>    opacity: 0;<br>    transition: all .4s;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 配合相应的插件，快捷方便：</span><br><span class="line"></span><br><span class="line">​```javascript</span><br><span class="line">//这个要配合animate插件使用</span><br><span class="line">&lt;transition enter-active-class=&quot;animated bounceInLeft&quot; leave-active-class=&quot;animated bounceOutRight&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;box&quot; v-show=&quot;flag&quot;&gt;&lt;h1&gt;I LOVE YOU&lt;/h1&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/transition&gt;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>实现一组动画：</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">transition-group</span> <span class="attr">enter-active-class</span>=<span class="string">"animated bounceInLeft"</span> <span class="attr">leave-active-class</span>=<span class="string">"animated bounceOutRight"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span> <span class="attr">v-for</span>=<span class="string">"(item,index) in ary"</span> <span class="attr">v-show</span>=<span class="string">"flag"</span> <span class="attr">:key</span>=<span class="string">"index"</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">transition-group</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-使用name属性配合class自定义动画
-1234 &lt;transition name="fadeIn"&gt;     &lt;div class="b
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/VUE/2017-04-12/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -639,6 +1271,10 @@ filters里面的方法的实参的第一位是是你要过滤自动传过来的�
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -646,13 +1282,27 @@ filters里面的方法的实参的第一位是是你要过滤自动传过来的�
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/VUE/2017-04-05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -660,38 +1310,42 @@ filters里面的方法的实参的第一位是是你要过滤自动传过来的�
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/VUE/2017-04-05/" itemprop="url">
-                  VUE的生命周期函数
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/VUE/2017-04-05/" itemprop="url">VUE的生命周期函数</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-10-05T12:53:52+08:00" content="2017-10-05">
-              2017-10-05
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-05T12:53:52+08:00">
+                2017-10-05
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/VUE/" itemprop="url" rel="index">
                     <span itemprop="name">VUE</span>
                   </a>
@@ -699,7 +1353,6 @@ filters里面的方法的实参的第一位是是你要过滤自动传过来的�
 
                 
                 
-
               
             </span>
           
@@ -707,25 +1360,33 @@ filters里面的方法的实参的第一位是是你要过滤自动传过来的�
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/VUE/2017-04-05/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="VUE/2017-04-05/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/VUE/2017-04-05/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -734,29 +1395,217 @@ filters里面的方法的实参的第一位是是你要过滤自动传过来的�
       
         
           
-          vue的生命周期vue实例从创建到销毁的过程，就是生命周期；也就是从开始创建，初始化数据，编译模板，挂载Dom，渲染更新卸载等一系列的过程，我们称之为vue的生命周期；
-vue生命周期的作用vue的生命周期中有很多时间钩子，让我们在控制整个vue实例过程中能形成更好的逻辑
-vue生命周期的几个阶段他
-          ...
+            <h4 id="vue的生命周期"><a href="#vue的生命周期" class="headerlink" title="vue的生命周期"></a>vue的生命周期</h4><p>vue实例从创建到销毁的过程，就是生命周期；也就是从开始创建，初始化数据，编译模板，挂载Dom，渲染更新卸载等一系列的过程，我们称之为vue的生命周期；</p>
+<h4 id="vue生命周期的作用"><a href="#vue生命周期的作用" class="headerlink" title="vue生命周期的作用"></a>vue生命周期的作用</h4><p>vue的生命周期中有很多时间钩子，让我们在控制整个vue实例过程中能形成更好的逻辑</p>
+<h4 id="vue生命周期的几个阶段"><a href="#vue生命周期的几个阶段" class="headerlink" title="vue生命周期的几个阶段"></a>vue生命周期的几个阶段</h4><p>他可以分8个阶段：数据初始化之前/初始化结束，挂载前/挂载结束,更新前/更新结束，销毁前/销毁结束</p>
+<p><strong>第一次加载会触发几个钩子,而且只执行一次：beforeCreate,created,beforeMount,mounted</strong></p>
+<p>Dom渲染在mounted中就已经完成了</p>
+<h4 id="周期使用的场景："><a href="#周期使用的场景：" class="headerlink" title="周期使用的场景："></a>周期使用的场景：</h4><ul>
+<li><p>beforeCreate:用来加loading事件；</p>
+</li>
+<li><p>加载实例是触发created：初始化完成时的时间都写在这里，可以在这里结束loading事件，异步请求也可以在这里调用；</p>
+</li>
+<li><p>mounted：挂在元素，获取到Dom节点；</p>
+</li>
+<li><p>updated：如果对数据统一处理，在这里写上相对应的函数；</p>
+</li>
+<li><p>nextTick：更新数据后立即操作dom</p>
+</li>
+</ul>
+<h4 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h4><p>beforeCreate: 数据初始化之前</p>
+<pre><code>在这个期间获取不到data里面的数据
+</code></pre><p>created: 数据初始化完成，</p>
+<pre><code>可以获取和操作data中的数据，一般用作Ajax操作获取数据
 
-          <div class="post-more-link text-center">
-            <a class="btn" href="/VUE/2017-04-05/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+只是把数据渲染出来了，页面还没有渲染
+</code></pre><p>  el: ‘#app’等价于vm.\$mount(‘#app’);   el的优先级比 \$mount高，只有没有el的时候才会看你当前mount；</p>
+<h4 id="template"><a href="#template" class="headerlink" title="template"></a>template</h4><p>只能有一个根元素包裹，他会替代掉el:’#app’，它提供用来包裹元素的标签,但是el必须保留，否则流程会错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template id=&quot;temp1&quot;&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line">     &lt;h1&gt;11&lt;/h1&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>beforeMount：</strong>挂载之前，判断你的渲染模板正确与否</p>
+<p>渲染出错，毁在这个阶段报错，下个阶段就渲染不出来了</p>
+<p><strong>mount：</strong>挂载完成，视图就渲染了<br>以上四个钩子函数只在初始时期执行一次，后续不会在执行</p>
+<p><strong>beforeUpdate:</strong> 数据改变，视图更新之前</p>
+<p><strong>update:</strong> 数据改变，视图更新完成,一般用watch代替了，不常用</p>
+<p><strong>beforeDestroy:</strong> 销毁之前，不会自动销毁，只能手动的去销毁</p>
+<p><strong>destroyed：</strong>销毁完成,切断了数据和视图之间的联系，不存在数据响应视图了</p>
+<p><strong>vm.$destroy();</strong></p>
+<p>不会销毁之前的内容，渲染好的 页面也保留下来，但是页面实例就不再起作用了</p>
+<h4 id="获取元素："><a href="#获取元素：" class="headerlink" title="获取元素："></a>获取元素：</h4><p>给当前元素加上ref，就会添加大vm.$refs里面去，获取的时候只需要this.$refs.box既可；</p>
+<ul>
+<li>$refs是一个对象，里面存着所有加过ref属性的键值对</li>
+<li>如果添加的ref属性名重复，后面的会覆盖前面的，因为对象的键值对不允许重复；</li>
+<li><p>如果是循环出来的元素，那么此时li上添加的ref就是一个数组</p>
+  <template id="temp1"><br>      <div><br>          <h1 ref="box"></h1><br>          <h1 ref="box"></h1><br>          <h1 ref="box1"></h1><br>          <h1 ref="box2"></h1><br>        <p ref="p" v-for="item in ary"></p>    //此时this.$refs为 {box: h1, p: Array(3)}<br>      </div><br>  </template>
+
+<p>  this.$refs的结果为     {box: h1, box1: h1, box2: h1}</p>
+  <script>
+          data: { ary: [1, 2, 3]},
+          mounted(){
+          // 一般操作元素都在这里操作，为了保证真实性一般都在里面包一个this.$nextTick()，保证当前DOm是最新渲染的
+              /* 因为数据修改再去渲染这个步骤是异步的，所以这两部分同步直接执行
+              得到结果3，此时最新修改的ary还未渲染出来，等到updated更新完成之后，
+              页面就已经根据最新的数据渲染完成了，此时获取到的refs的节点就是最新的了 */
+                //立即执行，数据以改变，然后去重新渲染的Dom的过程是异步的
+              this.ary = [1,2,3,4,5,6];
+              console.log(this.$refs.p.length);
+  //          第二种办法：
+             //等到Dom渲染完成之后在执行
+              this.$nextTick(()=>{
+                  console.log(this.$refs.p.length);
+              })
+          },
+          updated(){
+              // 里面是异步的，渲染dom的过程
+              console.log(this.$refs.p.length);
+          }
+  </script>
+
+
+
+</li>
+</ul>
+<h4 id="this-nextTick"><a href="#this-nextTick" class="headerlink" title="this.$nextTick()"></a>this.$nextTick()</h4><p>在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。</p>
+<ul>
+<li>是一个Promise实例</li>
+</ul>
+<h4 id="定义组件Component"><a href="#定义组件Component" class="headerlink" title="定义组件Component:"></a>定义组件Component:</h4><p>做开发的时候一般使用情况： 定义组件的名字使用驼峰命名法，那么使用的时候组件名都是小写，加上“-”</p>
+<ul>
+<li>组件是独立的，生命周期是独立的，数据也是独立的</li>
+<li>组件也是data，但是必须是一个函数</li>
+</ul>
+<p>局部组件：</p>
+<ul>
+<li>定义组件</li>
+<li>注册组件</li>
+<li><p>使用组件</p>
+<pre><code>let son = {
+    template: &apos;&lt;div&gt;我是你儿子&lt;/div&gt;&apos;
+};
+let component1 = {
+    template: &apos;&lt;div&gt;&lt;h1 @click=&quot;fn&quot;&gt;{{val}}&lt;/h1&gt;&lt;son&gt;&lt;/son&gt;&lt;/div&gt;&apos;,
+    data(){
+        return {
+            val: &apos;lalla&apos;
+        }
+    },
+    methods: {
+        fn() {
+            this.val = &apos;哈哈哈&apos;;
+        }
+    },
+    components: {
+        son
+    }
+
+};
+let vm = new Vue({
+    el: &apos;#app&apos;,
+    data: {
+        val: &apos;123&apos;
+    },
+    components: {
+        component1,
+        son
+    }
+});
+</code></pre></li>
+</ul>
+<p>props用来接收父亲传给儿子数据</p>
+<ul>
+<li>props放着所有的属性，是一个对象，里面都是属性名的字符串</li>
+<li>子组件用这个数据的时候用的是自己起的这个属性名</li>
+<li>required和default只能有一个，可以设置默认值</li>
+<li><p>只能传给儿子，不能越级</p>
+   <template id="temp1"><br>      <div><br>          <h1 @click="fn"></h1><br>          <son :i="index"></son><br>      </div><br>  </template>
+
+<p>  let son = {</p>
+<pre><code>template: &apos;&lt;div&gt;我是{{i}}你儿子&lt;/div&gt;&apos;,
+props: {
+    i: {
+</code></pre><p>  //                type: [Number, String],<br>  //                required: true,<br>  //                default: ‘100000’,</p>
+<p>  //                自定义校验</p>
+<pre><code>    validator(val) {
+        //return  true通过校验，false就是没通过校验
+        return val&gt;100;
+
+    }
+},
+</code></pre><p>  //            还可以这么写，校验的就是类型</p>
+<pre><code>        m: Number,
+    }
+};
+</code></pre></li>
+</ul>
+<p>子传父，保持同步修改</p>
+<p>两种方法，但是都用到<strong>$emit</strong>方法，详细看代码：</p>
+<pre><code>//用.sync保持m和money的同步
+&lt;child :m.sync=&quot;money&quot;&gt;&lt;/child&gt;
+//这是另外一个方法：用自定义事件通知的方式
+&lt;child2 :m=&quot;money&quot; @changemoney=&quot;change&quot;&gt;&lt;/child2&gt;
+
+&lt;template id=&quot;child&quot;&gt;
+    &lt;div&gt;
+        &lt;h2&gt;{{m}}&lt;/h2&gt;
+        &lt;button @click=&quot;getMore&quot;&gt;点我一下啊&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;template id=&quot;child2&quot;&gt;
+    &lt;div&gt;
+        &lt;h2&gt;{{m}}&lt;/h2&gt;
+        &lt;button @click=&quot;getMore&quot;&gt;点我&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+  let vm = new Vue({
+        el: &apos;#app&apos;,
+        data: {
+            money: 1000
+        },
+        methods: {
+          //第一个方法需要一个方法在子传父的时候，子通知父需要做的事情，所以有点麻烦，直接用sync更简单
+          change(res) {
+              this.money = res;
+          }
+        },
+        components: {
+            child: {
+                template: &apos;#child&apos;,
+                props: [&apos;m&apos;],
+                methods: {
+                    getMore() {
+                        this.$emit(&apos;update:m&apos;, 10000000);
+                    }
+                }
+            },
+            child2: {
+                template: &apos;#child2&apos;,
+                props: [&apos;m&apos;],
+                methods: {
+                    getMore() {
+                        this.$emit(&apos;changemoney&apos;,10000);
+                    }
+                }
+            }
+        }
+    })
+</code></pre>
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -766,6 +1615,10 @@ vue生命周期的几个阶段他
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -773,13 +1626,27 @@ vue生命周期的几个阶段他
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/JS/js1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -787,38 +1654,42 @@ vue生命周期的几个阶段他
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/JS/js1/" itemprop="url">
-                  数组遍历的几个方法
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/JS/js1/" itemprop="url">数组遍历的几个方法</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-15T22:25:19+08:00" content="2017-09-15">
-              2017-09-15
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T22:25:19+08:00">
+                2017-09-15
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/JS/" itemprop="url" rel="index">
                     <span itemprop="name">JS</span>
                   </a>
@@ -826,7 +1697,6 @@ vue生命周期的几个阶段他
 
                 
                 
-
               
             </span>
           
@@ -834,25 +1704,33 @@ vue生命周期的几个阶段他
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/JS/js1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="JS/js1/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/JS/js1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -861,33 +1739,59 @@ vue生命周期的几个阶段他
       
         
           
-          数组遍历方法
-
- 除了reduce，reduceRight两个，下面的方法的第二个参数都可以用来改变this的
-
-
-forEach
-12345678//对每一项做处理，但是原数组不会改变，而且没有返回值    let ary1 = [1, 2, 3, 4, 5, 0];    let ary2 = 
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/JS/js1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <p></p><h1 style="text-align=center">数组遍历方法<h1><p></p>
+<blockquote>
+<p> 除了reduce，reduceRight两个，下面的方法的<strong>第二个参数都可以用来改变this的</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>forEach</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//对每一项做处理，但是原数组不会改变，而且没有返回值</span><br><span class="line">    let ary1 = [1, 2, 3, 4, 5, 0];</span><br><span class="line">    let ary2 = ary1.forEach(function(a)&#123;</span><br><span class="line">        console.log(this);   //[&apos;this&apos;,&apos;is&apos;,&apos;change&apos;]</span><br><span class="line">        a *= 2;</span><br><span class="line">        console.log(a);    //1,4,6,8,10,0</span><br><span class="line">    &#125;,[&apos;this&apos;,&apos;is&apos;,&apos;change&apos;]);</span><br><span class="line">  console.log(ary1, ary2);// [1, 2, 3, 4, 5, 0]和undefined</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>map</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 原数组不会改变</span><br><span class="line">   // 返回值：是回调函数里面return的每一项值</span><br><span class="line">   let ary1 = [1, 2, 3, 4, 5, 0];</span><br><span class="line">   let ary2 = ary1.map(function(a)&#123;</span><br><span class="line">       console.log(this);  //this也变了</span><br><span class="line">       return a *= 2;</span><br><span class="line">   &#125;,[&apos;this&apos;,&apos;is&apos;,&apos;change&apos;]);</span><br><span class="line">   console.log(ary1, ary2);    //(6) [1, 2, 3, 4, 5, 0] (6) [2, 4, 6, 8, 10, 0]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>find</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">返回值为3,而且找到一项就停止了 ，返回的只有第一次找到的那个值</span><br><span class="line">   let ary2 = [1, 2, 3, 4，5，0].find(a =&gt;&#123;return a &gt; 2&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>findIndex</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/*查找某一项的索引*/</span><br><span class="line">	返回值为索引</span><br><span class="line">    let ary2 = [1, 2, 3, 0].findIndex(a =&gt;&#123;return a &gt; 2&#125;);//=&gt;2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>filter</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/*查找某一项的索引*/</span><br><span class="line">    let ary2 = [1, 2, 3,4，5， 0].filter(a =&gt;&#123;return a &gt; 2&#125;);</span><br><span class="line">    //返回值为数组[3, 4, 5]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>some</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    // 原数组不会改变</span><br><span class="line">    // 返回值：是布尔值</span><br><span class="line">    let ary1 = [1, 2, 3, 4, 5, 0];</span><br><span class="line">    let ary2 = ary1.some(function(a)&#123;</span><br><span class="line">        console.log(this);  //this也变了</span><br><span class="line">        return a &gt;= 2;</span><br><span class="line">    &#125;,[&apos;this&apos;,&apos;is&apos;,&apos;change&apos;]);</span><br><span class="line">//    只遍历了两次，第三次的时候发现符合条件，终止遍历</span><br><span class="line">    console.log(ary1, ary2);    //(6) [1, 2, 3, 4, 5, 0] true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>every</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码如上参考some</span></span><br><span class="line">跟some的区别在于：</span><br><span class="line">以上代码，只遍历了<span class="number">1</span>次，第<span class="number">2</span>次的时候发现不符合条件，就会终止遍历，返回<span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>reduce</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 原数组不会改变</span><br><span class="line">// 返回值：求和结果</span><br><span class="line">let ary1 = [1, 2, 3,4,5];</span><br><span class="line">let ary2 = ary1.reduce(function(prev,cur)&#123;</span><br><span class="line">    console.log(prev, cur);</span><br><span class="line">    return prev+cur;//1+2+3+4+5 = 15</span><br><span class="line">&#125;);</span><br><span class="line">console.log(ary1, ary2);    //[1, 2, 3, 4, 5] 15</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>reduceRight</strong></p>
+<blockquote>
+<p>它跟reduce的唯一区别是它是倒着处理的： 5+4+3+2+1 = 15</p>
+</blockquote>
+</li>
+</ul>
+</h1></h1>
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -897,6 +1801,10 @@ forEach
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -904,13 +1812,27 @@ forEach
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/GIT/git3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -918,38 +1840,42 @@ forEach
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/GIT/git3/" itemprop="url">
-                  初次使用git需要配置本地的基础信息，配置一次即可
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/GIT/git3/" itemprop="url">初次使用git需要配置本地的基础信息，配置一次即可</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-01T12:08:52+08:00" content="2017-09-01">
-              2017-09-01
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T12:08:52+08:00">
+                2017-09-01
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/GIT/" itemprop="url" rel="index">
                     <span itemprop="name">GIT</span>
                   </a>
@@ -957,7 +1883,6 @@ forEach
 
                 
                 
-
               
             </span>
           
@@ -965,25 +1890,33 @@ forEach
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/GIT/git3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="GIT/git3/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/GIT/git3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -992,28 +1925,27 @@ forEach
       
         
           
-          
-git config -l查看git的配置信息git config --global user.name xxxgit config --global user.email 1710735731@qq.com建议配置的用户名和邮箱和github用户名邮箱保持一致，这样以后向github推送的时候能
-          ...
+            <blockquote>
+<p><code>git config -l</code>查看git的配置信息<br><code>git config --global user.name xxx</code><br><code>git config --global user.email 1710735731@qq.com</code><br>建议配置的用户名和邮箱和github用户名邮箱保持一致，这样以后向github推送的时候能够展示出是谁推荐的</p>
+</blockquote>
 
-          <div class="post-more-link text-center">
-            <a class="btn" href="/GIT/git3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1023,6 +1955,10 @@ git config -l查看git的配置信息git config --global user.name xxxgit config
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1030,13 +1966,27 @@ git config -l查看git的配置信息git config --global user.name xxxgit config
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/JS/js2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -1044,38 +1994,42 @@ git config -l查看git的配置信息git config --global user.name xxxgit config
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/JS/js2/" itemprop="url">
-                  ES6的语法学习
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/JS/js2/" itemprop="url">ES6的语法学习</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-08-12T22:28:05+08:00" content="2017-08-12">
-              2017-08-12
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-12T22:28:05+08:00">
+                2017-08-12
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/JS/" itemprop="url" rel="index">
                     <span itemprop="name">JS</span>
                   </a>
@@ -1083,7 +2037,6 @@ git config -l查看git的配置信息git config --global user.name xxxgit config
 
                 
                 
-
               
             </span>
           
@@ -1091,25 +2044,33 @@ git config -l查看git的配置信息git config --global user.name xxxgit config
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/JS/js2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="JS/js2/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/JS/js2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1118,36 +2079,69 @@ git config -l查看git的配置信息git config --global user.name xxxgit config
       
         
           
-          1. set Map
+            <p></p><h2>1. set Map</h2><p></p>
+<ul>
+<li>[…new Set(ary)]去重方法</li>
+<li>解决NaN不等于NAN ：Object.is(NaN,NaN);</li>
+<li>add 增加一项，重复的增加不上 </li>
+<li>delete 删除一项，返回值为true/false</li>
+<li>has查看有无当前项</li>
+<li>clear清空,返回值为undefined</li>
+<li>size长度</li>
+<li>set遍历的时候只有value值<br><strong>下面这三个方法Array也有：</strong></li>
+<li><strong>set.keys();</strong><ul>
+<li><strong>set.values();</strong></li>
+<li><strong>set.entries();</strong></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">/* add 增加一项，重复的增加不上 */</span></span><br><span class="line">   <span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">23</span>, <span class="number">1</span>, <span class="number">12</span>, <span class="number">3</span>, <span class="number">54</span>, <span class="number">3</span>]);</span><br><span class="line">   set.add(<span class="number">1</span>);</span><br><span class="line">   <span class="comment">/* delete 删除一项，返回值为true/false */</span></span><br><span class="line">   set.delete(<span class="number">2</span>);</span><br><span class="line">   <span class="comment">//    set遍历的时候只有value值</span></span><br><span class="line">   set.forEach((item,index)=&gt;&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(item,index);</span><br><span class="line">   &#125;)</span><br><span class="line"> set.keys();</span><br><span class="line">set.values();</span><br><span class="line">set.entries();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> set.keys()) &#123;</span><br><span class="line">     <span class="built_in">console</span>.log(key);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p></p><h2>2.  Symbol</h2><p></p>
+<ul>
+<li>基本数据类型 通过函数执行得到 不能使用new执行</li>
+<li>唯一值</li>
+<li>不能进行运算 因为不可以转数字 也不可以进行字符串拼接 这些都会报错</li>
+<li>可以转为布尔值</li>
+<li>当做属性名的时候只能用[“”]的形式</li>
+<li><strong>Object.getOwnPropertySymbols()</strong> 得到所有的属性命名是Symbol类型的key放到一个数组中</li>
+<li><strong>Object.keys()</strong> 普通对象获取一个对象有多少键值对,但是获取不到Symbol类型的keys属性名</li>
+<li>Reflect.ownKeys方法可以返回所有类型的键名</li>
+</ul>
+<p></p><h2>3. async await</h2><p></p>
+<blockquote>
+<p>async await都是ES6的语法糖</p>
+<p>返回的Promise对象会以async function的返回值进行resolve，或者以该函数抛出的异常进行reject。</p>
+<p>   注意， <strong>await 关键字仅仅在 async function中有效</strong>。如果在 async function函数体外使用 await ，你只会得到一个语法错误（SyntaxError）<br>​<br>async/await的用途是简化使用 promises 异步调用的操作，并对一组 Promises执行某些操作。正如Promises类似于结构化回调，async/await类似于组合生成器和 promises。</p>
+</blockquote>
+<ul>
+<li><p>async 将一个函数变成promise对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let fn = async function () &#123;</span><br><span class="line">   return 1;</span><br><span class="line">&#125;;</span><br><span class="line">fn().then(res=&gt;&#123;</span><br><span class="line">   console.dir(res);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>await后面跟一个promise对象 如果不是默认将其变成一个resolve的promise 值作为resolve 的参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let fn = async function () &#123;</span><br><span class="line">      /*此时的promise是一个Promise对象，await就是一个语法糖，它把我们常用的new Promise().then()这种</span><br><span class="line">       接收的形式直接简化为用await接收，如果下面接着要用，就直接变量promise.then()就好*/</span><br><span class="line">      let promise = await new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">          setTimeout(() =&gt; &#123;</span><br><span class="line">              resolve(1000);</span><br><span class="line">          &#125;, 1000)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;;</span><br><span class="line">  fn();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>await的结果就是resolve或者reject的参数</p>
+</li>
+<li>await异步执行完成之后再去执行后面的代码</li>
+</ul>
 
-[…new Set(ary)]去重方法
-解决NaN不等于NAN ：Object.is(NaN,NaN);
-add 增加一项，重复的增加不上 
-delete 删除一项，返回值为true/false
-has查看有无当前项
-clear清空,返回值为undefined
-size长度
-
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/JS/js2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1157,400 +2151,10 @@ size长度
         <div class="post-eof"></div>
       
     </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
+  </div>
   
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/NODE/node/" itemprop="url">
-                  node基础知识
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-08-11T11:55:10+08:00" content="2017-08-11">
-              2017-08-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/NODE/" itemprop="url" rel="index">
-                    <span itemprop="name">NODE</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/NODE/node/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="NODE/node/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          NODE基础概念：
-node并不是一门语言，它是一个工具或者环境
-基于V8引擎（webkit）渲染和解析js的
-单线程
-无阻塞I/O操作
-事件驱动
-
-之所以把node称之为服务器端语言，是因为node给予js操作服务器的能力：我们在服务器端安装node，只用js完成服务器端需要处理的一些事情，最后把
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/NODE/node/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/NODE/node1/" itemprop="url">
-                  什么是NODE
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-08-11T11:08:30+08:00" content="2017-08-11">
-              2017-08-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/NODE/" itemprop="url" rel="index">
-                    <span itemprop="name">NODE</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/NODE/node1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="NODE/node1/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-           基于V8引擎（谷歌浏览器的引擎）渲染JS的工具或者环境
-
-安装NODE
-把JS代码放到NODE环境中执行
-
-2.安装NODE https://nodejs.org/en/
- node安装完成后
-
-当前电脑上自动安装了npm(Node Package Manager)：一个JS模块（所有封装好可以供
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/NODE/node1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/hexo/hexo/" itemprop="url">
-                  hexo发布
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-08-05T16:41:03+08:00" content="2017-08-05">
-              2017-08-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/hexo/hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo/hexo/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          最近脑子特别不好使，感觉是个弱智儿，经常会忘东忘西的，有时公司比较忙也来不及经常发博客，所以时间一久可能连发布的命令都给我忘了，所以在此做个笔录~
-写一篇新的文章：
-hexo new XXX文章的名字叫XXX
-然后去编辑这个文件，你可以直接用vim编辑也可以用其他工具打开，个人爱好~
-比如我的路径：
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/hexo/hexo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </article>
 
 
@@ -1559,7 +2163,7 @@ hexo new XXX文章的名字叫XXX
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1583,125 +2187,132 @@ hexo new XXX文章的名字叫XXX
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/photo.jpg"
-               alt="eva1963" />
-          <p class="site-author-name" itemprop="name">eva1963</p>
-          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">57</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/photo.jpg"
+                alt="刘欢" />
+            
+              <p class="site-author-name" itemprop="name">刘欢</p>
+              <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
           </div>
 
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
           
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">15</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/eva1963" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
+                      
+                        <i class="fa fa-fw fa-globe"></i>豆瓣</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
             </div>
           
 
           
-            <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">42</span>
-                <span class="site-state-item-name">标签</span>
-              
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com" title="张鑫旭" target="_blank">张鑫旭</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.mapan.win" title="马攀" target="_blank">马攀</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/57b28aec165abd00543511c6/posts" title="张玉凤" target="_blank">张玉凤</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
+                  </li>
+                
+              </ul>
             </div>
           
 
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
           
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  豆瓣
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-          
+
         </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              友情链接
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.zhangxinxu.com" title="张鑫旭" target="_blank">张鑫旭</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://blog.mapan.win" title="马攀" target="_blank">马攀</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://juejin.im/user/57b28aec165abd00543511c6/posts" title="张玉凤" target="_blank">张玉凤</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
       </section>
+
+      
 
       
 
@@ -1715,36 +2326,52 @@ hexo new XXX文章的名字叫XXX
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">eva1963</span>
+  <span class="author" itemprop="copyrightHolder">刘欢</span>
+
+  
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
 
         
+
+
+
+
+
+
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
   </div>
 
   
@@ -1767,83 +2394,137 @@ hexo new XXX文章的名字叫XXX
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
 
 
 
   
   
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+  
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
   
 
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
 
   
 
-  
-    
+
+
+
+	
+
+
+
+
+
   
 
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"eva1963"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '4QSMsROC8QxawtQM8Px85zd0-gzGzoHsz',
+        appKey: 'zfs08wcb14eEy6M5Bk5rAqSG',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
   </script>
 
-  
-    
-  
-
-
-
-
 
 
   
+
+
+
+
+
   
+
+  
+
+  
+
+  
+  
+
   
 
   

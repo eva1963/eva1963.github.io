@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,63 +34,38 @@
 
 
 
-  
-  
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
   
   
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -95,100 +77,99 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
-
-
-
-
 
 
 <meta name="description" content="hexo,JavaScript,github，个人博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Eva">
+<meta property="og:title" content="萌小乖">
 <meta property="og:url" content="http://eva1963.win/index.html">
-<meta property="og:site_name" content="Eva">
+<meta property="og:site_name" content="萌小乖">
 <meta property="og:description" content="hexo,JavaScript,github，个人博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eva">
+<meta name="twitter:title" content="萌小乖">
 <meta name="twitter:description" content="hexo,JavaScript,github，个人博客">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
-    sidebar: {"position":"right","display":"post"},
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
-      userId: 0,
-      author: 'eva1963'
+      userId: '0',
+      author: '萌小乖'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="http://eva1963.win/"/>
 
-  <title> Eva </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+
+
+  <title>萌小乖</title>
   
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?4c1cc7ebea1a70b10dc949505f9221f5";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
 
 
+</head>
 
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Eva</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">萌小乖</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
+      
   </div>
-  <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -209,7 +190,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -219,21 +200,11 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
           </a>
         </li>
       
@@ -244,6 +215,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -258,13 +231,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/其他/2019plan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -272,46 +259,49 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/react/react12/" itemprop="url">
-                  react问题汇总
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/其他/2019plan/" itemprop="url">2019计划篇</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-11-20T16:58:08+08:00" content="2018-11-20">
-              2018-11-20
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T15:33:29+08:00">
+                2018-12-03
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
                   </a>
                 </span>
 
                 
                 
-
               
             </span>
           
@@ -319,25 +309,346 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/其他/2019plan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/其他/2019plan/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>2018转瞬即逝,在之前的许多年里，我从未对自己做过多的目的性的计划，因为我坚信，未知才是最有趣的，当然这也是我这几年来毫无进展的原因吧，不过我坚信未来是美好的，不论你有没有对自己的未来有一个很美好的规划都要尽自己的最大努力去过好你想要的生活。最近看到网上各位网友的来年计划表，让我觉得，梦想还是要有的，万一实现了呢~</p>
+<h3 id="2019计划表"><a href="#2019计划表" class="headerlink" title="2019计划表"></a>2019计划表</h3><ol>
+<li>19年底买奥迪</li>
+<li>去香港旅游</li>
+<li>结婚</li>
+<li></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/antd/genCascaderOptionType/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/antd/genCascaderOptionType/" itemprop="url">genCascaderOptionType工具函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-29T18:14:56+08:00">
+                2018-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/antd/" itemprop="url" rel="index">
+                    <span itemprop="name">antd</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/antd/genCascaderOptionType/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/antd/genCascaderOptionType/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p> 最近接到一个需求，需要把后端给到的数据转换成antd里面树状选择器，为了方便下次使用就洗了一个工具函数：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> function isGeoNode(info: GeoNode | CategoryTreeRsp): info is GeoNode &#123;</span><br><span class="line">     return (info as GeoNode).zipCode !== undefined;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"> // 递归生成CascaderOptionType</span><br><span class="line">export const genCascaderOptionType = (info: GeoNode | CategoryTreeRsp): CascaderOptionType =&gt; &#123;</span><br><span class="line">    const type: CascaderOptionType = &#123;</span><br><span class="line">            label: info.label,</span><br><span class="line">                    value: info.key,</span><br><span class="line">                            zipcode: isGeoNode(info) ? info.zipCode : &quot;&quot;</span><br><span class="line">                                </span><br><span class="line">    &#125;;</span><br><span class="line">        const subChildMenus = info.children;</span><br><span class="line">            let children = [];</span><br><span class="line">            if (subChildMenus &amp;&amp; subChildMenus.length &gt; 0) &#123;</span><br><span class="line">                for (const sc of subChildMenus) &#123;</span><br><span class="line">                            children.push(genCascaderOptionType(sc));</span><br><span class="line">                                    </span><br><span class="line">                &#125;</span><br><span class="line">                    </span><br><span class="line">            &#125;</span><br><span class="line">                type.children = children;</span><br><span class="line">                    return type;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>因为之前没有接触过Typescript,所以基本上都是在公司现学现卖，做到这个地方的时候因为这个城市的ZipCode不是一定存在的，这就需要你把ZipCode设置为<br>可选值，因为之前做的类型都是一定存在的，所以当时还挺坑，最后在他们官网找到了这个地方，所以想在这里记下来，一个方便自己下次查阅，另一个也可以<br>给下次可能用到这个的小哥哥姐姐们一个帮助~</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/react/react12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/react/react12/" itemprop="url">react问题汇总</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-20T16:58:08+08:00">
+                2018-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/react/react12/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="react/react12/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/react/react12/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -346,27 +657,30 @@
       
         
           
-          为什么不在componentWillMount里写AJAX获取数据的功能?componentWillMount在render之前执行，早一点执行早得到结果。要知道，在componentWillMount里发起AJAX，不管多快得到结果也赶不上首次render，而且componentWillMount
-          ...
+            <h4 id="为什么不在componentWillMount里写AJAX获取数据的功能"><a href="#为什么不在componentWillMount里写AJAX获取数据的功能" class="headerlink" title="为什么不在componentWillMount里写AJAX获取数据的功能?"></a>为什么不在componentWillMount里写AJAX获取数据的功能?</h4><p>componentWillMount在render之前执行，早一点执行早得到结果。要知道，在componentWillMount里发起AJAX，不管多快得到结果也赶不上首次render，而且componentWillMount在服务器端渲染也会被调用到（当然，也许这是预期的结果），这样的IO操作放在componentDidMount里更合适。在Fiber启用async render之后，更没有理由在componentWillMount里做AJAX，因为componentWillMount可能会被调用多次，谁也不会希望无谓地多次调用AJAX吧</p>
+<h4 id="为何要用setState去更新数据，而不是直接变更数据"><a href="#为何要用setState去更新数据，而不是直接变更数据" class="headerlink" title="为何要用setState去更新数据，而不是直接变更数据?"></a>为何要用setState去更新数据，而不是直接变更数据?</h4><ul>
+<li>直接变更数据也是可以的，但是它不会触发页面重新渲染</li>
+<li>react自带的setState里面不仅仅是对数据做了变更，它还利用diff算法去比较每次的变更，而且会触发render方法执行，从而使得页面重新渲染</li>
+</ul>
+<h4 id="setState是一个异步操作！"><a href="#setState是一个异步操作！" class="headerlink" title="setState是一个异步操作！"></a>setState是一个异步操作！</h4><h4 id="setState方法的第二个参数："><a href="#setState方法的第二个参数：" class="headerlink" title="setState方法的第二个参数："></a>setState方法的第二个参数：</h4><p>setState变更数据，只有执行了render之后，这个数据才真正的被更改掉，在此之前我们想要拿到最新的数据，就可以用到setState的第二个参数，通过在回调函数里面去拿到最新的值；</p>
 
-          <div class="post-more-link text-center">
-            <a class="btn" href="/react/react12/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -376,6 +690,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -383,13 +701,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/react/react11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -397,38 +729,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/react/react11/" itemprop="url">
-                  react更新相关函数
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/react/react11/" itemprop="url">react更新相关函数</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-10-29T18:06:59+08:00" content="2018-10-29">
-              2018-10-29
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-29T18:06:59+08:00">
+                2018-10-29
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
                     <span itemprop="name">react</span>
                   </a>
@@ -436,7 +772,6 @@
 
                 
                 
-
               
             </span>
           
@@ -444,25 +779,33 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/react/react11/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="react/react11/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/react/react11/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -471,30 +814,55 @@
       
         
           
-          react相关
- 最近react刚刚公布16.3版本的公布，之前一直没时间来仔细整理一下，就听大家说will系列的钩子函数都要被废弃了，这会有时间就来整理一下到底更新了一些什么东西吧~
+            <h3 id="react相关"><a href="#react相关" class="headerlink" title="react相关"></a>react相关</h3><blockquote>
+<p> 最近react刚刚公布16.3版本的公布，之前一直没时间来仔细整理一下，就听大家说will系列的钩子函数都要被废弃了，这会有时间就来整理一下到底更新了一些什么东西吧~</p>
+</blockquote>
+<h3 id="新增的钩子函数："><a href="#新增的钩子函数：" class="headerlink" title="新增的钩子函数："></a>新增的钩子函数：</h3><p>我们都知道，在16.0刚推出的时候，是增加了一个<code>componentDidCatch</code>生命周期函数，这只是一个增量式修改，完全不影响原有生命周期函数；但是，到了React v16.3，大改动来了，引入了两个新的生命周期函数：</p>
+<ul>
+<li>getDerivedStateFromProps</li>
+<li>getSnapshotBeforeUpdate</li>
+</ul>
+<ol>
+<li><p><code>getDerivedStateFromProps</code>实际上就是用来取代以前的函数<code>componentWillReceiveProps</code>，但他们又有一些不同，准确来说，componentWillReceiveProps是在update的时候被调用的，只有在父组件传递给子组件的props发生了变化的时候才会调用，而getDerivedStateFromProps是在Updating和Mounting的时候都会被调用；</p>
+</li>
+<li><p><code>getSnapshotBeforeUpdate</code>函数会在render之后执行，而执行之时DOM元素还没有被更新，给了一个机会去获取DOM信息，计算得到一个snapshot，这个snapshot会作为componentDidUpdate的第三个参数传入例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">getSnapshotBeforeUpdate(prevProps, prevState) &#123;</span><br><span class="line">    console.log(&apos;#enter getSnapshotBeforeUpdate&apos;);</span><br><span class="line">    return &apos;foo&apos;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidUpdate(prevProps, prevState, snapshot) &#123;</span><br><span class="line">    console.log(&apos;#enter componentDidUpdate snapshot = &apos;, snapshot);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="即将被废弃的钩子函数："><a href="#即将被废弃的钩子函数：" class="headerlink" title="即将被废弃的钩子函数："></a>即将被废弃的钩子函数：</h3><p>另外之前不建议使用的几个钩子函数都被标识为不安全，依然不建议使用，或许在后期或被直接废弃掉：</p>
+<ul>
+<li>UNSAFE_componentWillReceiveProps</li>
+<li>UNSAFE_componentWillMount</li>
+<li>UNSAFE_componentWillUpdate</li>
+</ul>
+<h3 id="更新前后对比图："><a href="#更新前后对比图：" class="headerlink" title="更新前后对比图："></a>更新前后对比图：</h3><ul>
+<li>修改之前的周期函数概览图</li>
+</ul>
+<p><img src="https://pic4.zhimg.com/80/v2-8c9f2b2eebc3449da805e8bd0deced47_hd.jpg" alt="@修改之前的周期函数概览图"></p>
+<ul>
+<li><p>修改之后</p>
+<p><img src="https://pic1.zhimg.com/v2-930c5299db442e73dbb1d2f9c92310d4_r.jpg" alt="@修改之后"></p>
+</li>
+</ul>
+<p>当然， 唯一的值得吐槽的是，改了之后函数名一如以往的长~</p>
 
-新增的钩子函数：我们都知道，在16.0刚推出的时候，是增加了一个componentDidCatch生命周期函数，
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/react/react11/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -504,6 +872,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -511,13 +883,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/react/react9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -525,38 +911,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/react/react9/" itemprop="url">
-                  React.Component与React.PureComponent的区别
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/react/react9/" itemprop="url">React.Component与React.PureComponent的区别</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-08-05T10:37:05+08:00" content="2018-08-05">
-              2018-08-05
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-05T10:37:05+08:00">
+                2018-08-05
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
                     <span itemprop="name">react</span>
                   </a>
@@ -564,7 +954,6 @@
 
                 
                 
-
               
             </span>
           
@@ -572,25 +961,33 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/react/react9/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="react/react9/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/react/react9/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -599,27 +996,33 @@
       
         
           
-          ​    最近换了工作，因为接手的项目中用到了Component和PureComponent，而自己之前一直使用React.Component而对PureComponent没有过多地了解到，所以就专门的查了一下，作为自己只是体系中的补充，也对自己接下来的项目开展做点铺垫，所以这里就谈谈两者的具体区别
-          ...
+            <p>​    最近换了工作，因为接手的项目中用到了Component和PureComponent，而自己之前一直使用React.Component而对PureComponent没有过多地了解到，所以就专门的查了一下，作为自己只是体系中的补充，也对自己接下来的项目开展做点铺垫，所以这里就谈谈两者的具体区别~</p>
+<p>两者的本质区别：<code>PureComponent</code>已经定义好了<code>shouldUpdateComponent</code>而<code>Component</code>需要显示定义。</p>
+<p>​    一般情况下，我们使用Component的时候，有时候我们虽然为了性能着想并不想无时无刻的去渲染页面，那么我们会设置一个<code>shouldComponentUpdate</code>周期函数，在这个周期函数中有我们自己手动来对比某些属性，当这些属性不同的时候我们才选择更新render执行，可能我说的也不是很清楚，网上扒了一个例子，参考如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CounterButton</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;count: <span class="number">1</span>&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  shouldComponentUpdate(nextProps, nextState) &#123;</span><br><span class="line">    <span class="comment">//在这里我们进行比较，这样可以节省性能</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.props.color !== nextProps.color) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.state.count !== nextState.count) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">button</span></span><br><span class="line">        <span class="attr">color</span>=<span class="string">&#123;this.props.color&#125;</span></span><br><span class="line">        <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.setState(state =&gt; (&#123;count: state.count + 1&#125;))&#125;&gt;</span><br><span class="line">        Count: &#123;this.state.count&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面的例子我们可以看出，就是对比一些简单的值，而且有一种很多余的感觉，此时就是使用pureComponent的最好时机，React提供的<code>PureComponent</code>就会自动帮我们来进行<code>浅比较</code>，这样就不需要手动来写<code>shouldComponentUpdate</code>了；</p>
+<p>你可能注意到了，上面我们提到了浅比较，虽然pureComponent自动为我们添加了<code>shouldComponentUpdate</code>周期函数，自己进行比较了，但是只是对props和state进行浅比较(shadow comparison)，当props或者state本身是嵌套对象或数组等时，浅比较并不能得到预期的结果，这会导致实际的props和state发生了变化，但组件却没有更新的问题，举个栗子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListOfWords</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">PureComponent</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;this.props.words.join(',')&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WordAdder</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      words: [<span class="string">'marklar'</span>]</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  handleClick() &#123;</span><br><span class="line">    <span class="comment">// 这个地方导致了bug</span></span><br><span class="line">    <span class="keyword">const</span> words = <span class="keyword">this</span>.state.words;</span><br><span class="line">    words.push(<span class="string">'marklar'</span>);</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;words: words&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button onClick=&#123;this.handleClick&#125; /&gt;</span><br><span class="line">        &lt;ListOfWords words=&#123;this.state.words&#125; /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此外,React.PureComponent 的 shouldComponentUpate() 会忽略整个组件的子级。<strong>请确保所有的子级组件也是”Pure”的。</strong></p>
+<p>参考文章：<a href="https://segmentfault.com/a/1190000008402834" target="_blank" rel="external">https://segmentfault.com/a/1190000008402834</a></p>
 
-          <div class="post-more-link text-center">
-            <a class="btn" href="/react/react9/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -629,6 +1032,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -636,13 +1043,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/react/react10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -650,38 +1071,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/react/react10/" itemprop="url">
-                  react创建组建的四种方式
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/react/react10/" itemprop="url">react创建组建的四种方式</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-08-04T11:10:28+08:00" content="2018-08-04">
-              2018-08-04
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-04T11:10:28+08:00">
+                2018-08-04
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
                     <span itemprop="name">react</span>
                   </a>
@@ -689,7 +1114,6 @@
 
                 
                 
-
               
             </span>
           
@@ -697,25 +1121,33 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/react/react10/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="react/react10/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/react/react10/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -724,27 +1156,42 @@
       
         
           
-          react创建组件的方式有很多种，但是一般情况下公司里可能只用一种react.Component,但是其他三种方式我们还是应该了解一些，因为有时候公司不用是因为大家不会用，然而存在即合理，既然有这么多种方式肯定就有它本身的优点，或者对于性能有很大的提升，或者对于精简代码有帮助，所以本宝认为有些东西还
-          ...
+            <p>react创建组件的方式有很多种，但是一般情况下公司里可能只用一种react.Component,但是其他三种方式我们还是应该了解一些，因为有时候公司不用是因为大家不会用，然而存在即合理，既然有这么多种方式肯定就有它本身的优点，或者对于性能有很大的提升，或者对于精简代码有帮助，所以本宝认为有些东西还是需要自己去深入理解学习才能在最大程度的去使用它；以下就是创建组建的四种方式，除了第一种不常用之外我认为其他三种都还是运用比较多的，所以建议如果宝宝你看我的不是很理解的话可以根据我查阅的资料链接或者自己再去挖掘以下~</p>
+<h2 style="color:'red'"><strong>createClass</strong></h2>
 
-          <div class="post-more-link text-center">
-            <a class="btn" href="/react/react10/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+<blockquote>
+<p>不常用且基本不用，官方都建议放弃了的，我们提一嘴</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> React = <span class="built_in">require</span>(<span class="string">"react"</span>);</span><br><span class="line"><span class="keyword">var</span> FirstComponent = React.createClass(&#123;</span><br><span class="line">  propTypes: &#123;</span><br><span class="line">    name: React.PropTypes.string </span><br><span class="line">    <span class="comment">//属性校验 (string, number, bool, func, array, object...... )</span></span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">  getDefaultProps: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      name: <span class="string">'Mary'</span> </span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 初始化props</span></span><br><span class="line">  &#125;, </span><br><span class="line">    </span><br><span class="line">  getInitialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;count: <span class="keyword">this</span>.props.initialCount&#125;; </span><br><span class="line">    <span class="comment">//初始化props</span></span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">  handleClick: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//.....</span></span><br><span class="line">  &#125;,</span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">module</span>.exports = FirstComponent;</span><br></pre></td></tr></table></figure>
+<p><strong><h2 style="color:'red'">Component</h2></strong>（最常用，里面包含构造函数，周期函数，状态值等）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FirstComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">       count: props.initialCount</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> propTypes ＝ &#123;</span><br><span class="line">    name: React.PropTypes.string</span><br><span class="line">  &#125;</span><br><span class="line">  statice props = &#123;</span><br><span class="line">    name: <span class="string">'Mary'</span></span><br><span class="line">  &#125;</span><br><span class="line">  handleClick() &#123;</span><br><span class="line">    <span class="comment">//点击事件的处理函数</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleClick&#125;</span>&gt;</span>Hello, &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> FirstComponent;</span><br></pre></td></tr></table></figure>
+<h2 style="color:'red'"><strong>pureComponent</strong></h2>
+
+<blockquote>
+<p> 大多数情况下， 我们使用<code>PureComponent</code>能够简化我们的代码，并且提高性能，但是PureComponent的自动为我们添加的<code>shouldComponentUpate</code>函数，只是对<code>props</code>和<code>state</code>进行浅比较<code>(shadow comparison)</code>，当<code>props</code>或者<code>state</code>本身是嵌套对象或数组等时，浅比较并不能得到预期的结果，这会导致实际的<code>props</code>和<code>state</code>发生了变化，但组件却没有更新的问题。当然还是有解决的方法的,比如使用<code>Immutable.js</code>来创建不可变对象，通过它来简化对象比较，提高性能</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CounterButton</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">PureComponent</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;count: <span class="number">1</span>&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">button</span></span><br><span class="line">        <span class="attr">color</span>=<span class="string">&#123;this.props.color&#125;</span></span><br><span class="line">        <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.setState(state =&gt; (&#123;count: state.count + 1&#125;))&#125;&gt;</span><br><span class="line">        Count: &#123;this.state.count&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 style="color:'red'"><strong>Function Component</strong></h2>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line">Button.propTypes = &#123;</span><br><span class="line">  day: PropTypes.string.isRequired,</span><br><span class="line">  increment: PropTypes.func.isRequired,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Button = (&#123;</span><br><span class="line">  day,</span><br><span class="line">  increment</span><br><span class="line">&#125;) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;increment&#125;</span>&gt;</span>Today is &#123;day&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -754,6 +1201,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -761,13 +1212,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/XSS/xss/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -775,38 +1240,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/XSS/xss/" itemprop="url">
-                  如何防止XSS攻击？
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/XSS/xss/" itemprop="url">如何防止XSS攻击？</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-07-10T10:35:19+08:00" content="2018-07-10">
-              2018-07-10
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T10:35:19+08:00">
+                2018-07-10
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/XSS/" itemprop="url" rel="index">
                     <span itemprop="name">XSS</span>
                   </a>
@@ -814,7 +1283,6 @@
 
                 
                 
-
               
             </span>
           
@@ -822,25 +1290,33 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/XSS/xss/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="XSS/xss/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/XSS/xss/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -849,30 +1325,27 @@
       
         
           
-          最近总是听到一些关于XSS的一些说法，因为之前并没有接触过，所以最近想抽点时间了解一下，下面这个文章总结的很好，是美团技术团队一个很厉害的小哥哥写的，总结的也很全面，所以我就直接贴上去了，方便以后自己查询：
-    如何防止XSS攻击？
-
-
+            <p>最近总是听到一些关于XSS的一些说法，因为之前并没有接触过，所以最近想抽点时间了解一下，下面这个文章总结的很好，是美团技术团队一个很厉害的小哥哥写的，总结的也很全面，所以我就直接贴上去了，<br>方便以后自己查询：</p>
+<p><div style="textAlign: center"><br>    <a style="color: blue;" href="https://tech.meituan.com/fe_security.html" target="_blank" rel="external">如何防止XSS攻击？</a></div></p>
+<div>
+</div>
           
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/XSS/xss/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -882,6 +1355,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -889,13 +1366,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/lodash/lodash1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -903,38 +1394,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/lodash/lodash1/" itemprop="url">
-                  初识lodash
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/lodash/lodash1/" itemprop="url">初识lodash</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-05-08T09:29:11+08:00" content="2018-05-08">
-              2018-05-08
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T09:29:11+08:00">
+                2018-05-08
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/lodash/" itemprop="url" rel="index">
                     <span itemprop="name">lodash</span>
                   </a>
@@ -942,7 +1437,6 @@
 
                 
                 
-
               
             </span>
           
@@ -950,25 +1444,33 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/lodash/lodash1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="lodash/lodash1/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/lodash/lodash1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -977,27 +1479,77 @@
       
         
           
-          最近在公司的项目中发现了lodash插件，因为之前也没有使用过underscore.js这样的插件库，所以一直对其没有研究过，不过既然项目中已经用到了，那就必须来学习一下，这里是我在项目中看到的部分，然后根据lodash官网的解释来记录的，所以可能不是很全，如果想要全面了解的，还是建议去官网学习哦~
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/lodash/lodash1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <p>最近在公司的项目中发现了lodash插件，因为之前也没有使用过underscore.js这样的插件库，所以一直对其没有研究过，不过既然项目中已经用到了，那就必须来学习一下，这里是我在项目中看到的部分，然后根据lodash官网的解释来记录的，所以可能不是很全，如果想要全面了解的，还是建议去官网学习哦~locash官网[<a href="http://www.css88.com/doc/lodash/" target="_blank" rel="external">http://www.css88.com/doc/lodash/</a>]<br>在学习之前我们先来了解一下lodash是一个什么东东呢？</p>
+<p>下面是来自简书同学的解释，地址：<a href="https://www.jianshu.com/p/d46abfa4ddc9" target="_blank" rel="external">https://www.jianshu.com/p/d46abfa4ddc9</a></p>
+<blockquote>
+<p>“Lodash是一个著名的javascript原生库，不需要引入其他第三方依赖。是一个意在提高开发者效率,提高JS原生方法性能的JS库。简单的说就是，很多方法lodash已经帮你写好了，直接调用就行，不用自己费尽心思去写了，而且可以统一方法的一致性。Lodash使用了一个简单的 _ 符号，就像Jquery的 $ 一样，十分简洁。<br>类似的还有Underscore.js和Lazy.js”</p>
+</blockquote>
+<p>使用起来也是非常方便，直接npm i lodash –save 即可</p>
+<p>以下是项目中比较常见的方法：<br>引入项目中：<code>import _ from &quot;lodash&quot;;</code></p>
+<p><code>_.trim([目标字符串], [指定字符])</code></p>
+<blockquote>
+<p>指定字符默认为空格，所以只写第一个参数意思就是去空格，如果要去除指定的字符，就用到了第二个参数</p>
+</blockquote>
+<p><code>_.pick(object, [props])</code></p>
+<blockquote>
+<p>创建一个从 object 中选中的属性的对象。<code>_.omit</code>作用正好与之相反<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = &#123; <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="string">'2'</span>, <span class="string">'c'</span>: <span class="number">3</span> &#125;;</span><br><span class="line"> </span><br><span class="line">_.pick(object, [<span class="string">'a'</span>, <span class="string">'c'</span>]);</span><br><span class="line"><span class="comment">// =&gt; &#123; 'a': 1, 'c': 3 &#125;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>_.values(object)</code></p>
+<blockquote>
+<p>创建 object 自身可枚举属性的值为数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.a = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">this</span>.b = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Foo.prototype.c = <span class="number">3</span>;</span><br><span class="line"> </span><br><span class="line">_.values(<span class="keyword">new</span> Foo);</span><br><span class="line"><span class="comment">// =&gt; [1, 2] (无法保证遍历的顺序)</span></span><br><span class="line"> </span><br><span class="line">_.values(<span class="string">'hi'</span>);</span><br><span class="line"><span class="comment">// =&gt; ['h', 'i']</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>_.assign(object, [sources])</code></p>
+<blockquote>
+<p>分配来源对象的 <strong>可枚举属性</strong> 到目标对象上。 来源对象的应用规则是从左到右，随后的下一个对象的属性会覆盖上一个对象的属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.c = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Foo.prototype.b = <span class="number">2</span>;</span><br><span class="line">Bar.prototype.d = <span class="number">4</span>;</span><br><span class="line"> </span><br><span class="line">_.assign(&#123; <span class="string">'a'</span>: <span class="number">0</span> &#125;, <span class="keyword">new</span> Foo, <span class="keyword">new</span> Bar);</span><br><span class="line"><span class="comment">// =&gt; &#123; 'a': 1, 'c': 3 &#125;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>_.uniq(array)</code></p>
+<blockquote>
+<p>数组去重；创建一个去重后的array数组副本<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.uniq([<span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>]);</span><br><span class="line"><span class="comment">// =&gt; [2, 1]</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>_.sortBy(collection, [iteratees=[_.identity]])</code></p>
+<blockquote>
+<p>创建一个元素数组。 以 iteratee 处理的结果升序排序<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> users = [</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'fred'</span>,   <span class="string">'age'</span>: <span class="number">48</span> &#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'barney'</span>, <span class="string">'age'</span>: <span class="number">36</span> &#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'fred'</span>,   <span class="string">'age'</span>: <span class="number">40</span> &#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'barney'</span>, <span class="string">'age'</span>: <span class="number">34</span> &#125;</span><br><span class="line">];</span><br><span class="line"> </span><br><span class="line">_.sortBy(users, <span class="function"><span class="keyword">function</span>(<span class="params">o</span>) </span>&#123; <span class="keyword">return</span> o.user; &#125;);</span><br><span class="line"><span class="comment">// =&gt; objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]</span></span><br><span class="line"> </span><br><span class="line">_.sortBy(users, [<span class="string">'user'</span>, <span class="string">'age'</span>]);</span><br><span class="line"><span class="comment">// =&gt; objects for [['barney', 34], ['barney', 36], ['fred', 40], ['fred', 48]]</span></span><br><span class="line"> </span><br><span class="line">_.sortBy(users, <span class="string">'user'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.floor(o.age / <span class="number">10</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// =&gt; objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>_.clone(value)</code></p>
+<blockquote>
+<p>创建一个value的浅拷贝<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> objects = [&#123; <span class="string">'a'</span>: <span class="number">1</span> &#125;, &#123; <span class="string">'b'</span>: <span class="number">2</span> &#125;];</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> shallow = _.clone(objects);</span><br><span class="line"><span class="built_in">console</span>.log(shallow[<span class="number">0</span>] === objects[<span class="number">0</span>]);</span><br><span class="line"><span class="comment">// =&gt; true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>_.cloneDeep(value)</code></p>
+<blockquote>
+<p>这个方法类似_.clone，除了它会递归拷贝 value<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> objects = [&#123; <span class="string">'a'</span>: <span class="number">1</span> &#125;, &#123; <span class="string">'b'</span>: <span class="number">2</span> &#125;];</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> deep = _.cloneDeep(objects);</span><br><span class="line"><span class="built_in">console</span>.log(deep[<span class="number">0</span>] === objects[<span class="number">0</span>]);</span><br><span class="line"><span class="comment">// =&gt; false</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>_.findIndex(array, [predicate=_.identity], [fromIndex=0])</code></p>
+<blockquote>
+<p>该方法类似_.find，区别是该方法返回第一个通过 predicate 判断为真值的元素的索引值（index），而不是元素本身<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> users = [</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'barney'</span>,  <span class="string">'active'</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'fred'</span>,    <span class="string">'active'</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'pebbles'</span>, <span class="string">'active'</span>: <span class="literal">true</span> &#125;</span><br><span class="line">];</span><br><span class="line"> </span><br><span class="line">_.findIndex(users, <span class="function"><span class="keyword">function</span>(<span class="params">o</span>) </span>&#123; <span class="keyword">return</span> o.user == <span class="string">'barney'</span>; &#125;);</span><br><span class="line"><span class="comment">// =&gt; 0</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// The `_.matches` iteratee shorthand.</span></span><br><span class="line">_.findIndex(users, &#123; <span class="string">'user'</span>: <span class="string">'fred'</span>, <span class="string">'active'</span>: <span class="literal">false</span> &#125;);</span><br><span class="line"><span class="comment">// =&gt; 1</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// The `_.matchesProperty` iteratee shorthand.</span></span><br><span class="line">_.findIndex(users, [<span class="string">'active'</span>, <span class="literal">false</span>]);</span><br><span class="line"><span class="comment">// =&gt; 0</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// The `_.property` iteratee shorthand.</span></span><br><span class="line">_.findIndex(users, <span class="string">'active'</span>);</span><br><span class="line"><span class="comment">// =&gt; 2</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>_.flatten(array)</code></p>
+<blockquote>
+<p>减少一级array嵌套深度<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.flatten([<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, [<span class="number">4</span>]], <span class="number">5</span>]]);</span><br><span class="line"><span class="comment">// =&gt; [1, 2, [3, [4]], 5]</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>_.flattenDeep(array)</code></p>
+<blockquote>
+<p>将array递归为一维数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.flattenDeep([<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, [<span class="number">4</span>]], <span class="number">5</span>]]);</span><br><span class="line"><span class="comment">// =&gt; [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<pre><code>查看lodash官方文档后你会发现，其实这个就是进化后的JQuery，lodash提供了更强大的函数工具给我们使用，大大的方便了我们的开发，提高了我们的而开发效率，所以了解lodash是必要的，如果你还有精力的话，也建议你去看看lodash的源码，就想之前看jquery的源码一样，相信了lodash的源码也不会让你失望，会使你大大受益~
+好了，就说到这里了，工作~
+</code></pre>
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1007,6 +1559,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1014,13 +1570,27 @@
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/react/create-react/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -1028,38 +1598,42 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/react/create-react/" itemprop="url">
-                  react脚手架搭建项目整体流程
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/react/create-react/" itemprop="url">react脚手架搭建项目整体流程</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-04-12T21:45:47+08:00" content="2018-04-12">
-              2018-04-12
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-12T21:45:47+08:00">
+                2018-04-12
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
                     <span itemprop="name">react</span>
                   </a>
@@ -1067,7 +1641,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1075,25 +1648,33 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/react/create-react/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="react/create-react/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/react/create-react/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1102,35 +1683,67 @@
       
         
           
+            <ol>
+<li>首先保证在node环境下，全局已经安装了react脚手架，命令如下：</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i create-react-app -g</span><br></pre></td></tr></table></figure>
+<p><em>tips: 查看本地node里面安装了那些全局插件<code>npm root -g</code></em></p>
+<h3>如果想要用less编写做以下处理：</h3>
+
+<ol>
+<li>执行<code>yarn eject</code>使得项目中的配置文件从node_modules里面暴露出来的，方便我们更改；</li>
+</ol>
+<ul>
+<li><p>执行完第二步才做之后，项目文件目录中会多出两个文件夹’config’&amp;&amp;’script’；</p>
+<h4 id="修改操作："><a href="#修改操作：" class="headerlink" title="修改操作："></a>修改操作：</h4><blockquote>
+<p> 修改webpack.config.dev.js&amp;&amp;webpack.config.prev.js里面对应的css处理部分，按如下修改：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  test: <span class="regexp">/\.(css|less)$/</span>,</span><br><span class="line">    use: [</span><br><span class="line">      <span class="built_in">require</span>.resolve(<span class="string">'style-loader'</span>),</span><br><span class="line">      <span class="comment">//....省略中间不变部分</span></span><br><span class="line">      &#123;</span><br><span class="line">        loader: <span class="built_in">require</span>.resolve(<span class="string">'less-loader'</span>)</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li>如果想修改默认打开的端口可以在script文件夹中的start.js中修改如下内容：</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面的3000指的就是端口</span></span><br><span class="line"><span class="keyword">const</span> DEFAULT_PORT = <span class="built_in">parseInt</span>(process.env.PORT, <span class="number">10</span>) || <span class="number">3000</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>或者使用命令直接改变node全局变量中的PORT（因为react中做了process.env.PORT这个处理）:<ul>
+<li>MAC环境下：执行<code>PORT=63342 yarn start</code>即可</li>
+<li>WINDOW环境下：执行<code>set PORT=63342&amp;&amp;yarn start</code>即可</li>
+</ul>
+</li>
+</ul>
+<p>tips: http设置为https更上面差不多,<code>HTTPS=TRUE yarn start</code></p>
+<ol>
+<li>想要使用第三方插件如booststrap这些样式的时候，直接在入口文件index.js里面引入即可；</li>
+<li>如果使用到redux/react-redux的时候，首先在生产环境中安装这两个插件；</li>
+</ol>
+<ul>
+<li>在src文件中建一个store文件夹，用来存放相关的reducer&amp;&amp;action&amp;&amp;action-types；<ul>
+<li><strong>store文件下有一个index.js：它创建了一个最大的中央管理区；</strong>里面可能存放着各种小管理区，然后通过combineReducer方法把这个小管理区的东西全都汇总到中央管理区；然后ES6导出这个中央管理区store给开发用，谁想用就import就成；</li>
+<li><strong>reducer文件夹：每一个模块的reducer都在这里，最后由index.js文件进行合并；</strong>文件夹下也有一个自己的index.js,除此之外可能还有vote.js/person.js等文件，这些文件都创建了一个自己的管理区块reducer，然后导出，最后在reducer文件夹下的index.js文件里整个汇总成一个中央管理区，为了区分。每一个模块都有自己的命令空间，防止相互之间冲突；所以使用的时候我们经常会这样写：this.props.store.getState().vote，这就是拿到vote命名空间下的所有变量，也就是vote.js文件中的变量，这样使我们的管理变得十分简便；</li>
+<li><strong>action文件夹：每个模块修改redux容器中状态，派发的任务都在这；</strong>存放的也有index.js/vote.js/person.js等文件，每一个模块里导出自己的方法，方法中return一个对象，这个对象就是以后点击事件中dispatch派发事件的参数，通过这个参数type: VOTE_SUPPROT，派发事件根据这个表示触发管理区reducer的第二个参数action执行对应的操作。这个操作紧接着就会触发事件池subscribe自上而下执行，subscribe在执行之前我们必须手动拉取一下最新值：this.props.store.getState()，接着去执行下面的代码，因为state发生改变，也就触发了render重新渲染整个页面，这样一个完整的点击事件就完成了</li>
+<li><strong>action-types.js：统一管理所有派发的标识</strong>，这个文件是一个中间层，他把所有的派发标识都整理在一起，我们使用的时候直接引入使用即可；</li>
+</ul>
+</li>
+</ul>
+
           
-首先保证在node环境下，全局已经安装了react脚手架，命令如下：
-
-1npm i create-react-app -g
-tips: 查看本地node里面安装了那些全局插件npm root -g
-如果想要用less编写做以下处理：
-
-
-执行yarn eject使得项目中的配置文件从node_m
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/react/create-react/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1140,6 +1753,10 @@ tips: 查看本地node里面安装了那些全局插件npm root -g
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1147,13 +1764,27 @@ tips: 查看本地node里面安装了那些全局插件npm root -g
       
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eva1963.win/VUE/creat-vue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘欢">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌小乖">
+    </span>
 
     
       <header class="post-header">
@@ -1161,38 +1792,42 @@ tips: 查看本地node里面安装了那些全局插件npm root -g
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/VUE/creat-vue/" itemprop="url">
-                  vue脚手架搭建项目整体流程
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/VUE/creat-vue/" itemprop="url">vue脚手架搭建项目整体流程</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-03-11T21:49:35+08:00" content="2018-03-11">
-              2018-03-11
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T21:49:35+08:00">
+                2018-03-11
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/VUE/" itemprop="url" rel="index">
                     <span itemprop="name">VUE</span>
                   </a>
@@ -1200,7 +1835,6 @@ tips: 查看本地node里面安装了那些全局插件npm root -g
 
                 
                 
-
               
             </span>
           
@@ -1208,25 +1842,33 @@ tips: 查看本地node里面安装了那些全局插件npm root -g
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/VUE/creat-vue/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="VUE/creat-vue/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/VUE/creat-vue/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1235,31 +1877,43 @@ tips: 查看本地node里面安装了那些全局插件npm root -g
       
         
           
+            <ol>
+<li>执行<code>vue init webpack shoppingmall</code>构建一个完整的vue脚手架项目；<br>安装axios -S<br>安装vant -S</li>
+</ol>
+<p>在main.js中引入vant插件，可以使用官方文档推荐的装入<code>npm i babel-plugin-import -D</code>按需引入你所需要的插件；</p>
+<p>先写一个公用组件，然后其他的模块组件也都写好，在去router里面去配置路由；</p>
+<p>配置路由首先要把路由所用的组件都引进去，VueRouter也要作为插件引进去，就是vue.use(router);</p>
+<p>组件通用注册：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Icon, Tabbar, TabbarItem, Lazyload &#125; <span class="keyword">from</span> <span class="string">'vant'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Vue.use(Vant);</span></span><br><span class="line">Vue.use(Icon).use(Tabbar).use(TabbarItem).use(Lazyload);</span><br></pre></td></tr></table></figure>
+<p>组件用的次数比较少：直接在在vue里面写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; getSlidesData &#125; <span class="keyword">from</span> <span class="string">"../api"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;Swipe, SwipeItem&#125; <span class="keyword">from</span> <span class="string">'vant'</span>;</span><br><span class="line"></span><br><span class="line">components: &#123;</span><br><span class="line">    <span class="comment">/* 如果轮播图这个插件只用了这一次，我们可以直接在这个文件里面注册，注册方法如下： */</span></span><br><span class="line">    <span class="comment">/* 如果插件用的比较频繁，就直接main里面用vue.use的方式注册 */</span></span><br><span class="line">  [Swipe.name] : Swipe,</span><br><span class="line">  [SwipeItem.name] : SwipeItem</span><br><span class="line">&#125;,</span><br><span class="line">  <span class="keyword">async</span> created() &#123;</span><br><span class="line">    <span class="keyword">let</span> slideData = <span class="keyword">await</span> getSlidesData();</span><br><span class="line">    <span class="keyword">this</span>.slides = slideData.slides;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>自定义的iconfont字体，放到asset文件里面，然后在App.vue里面引入iconfont.css文件，使用的时候直接用字体文件的class名字即可</p>
+<ul>
+<li><strong> Vue.use(Router)</strong>是在router的index.js里面作为插件使用的；</li>
+</ul>
+<ul>
+<li><strong>main.js</strong>里面是把<strong>vue相关的使用的插件用use写进去</strong>，两者不同；</li>
+</ul>
+<p>你在router里面路由参数配置了之后，在页面中想使用就是方法就是$router.pash(),使用属性就是$route.params.XXX;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//两种路由导航方式：</span></span><br><span class="line">&lt;div @click=<span class="string">"$router.push('/order/daifukuan')"</span>&gt;</span><br><span class="line">    &lt;van-col span="6"&gt;</span><br><span class="line">      &lt;p&gt;&lt;van-icon name="daifukuan"&gt;&lt;/van-icon&gt;&lt;/p&gt;</span><br><span class="line">      &lt;p&gt;代付款&lt;/p&gt;</span><br><span class="line">    &lt;/van-col&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div @click="$router.push(&#123;name: 'order',params: &#123;type:'daifahuo'&#125;&#125;)"&gt;</span><br><span class="line">    &lt;van-col span="6"&gt;</span><br><span class="line">      &lt;p&gt;&lt;van-icon name="daifahuo" info="9"&gt;&lt;/van-icon&gt;&lt;/p&gt;</span><br><span class="line">      &lt;p&gt;代发货&lt;/p&gt;</span><br><span class="line">    &lt;/van-col&gt;</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
           
-执行vue init webpack shoppingmall构建一个完整的vue脚手架项目；安装axios -S安装vant -S
-
-在main.js中引入vant插件，可以使用官方文档推荐的装入npm i babel-plugin-import -D按需引入你所需要的插件；
-先写一个公用组件，
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/VUE/creat-vue/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+
+    
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1269,264 +1923,10 @@ tips: 查看本地node里面安装了那些全局插件npm root -g
         <div class="post-eof"></div>
       
     </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
+  </div>
   
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/webpack/webpack/" itemprop="url">
-                  webpack安装
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-03-10T23:09:00+08:00" content="2018-03-10">
-              2018-03-10
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/webpack/" itemprop="url" rel="index">
-                    <span itemprop="name">webpack</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/webpack/webpack/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="webpack/webpack/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-npm init -y
-npm i webpack@3.6.0 --save-dev
-npm i babel babel-core babel-loader --save-dev
-npm babel-preset-es2015 babel-preset-stage-0 --save-dev
-设置.
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/webpack/webpack/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/react/react5/" itemprop="url">
-                  REACT-REDUX && REDUX
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-03-10T01:51:46+08:00" content="2018-03-10">
-              2018-03-10
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/react/react5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="react/react5/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          直接上案例，说明react-redux对redux做了哪些优化处理：
-
-NO1：直接用redux写，比较麻烦：
-1234567891011121314151617181920212223242526272829303132class VoteBase extends React.Component 
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/react/react5/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </article>
 
 
@@ -1535,7 +1935,7 @@ NO1：直接用redux写，比较麻烦：
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1559,125 +1959,132 @@ NO1：直接用redux写，比较麻烦：
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/photo.jpg"
-               alt="eva1963" />
-          <p class="site-author-name" itemprop="name">eva1963</p>
-          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">57</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/photo.jpg"
+                alt="刘欢" />
+            
+              <p class="site-author-name" itemprop="name">刘欢</p>
+              <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
           </div>
 
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
           
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">15</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/eva1963" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
+                      
+                        <i class="fa fa-fw fa-globe"></i>豆瓣</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
             </div>
           
 
           
-            <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">42</span>
-                <span class="site-state-item-name">标签</span>
-              
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com" title="张鑫旭" target="_blank">张鑫旭</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.mapan.win" title="马攀" target="_blank">马攀</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://juejin.im/user/57b28aec165abd00543511c6/posts" title="张玉凤" target="_blank">张玉凤</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
+                  </li>
+                
+              </ul>
             </div>
           
 
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
           
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  豆瓣
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-          
+
         </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              友情链接
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.zhangxinxu.com" title="张鑫旭" target="_blank">张鑫旭</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://blog.mapan.win" title="马攀" target="_blank">马攀</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://juejin.im/user/57b28aec165abd00543511c6/posts" title="张玉凤" target="_blank">张玉凤</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
       </section>
+
+      
 
       
 
@@ -1691,36 +2098,52 @@ NO1：直接用redux写，比较麻烦：
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">eva1963</span>
+  <span class="author" itemprop="copyrightHolder">刘欢</span>
+
+  
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
 
         
+
+
+
+
+
+
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
   </div>
 
   
@@ -1743,83 +2166,137 @@ NO1：直接用redux写，比较麻烦：
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
 
 
 
   
   
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+  
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
   
 
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
 
   
 
-  
-    
+
+
+
+	
+
+
+
+
+
   
 
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"eva1963"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '4QSMsROC8QxawtQM8Px85zd0-gzGzoHsz',
+        appKey: 'zfs08wcb14eEy6M5Bk5rAqSG',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
   </script>
 
-  
-    
-  
-
-
-
-
 
 
   
+
+
+
+
+
   
+
+  
+
+  
+
+  
+  
+
   
 
   
