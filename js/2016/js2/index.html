@@ -1,0 +1,736 @@
+<!doctype html>
+
+
+
+
+<!--html class="theme-next mist"-->
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta http-equiv="Cache-Control" content="max-age=7200" />
+
+<meta name="theme-color" content="">
+
+  <meta name="author" content="eva1963" />
+
+
+
+
+
+  <meta name="description" content="hexo,JavaScript,github，个人博客" />
+  <meta property="og:description" content="hexo,JavaScript,github，个人博客">
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eva">
+<meta property="og:url" content="http://eva1963.win/posts/.html ">
+<meta property="og:site_name" content="Eva">
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js,es6," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.0.2" />
+
+
+
+
+
+
+
+
+
+
+<script id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: false,
+    motion: false,
+  };
+</script>
+
+
+
+
+
+
+
+  <title> ES6的语法学习 | Eva </title>
+</head>
+
+<body itemscope itemtype="https://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="https://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta ">
+  
+  <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title" >Eva</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-message">
+          <a href="/message.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-soccer-ball-o"></i> <br />
+            
+            寄言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="https://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ES6的语法学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-12T22:28:05+08:00" content="2016-08-12">
+              2016-08-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JS/index.html" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/JS/2016/js2/" class="leancloud_visitors" data-flag-title="ES6的语法学习">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-text">
+                  <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><h2>1. set Map</h2><p></p>
+<ul>
+<li>[…new Set(ary)]去重方法</li>
+<li>解决NaN不等于NAN ：Object.is(NaN,NaN);</li>
+<li>add 增加一项，重复的增加不上 </li>
+<li>delete 删除一项，返回值为true/false</li>
+<li>has查看有无当前项</li>
+<li>clear清空,返回值为undefined</li>
+<li>size长度</li>
+<li>set遍历的时候只有value值<br><strong>下面这三个方法Array也有：</strong></li>
+<li><strong>set.keys();</strong><ul>
+<li><strong>set.values();</strong></li>
+<li><strong>set.entries();</strong></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">/* add 增加一项，重复的增加不上 */</span></span><br><span class="line">   <span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">23</span>, <span class="number">1</span>, <span class="number">12</span>, <span class="number">3</span>, <span class="number">54</span>, <span class="number">3</span>]);</span><br><span class="line">   set.add(<span class="number">1</span>);</span><br><span class="line">   <span class="comment">/* delete 删除一项，返回值为true/false */</span></span><br><span class="line">   set.delete(<span class="number">2</span>);</span><br><span class="line">   <span class="comment">//    set遍历的时候只有value值</span></span><br><span class="line">   set.forEach((item,index)=&gt;&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(item,index);</span><br><span class="line">   &#125;)</span><br><span class="line"> set.keys();</span><br><span class="line">set.values();</span><br><span class="line">set.entries();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> set.keys()) &#123;</span><br><span class="line">     <span class="built_in">console</span>.log(key);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p></p><h2>2.  Symbol</h2><p></p>
+<ul>
+<li>基本数据类型 通过函数执行得到 不能使用new执行</li>
+<li>唯一值</li>
+<li>不能进行运算 因为不可以转数字 也不可以进行字符串拼接 这些都会报错</li>
+<li>可以转为布尔值</li>
+<li>当做属性名的时候只能用[“”]的形式</li>
+<li><strong>Object.getOwnPropertySymbols()</strong> 得到所有的属性命名是Symbol类型的key放到一个数组中</li>
+<li><strong>Object.keys()</strong> 普通对象获取一个对象有多少键值对,但是获取不到Symbol类型的keys属性名</li>
+<li>Reflect.ownKeys方法可以返回所有类型的键名</li>
+</ul>
+<p></p><h2>3. async await</h2><p></p>
+<blockquote>
+<p>async await都是ES6的语法糖</p>
+<p>返回的Promise对象会以async function的返回值进行resolve，或者以该函数抛出的异常进行reject。</p>
+<p>   注意， <strong>await 关键字仅仅在 async function中有效</strong>。如果在 async function函数体外使用 await ，你只会得到一个语法错误（SyntaxError）<br>​<br>async/await的用途是简化使用 promises 异步调用的操作，并对一组 Promises执行某些操作。正如Promises类似于结构化回调，async/await类似于组合生成器和 promises。</p>
+</blockquote>
+<ul>
+<li><p>async 将一个函数变成promise对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fn = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line">fn().then(res=&gt;&#123;</span><br><span class="line">   <span class="built_in">console</span>.dir(res);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>await后面跟一个promise对象 如果不是默认将其变成一个resolve的promise 值作为resolve 的参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fn = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">/*此时的promise是一个Promise对象，await就是一个语法糖，它把我们常用的new Promise().then()这种</span><br><span class="line">       接收的形式直接简化为用await接收，如果下面接着要用，就直接变量promise.then()就好*/</span></span><br><span class="line">      <span class="keyword">let</span> promise = <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject) =&gt; &#123;</span><br><span class="line">          setTimeout(() =&gt; &#123;</span><br><span class="line">              resolve(<span class="number">1000</span>);</span><br><span class="line">          &#125;, <span class="number">1000</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;;</span><br><span class="line">  fn();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>await的结果就是resolve或者reject的参数</p>
+</li>
+<li>await异步执行完成之后再去执行后面的代码</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js-es6/" rel="tag">#js,es6</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo/2016/hexo/" rel="next" title="hexo发布">
+                <i class="fa fa-chevron-left"></i> hexo发布
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/GIT/2016/git3/" rel="prev" title="初次使用git需要配置本地的基础信息，配置一次即可">
+                初次使用git需要配置本地的基础信息，配置一次即可 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments">
+        
+        
+        <script src="/lib/valine/av-min.js?v=3.0.4"></script>
+        <script src="/lib/valine/Valine.min.js"></script>
+<script>new Valine({el:'#comments',verify:true,notify:false,appId:'4QSMsROC8QxawtQM8Px85zd0-gzGzoHsz',appKey:'zfs08wcb14eEy6M5Bk5rAqSG',placeholder:'说点什么吧',avatar:'mm',pageSize:'10'||10,lang:'zh-cn'});</script>
+      
+    </div>
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="eva1963" />
+          <p class="site-author-name" itemprop="name">eva1963</p>
+          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/index.html">
+              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.mapan.win" title="马攀" target="_blank">马攀</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://juejin.im/user/57b28aec165abd00543511c6/posts" title="张玉凤" target="_blank">张玉凤</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <!-- <div class="copyright">
+<!--  
+  &copy;  2015 - 2018 
+-->
+  
+
+  <!-- 
+    Eva
+  </a>-->
+  <!--span class="author" itemprop="copyrightHolder">eva1963&nbsp;&nbsp;</span-->
+
+  
+
+  
+
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("GzoHsz4QSMsROC8QxawtQM8Px85zd0-gzGzoHsz", "zfs08wcb14eEy6M5Bk5rAqSG");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+
+
+</body>
+</html>

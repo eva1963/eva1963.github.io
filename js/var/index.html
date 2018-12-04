@@ -1,22 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 
 
 
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
 
 
 
@@ -34,38 +27,63 @@
 
 
 
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
 
 
 
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="js，var，let," />
@@ -73,6 +91,11 @@
 
 
 
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
 
 
 
@@ -86,7 +109,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="VAR && LET">
 <meta property="og:url" content="http://eva1963.win/JS/var/index.html">
-<meta property="og:site_name" content="萌小乖">
+<meta property="og:site_name" content="Eva">
 <meta property="og:description" content="####只对等号左边的进行变量提升123456sum();	//2fn();//报错   只对等号左边的进行变量提升var fn = function()&amp;#123;console.log(1);&amp;#125;	//	只对fn声明，不定义function sum（）&amp;#123;console.log(2)&amp;#125;；//声明和定义都完成了
 在当前作用域下，不管条件是否成立都要进行变量提升,
 
@@ -101,84 +124,79 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
+<script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
     fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: true,
     duoshuo: {
-      userId: '0',
-      author: '萌小乖'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      userId: 0,
+      author: 'eva1963'
     }
   };
 </script>
 
 
 
+
   <link rel="canonical" href="http://eva1963.win/JS/var/"/>
 
-
-
-
-
-  <title>VAR && LET | 萌小乖</title>
-  
-
-
-
-
-
-
-
-
+  <title> VAR && LET | Eva </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?4c1cc7ebea1a70b10dc949505f9221f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
   
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+      <div class="header-inner"><div class="site-meta ">
+  
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">萌小乖</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
-      
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Eva</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
   </div>
+  <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
+</div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
 </div>
 
 <nav class="site-nav">
@@ -199,7 +217,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -209,11 +227,21 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
@@ -224,8 +252,6 @@
 
   
 </nav>
-
-
 
  </div>
     </header>
@@ -240,68 +266,49 @@
     
 
   
-
-  
-  
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://eva1963.win/JS/var/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘欢">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/photo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="萌小乖">
-    </span>
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">VAR && LET</h1>
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                VAR && LET
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-01T19:21:52+08:00">
-                2017-04-01
-              </time>
-            
-
-            
-
-            
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-01T19:21:52+08:00" content="2017-04-01">
+              2017-04-01
+            </time>
           </span>
 
           
             <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+              &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
               
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/JS/" itemprop="url" rel="index">
                     <span itemprop="name">JS</span>
                   </a>
@@ -309,6 +316,7 @@
 
                 
                 
+
               
             </span>
           
@@ -316,44 +324,36 @@
           
             
               <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
+                &nbsp; | &nbsp;
                 <a href="/JS/var/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/JS/var/" itemprop="commentCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="JS/var/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
           
 
           
+
+          
           
 
           
-
-          
-
-          
-
         </div>
       </header>
     
 
-    
-    
-    
+
     <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <p>####只对等号左边的进行变量提升<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sum();	//2</span><br><span class="line">fn();//报错   只对等号左边的进行变量提升</span><br><span class="line">var fn = function()&#123;</span><br><span class="line">console.log(1);</span><br><span class="line">&#125;	//	只对fn声明，不定义</span><br><span class="line">function sum（）&#123;console.log(2)&#125;；//声明和定义都完成了</span><br></pre></td></tr></table></figure></p>
+        <p>####只对等号左边的进行变量提升<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sum();	<span class="comment">//2</span></span><br><span class="line">fn();<span class="comment">//报错   只对等号左边的进行变量提升</span></span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;	<span class="comment">//	只对fn声明，不定义</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>（）</span>&#123;<span class="built_in">console</span>.log(<span class="number">2</span>)&#125;；<span class="comment">//声明和定义都完成了</span></span><br></pre></td></tr></table></figure></p>
 <p>在当前作用域下，不管条件是否成立都要进行变量提升,</p>
 <ul>
 <li>带var的还是只声明</li>
-<li>带function的在老版本浏览器渲染机制下，声明和定义都处理，为了迎合ES6中的块级作用域，新版本浏览器对于函数（在条件判断中的函数，不管条件是否成立，都只是先声明未定义，类似于var）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(a);	//undefined   条件判断下a已经声明了</span><br><span class="line">if (1 === 2) &#123;</span><br><span class="line">    var a = 12;</span><br><span class="line">&#125;</span><br><span class="line">console.log(a);	//undefined   条件不成立，不赋值</span><br></pre></td></tr></table></figure>
+<li>带function的在老版本浏览器渲染机制下，声明和定义都处理，为了迎合ES6中的块级作用域，新版本浏览器对于函数（在条件判断中的函数，不管条件是否成立，都只是先声明未定义，类似于var）<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">//undefined   条件判断下a已经声明了</span></span><br><span class="line"><span class="keyword">if</span> (<span class="number">1</span> === <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">12</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">//undefined   条件不成立，不赋值</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(b); <span class="comment">//报错</span></span><br><span class="line">    b = <span class="number">13</span>;<span class="comment">//相当于给window.b设置值</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'b'</span> <span class="keyword">in</span> <span class="built_in">window</span>);<span class="comment">//true</span></span><br><span class="line">    <span class="built_in">console</span>.log(b);<span class="comment">//13</span></span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">//13</span></span><br></pre></td></tr></table></figure>
@@ -366,7 +366,7 @@
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(fn);   <span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">if</span>(<span class="number">1</span>==<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(fn);    <span class="comment">//函数本身</span></span><br><span class="line"><span class="comment">// 当条件成立，进入到判断体当中，在ES6中他是一个块级作用域，之后的第一件事是类似于变量提升一样，先把FN声明和定义了，也就是在代码执行之前，FN就已经了</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fn);  <span class="comment">//函数本身</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 360浏览器面试题=====考点：条件判断下的变量提升</span><br><span class="line">f = function () &#123;return true;&#125;;// f和g相当于给window添加了属性</span><br><span class="line">g = function () &#123;return false;&#125;;// f和g相当于给window添加了属性</span><br><span class="line">~function () &#123;</span><br><span class="line">    // 新版本浏览器中 ===》形成一个私有作用域，进行变量提升，新版本浏览器中只对函数进行声明不定义，所以只是声明了一个g，那么此时g是undefined；</span><br><span class="line">    // 老版本浏览器中 ===》形成一个私有作用域，进行变量提升，老版本浏览器只对函数进行声明和定义，g此时既声明也定义了，那么此时g是代码字符串；</span><br><span class="line">    if (g() &amp;&amp; [] == ![]) &#123;</span><br><span class="line">        f = function () &#123;return false;&#125;;</span><br><span class="line">        function g() &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;();</span><br><span class="line">console.log(f());</span><br><span class="line">console.log(g());</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 360浏览器面试题=====考点：条件判断下的变量提升</span></span><br><span class="line">f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;;<span class="comment">// f和g相当于给window添加了属性</span></span><br><span class="line">g = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;;<span class="comment">// f和g相当于给window添加了属性</span></span><br><span class="line">~<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 新版本浏览器中 ===》形成一个私有作用域，进行变量提升，新版本浏览器中只对函数进行声明不定义，所以只是声明了一个g，那么此时g是undefined；</span></span><br><span class="line">    <span class="comment">// 老版本浏览器中 ===》形成一个私有作用域，进行变量提升，老版本浏览器只对函数进行声明和定义，g此时既声明也定义了，那么此时g是代码字符串；</span></span><br><span class="line">    <span class="keyword">if</span> (g() &amp;&amp; [] == ![]) &#123;</span><br><span class="line">        f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">g</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;();</span><br><span class="line"><span class="built_in">console</span>.log(f());</span><br><span class="line"><span class="built_in">console</span>.log(g());</span><br></pre></td></tr></table></figure>
 <h4 id="重命名问题的处理"><a href="#重命名问题的处理" class="headerlink" title="重命名问题的处理"></a>重命名问题的处理</h4><ol>
 <li>带var和function关键字声明相同的名字，这种也算是重名了（其实是一个fn，只是存储的类型不一样）</li>
 <li>关于重名的处理：如果名字重复了不会重新的声明但是会重新的定义，就是赋值（不管是变量提升还是代码执行解读那皆是如此）<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 变量提升：</span><br><span class="line"> *   fn = ...（1）</span><br><span class="line"> *      = ...（2）</span><br><span class="line"> *      = ...（3）</span><br><span class="line"> *      = ...（4）</span><br><span class="line"> */</span></span><br><span class="line">fn();<span class="comment">//=&gt;4</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="number">1</span>);&#125;</span><br><span class="line">fn();<span class="comment">//=&gt;4</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="number">2</span>);&#125;</span><br><span class="line">fn();<span class="comment">//=&gt;4</span></span><br><span class="line"><span class="keyword">var</span> fn = <span class="number">100</span>;<span class="comment">//=&gt;带VAR的在提升阶段只把声明处理了,赋值操作没有处理,所以在代码执行的时候需要完成赋值 FN=100</span></span><br><span class="line">fn();<span class="comment">//=&gt;100() Uncaught TypeError: fn is not a function</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="number">3</span>);&#125;</span><br><span class="line">fn();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="number">4</span>);&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
@@ -377,7 +377,7 @@
 <p><strong>在ES6中，基于let以及const等方式创建变量或者函数，不存在变量提升机制；而且切断了全局变量和window属性的映射机制</strong></p>
 <p><strong>在相同的作用域当中，基于let不能声明相同的名字的变量(不管在当前作用域下声明了变量，)</strong></p>
 <pre><code>- 解释：虽然没有变量提升机制但是在当前作用于代码自上而下执行之前，浏览器会做一个重复性检测（语法检测）：自上而下查找当前作用域下所有变量一旦发现有重复的直接抛出异常，代码也不再执行了，虽然没有把变量提前声明定义但是浏览器已经记住了当前作用域下有哪些变量
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var b =12;</span><br><span class="line">let b = 16;   </span><br><span class="line">console.log(b);		//报错</span><br><span class="line">//--------------------</span><br><span class="line">a = 12;</span><br><span class="line">console.log(a);		//报错</span><br><span class="line">let a =10;</span><br><span class="line">console.log(a);			//上面报错，这个不执行了</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b =<span class="number">12</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">16</span>;   </span><br><span class="line"><span class="built_in">console</span>.log(b);		<span class="comment">//报错</span></span><br><span class="line"><span class="comment">//--------------------</span></span><br><span class="line">a = <span class="number">12</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);		<span class="comment">//报错</span></span><br><span class="line"><span class="keyword">let</span> a =<span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);			<span class="comment">//上面报错，这个不执行了</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <ul>
 <li>基于let和基于var变量在基于私有变量和作用域链机制上是一样的</li>
@@ -387,27 +387,27 @@
 
       
     </div>
-    
-    
-    
 
-    
+    <div>
+      
+        
+      
+    </div>
 
-    
+    <div>
+      
+        
 
-    
+      
+    </div>
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/js，var，let/" rel="tag"># js，var，let</a>
+            <a href="/tags/js，var，let/" rel="tag">#js，var，let</a>
           
         </div>
-      
-
-      
-      
       
 
       
@@ -420,12 +420,10 @@
             
           </div>
 
-          <span class="post-nav-divider"></span>
-
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/JS/dom3/" rel="prev" title="DOM的回流和重绘">
-                DOM的回流和重绘 <i class="fa fa-chevron-right"></i>
+              <a href="/JS/settimeout/" rel="prev" title="定时器和异步编程">
+                定时器和异步编程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -435,15 +433,30 @@
       
       
     </footer>
-  </div>
-  
-  
-  
   </article>
 
 
 
     <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="JS/var/"
+     data-title="VAR && LET"
+     data-content=""
+     data-url="http://eva1963.win/JS/var/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
   </div>
@@ -454,12 +467,13 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="JS/var/"
+           data-title="VAR && LET" data-url="http://eva1963.win/JS/var/">
+      </div>
+    
+  </div>
 
 
         </div>
@@ -475,158 +489,146 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          <li class="sidebar-nav-overview" data-target="site-overview">
             站点概览
           </li>
         </ul>
       
 
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/photo.jpg"
-                alt="刘欢" />
-            
-              <p class="site-author-name" itemprop="name">刘欢</p>
-              <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/photo.jpg"
+               alt="eva1963" />
+          <p class="site-author-name" itemprop="name">eva1963</p>
+          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives">
-              
-                  <span class="site-state-item-count">61</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">46</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
-
-          </nav>
-
           
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/eva1963" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
-                      
-                        <i class="fa fa-fw fa-globe"></i>微博</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
-                      
-                        <i class="fa fa-fw fa-globe"></i>豆瓣</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
-                      
-                        <i class="fa fa-fw fa-globe"></i>知乎</a>
-                  </span>
-                
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
             </div>
           
 
           
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                友情链接
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.zhangxinxu.com" title="张鑫旭" target="_blank">张鑫旭</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://blog.mapan.win" title="马攀" target="_blank">马攀</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://juejin.im/user/57b28aec165abd00543511c6/posts" title="张玉凤" target="_blank">张玉凤</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
-                  </li>
-                
-              </ul>
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              
             </div>
           
 
-          
+        </nav>
 
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
         </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.mapan.win" title="马攀" target="_blank">马攀</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://juejin.im/user/57b28aec165abd00543511c6/posts" title="张玉凤" target="_blank">张玉凤</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
       </section>
 
       
-      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
-
             
               
             
-
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#条件判断下的变量提升"><span class="nav-number">1.</span> <span class="nav-text">条件判断下的变量提升</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重命名问题的处理"><span class="nav-number">2.</span> <span class="nav-text">重命名问题的处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS暂时性死区"><span class="nav-number">3.</span> <span class="nav-text">JS暂时性死区</span></a></li></ol></div>
             
-
           </div>
         </section>
-      <!--/noindex-->
-      
-
       
 
     </div>
@@ -639,52 +641,36 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">刘欢</span>
-
+        <div class="copyright" >
   
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">eva1963</span>
 </div>
 
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
-
-
-
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
 
         
-
-
-
-
-
-
 
         
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
   
@@ -707,141 +693,87 @@
 
 
 
-
-
-
-
-
-
-
-
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
 
 
 
   
   
 
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
 
 
 
   
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
 
 
 
   
 
 
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
 
 
 
   
 
-
-
-
-
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
+    
+  
+
   <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: '4QSMsROC8QxawtQM8Px85zd0-gzGzoHsz',
-        appKey: 'zfs08wcb14eEy6M5Bk5rAqSG',
-        placeholder: 'Just go go',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
+    var duoshuoQuery = {short_name:"eva1963"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
   </script>
 
-
-
+  
+    
   
 
 
 
 
 
-  
-
-  
-
-  
 
   
   
-
   
 
   

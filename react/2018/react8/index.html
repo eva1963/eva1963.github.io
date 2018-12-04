@@ -1,0 +1,826 @@
+<!doctype html>
+
+
+
+
+<!--html class="theme-next mist"-->
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta http-equiv="Cache-Control" content="max-age=7200" />
+
+<meta name="theme-color" content="">
+
+  <meta name="author" content="eva1963" />
+
+
+
+
+
+  <meta name="description" content="hexo,JavaScript,github，个人博客" />
+  <meta property="og:description" content="hexo,JavaScript,github，个人博客">
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eva">
+<meta property="og:url" content="http://eva1963.win/posts/.html ">
+<meta property="og:site_name" content="Eva">
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="react,react-router," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.0.2" />
+
+
+
+
+
+
+
+
+
+
+<script id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: false,
+    motion: false,
+  };
+</script>
+
+
+
+
+
+
+
+  <title> REACT-ROUTER | Eva </title>
+</head>
+
+<body itemscope itemtype="https://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="https://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta ">
+  
+  <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title" >Eva</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-message">
+          <a href="/message.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-soccer-ball-o"></i> <br />
+            
+            寄言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="https://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                REACT-ROUTER
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-04T01:02:19+08:00" content="2018-03-04">
+              2018-03-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/index.html" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/react/2018/react8/" class="leancloud_visitors" data-flag-title="REACT-ROUTER">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-text">
+                  <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="REACT-ROUTER"><a href="#REACT-ROUTER" class="headerlink" title="REACT-ROUTER"></a>REACT-ROUTER</h3><h4 id="SPA：单页面应用"><a href="#SPA：单页面应用" class="headerlink" title="SPA：单页面应用"></a>SPA：单页面应用</h4><blockquote>
+<p>只有一个页面，所有需要展示的内容都要在这一个页面中实现切换，webpack只需要配置一个入口即可（移动页面应用居多，或者PC端管理系统类也是单页面应用为主）</p>
+</blockquote>
+<h3>如何使用单页面应用？（SPA发展史）</h3>
+
+<ol>
+<li>如果项目是基于服务器渲染的，后台语言当中可以基于‘include’等技术，把很多部分拼凑在一起，实现组件化，插件化开发，最后也可以实现单页面应用</li>
+<li>基于IFRAME实现单页面应用</li>
+<li>模块化开发</li>
+</ol>
+<ul>
+<li>AMD：require.js</li>
+<li>CMD:SEA.JS</li>
+</ul>
+<p>基于这些思想吧每一部分单独写成一个模块，最后基于grunt/gulp/fis等自动化工具，最后把搜偶有的模块都合并到首页面中（包括HTML,CSS,JS），通过控制那些页面显示隐藏来实现单页面应用开发</p>
+<p>弊端：由于首页中的内容包含了所有模块的信息，所以首次加载非常慢；</p>
+<ol>
+<li>基于VUE/REACT实现模块化组件化开发，基于他们提供的路由实现SPA单页面开发，基于webpack打包等</li>
+</ol>
+<h4 id="MPA：多页面应用"><a href="#MPA：多页面应用" class="headerlink" title="MPA：多页面应用"></a>MPA：多页面应用</h4><blockquote>
+<p>一个项目由很多页面组成，整个项目是页面之间跳转完成的；PC端多页面应用居多</p>
+<p>在基于框架开发的时候需要在webpack中配置多入口，每一个入口对应一个页面；</p>
+</blockquote>
+<h4 id="安装react-router"><a href="#安装react-router" class="headerlink" title="安装react-router"></a>安装react-router</h4><blockquote>
+<p>3.00+及以前版本，成为react-router，4.00+成为react-router-dom</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i react-router-dom -S</span><br></pre></td></tr></table></figure>
+<h4 id="BrowserRouter-VS-HashRouter"><a href="#BrowserRouter-VS-HashRouter" class="headerlink" title="BrowserRouter VS HashRouter"></a>BrowserRouter VS HashRouter</h4><blockquote>
+<p>两种常用的路由实现思想，BrowserRouter是浏览器路由，HashRouter是哈希路由；</p>
+</blockquote>
+<p>【BrowserRouter】</p>
+<blockquote>
+<p>它是基于H5中的history API来保持UI和URL同步的，真实项目中应用不多，一般只有当前项目是基于服务器端渲染的，我们才会使用浏览器路由；服务器端得到数据然后进行拼接然后客户端只需要拿到渲染即可</p>
+<p>一般这么做，大部分都是为了做SEO搜索引擎优化；</p>
+</blockquote>
+<p>【HashRouter】</p>
+<blockquote>
+<p>真实项目中(前后端分离的项目)，客户端渲染，我们经常使用的是HASH路由来完成的；它依据相同的页面地址，不同的哈希值，来规划当前的页面哪一个组件呈现渲染，它基于原生JS构造了一套类似与history API的机制，每一次路由切换都是基于history stack完成的</p>
+</blockquote>
+<ol>
+<li>当前项目一旦使用HashRouter，则在页面地址后面加上‘#/‘，也就是hash默认值是一个’/‘，我们一般让其显示首页内容</li>
+<li>HashRouter中只能出现一个子元素；</li>
+<li>HashRouter机制中我们需要根据hash不同展示不同的组件内容，此时我们需要使用router；</li>
+</ol>
+<h4 id="ROUTE-两个参数PATH-amp-amp-COMPONENT"><a href="#ROUTE-两个参数PATH-amp-amp-COMPONENT" class="headerlink" title="ROUTE,两个参数PATH&amp;&amp;COMPONENT"></a>ROUTE,两个参数PATH&amp;&amp;COMPONENT</h4><blockquote>
+<p>校验规则：默认情况下会和每个route都做校验，哪怕之前已经有了校验成功的了，他也还是会和每一个对一遍,这个问题我们用Switch来解决即可</p>
+</blockquote>
+<p><strong>path:</strong> 设置匹配地址，但是不是默认不是严格匹配</p>
+<p><strong>component:</strong>一旦hash值和当前route的path相同了，则渲染component指定的组件</p>
+<p><strong>exact</strong>：让path的匹配相对严谨严格，只有url的hash值跟path的相等才可以匹配到；</p>
+<p><strong>render</strong>：里面参数是一个回调函数，用作处理权限校验较多；当页面的hash地址跟path匹配，会把render执行；渲染组件之前验证是否存在权限，不存在做一些特殊处理；</p>
+<p><strong>Switch</strong>：只要有一种情况校验成功，就不再向后校验了</p>
+<h4 id="Redirect"><a href="#Redirect" class="headerlink" title="Redirect"></a>Redirect</h4><p>参数：</p>
+<p><strong>TO</strong>【字符串】：重定向到一个新的地址；</p>
+<p><strong>TO【Object】</strong>：重定向到一个新地址，制定了更多的信息而已,里面包含的：</p>
+<ul>
+<li><strong>pathname</strong>:定向的地址；</li>
+<li>search：给定的地址问号传参；（真实项目中，我们有些时候会根据是否存在问号参数值来统计是正常进入首页还是非正常跳转过来的，也可能根据问号值做不一样的事情）</li>
+<li>state：给定向后的组件传递一些信息</li>
+</ul>
+<p><strong>PUSH</strong>：如果设置了这个属性，当前跳转的地址会加入到history stack中一条记录</p>
+<p><strong>FROM</strong>：设置当前页面来源的页面地址，举个栗子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果当前请求的地址是/custom，我们就把它重定向到/custom/list</span></span><br><span class="line">&lt;Redirect <span class="keyword">from</span>=<span class="string">"/custom"</span> to=<span class="string">"/custom/list"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h4><p><strong>TO</strong>用法和上面的差不多；</p>
+<p><strong>replace</strong> 是替换HISTORY stack中当前的地址，还要追加一个新的地址</p>
+<p>原理：基于LINK组件渲染，渲染后的组件就是一个A标签</p>
+<h4 id="NavLink"><a href="#NavLink" class="headerlink" title="NavLink"></a>NavLink</h4><blockquote>
+<p>跟link类似，都是用来实现路跳转的，不同在于NavLink组件在当前页面hash地址和组件对应地址相吻合的时候，会默认给组件加一个active样式</p>
+</blockquote>
+<p>其他的跟LINK用法都一样，加了一个<strong>activeClassName,activeStyle</strong></p>
+<h4 id="withRouter"><a href="#withRouter" class="headerlink" title="withRouter"></a>withRouter</h4><blockquote>
+<p>把一个非路由管控的组件，模拟成为路由管控的组件</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">'/'</span> component=&#123;Nav&#125; &#125;</span><br><span class="line"><span class="comment">//变为受路由管控的</span></span><br><span class="line">widthRouter(connect()(Nav));</span><br></pre></td></tr></table></figure>
+<h4 id="受路由管控组件的特点："><a href="#受路由管控组件的特点：" class="headerlink" title="受路由管控组件的特点："></a>受路由管控组件的特点：</h4><ol>
+<li><p>只有当前页面的哈希地址和路由指定的地址匹配，才会把对应的组件渲染（withRouter是没有地址匹配，都被模拟成为受路由管控的）</p>
+</li>
+<li><p><strong>路由切换的原理：</strong>凡是匹配的路由都会把对应的组件内容重新添加到页面中，相反，不匹配的都会在页面中移除掉，下一次重新匹配上，组件需要重新渲染;每一次路由切换的时候的哈西路由地址改变，都会重新从一级路由开始重新校验一遍</p>
+</li>
+<li><p>所有受路由管控的组件，在组建的属性Props上都默认添加了三个属性：</p><h3>（重要！！！）</h3><p></p>
+<ul>
+<li><p>history</p>
+<blockquote>
+<p>相当于一个路由池子，里面存放的是你所有push进来的路由</p>
+</blockquote>
+<ul>
+<li>push：向路由池子中添加一条新的信息，达到切换指定路由地址的目的；this.props.history.push(‘/plan’)，JS中实现路由切换</li>
+<li>go：跳转到指定的地址</li>
+<li>goBack：相当于go(-1)</li>
+<li>goForward：相当于go(1)</li>
+</ul>
+</li>
+<li><p>location</p>
+<blockquote>
+<p>获取当前哈西路由渲染组建的一些信息</p>
+</blockquote>
+<ul>
+<li>pathname：当前哈西路由的地址</li>
+<li>search：当前页面的问号传参</li>
+<li>state：基于redirect。link/NavLink中的to，传递的是一个对象，对象中编写的state，就可以在location.state中获取到</li>
+</ul>
+</li>
+<li><p>match</p>
+<blockquote>
+<p>获取的是当前路由匹配的结果</p>
+</blockquote>
+<ul>
+<li>params：如果当前匹配的是地址路径参数，则这里可以获取传递参数的值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="整体路由如何运用，项目实际应用如下："><a href="#整体路由如何运用，项目实际应用如下：" class="headerlink" title="整体路由如何运用，项目实际应用如下："></a>整体路由如何运用，项目实际应用如下：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">render(</span><br><span class="line">    &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">        &lt;HashRouter&gt;</span><br><span class="line">            &#123;/* 基于hash路由来展示不同页面 */&#125;</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Nav/&gt;</span><br><span class="line">                &lt;Switch&gt;</span><br><span class="line">                    &#123;/* 头部公共部分 */&#125;</span><br><span class="line">                    &lt;Route path="/" exact component=&#123;Home&#125;/&gt;</span><br><span class="line">                    &lt;Route path="/custom" component=&#123;Custom&#125;/&gt;</span><br><span class="line">                    &lt;Route path="/plan" component=&#123;Plan&#125;/&gt;</span><br><span class="line">                    &lt;Redirect to="/?lx=unsafe"/&gt;</span><br><span class="line">                &lt;/Switch&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/HashRouter&gt;</span><br><span class="line">    &lt;/Provider&gt;,</span><br><span class="line">    document.getElementById('root')</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>在SPA路由管控的项目中，从列表跳转到详情，总需要传递一些信息给详情，依此展示不同的信息，传递给详情页信息的方式我们有很多种：</p>
+<p>【不推荐】</p>
+<p>redux</p>
+<p>本地存储</p>
+<p>【推荐】</p>
+<ul>
+<li><p>问号传参</p>
+</li>
+<li><p>state传值(弊端：一旦页面刷新，上一次传递过来的state值就丢了啊)</p>
+</li>
+<li><p>URL地址传参：把参数当做地址的一部分</p>
+<blockquote>
+<p>path = ‘/custorm/detail/:id’</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="redux中间件"><a href="#redux中间件" class="headerlink" title="redux中间件"></a>redux中间件</h4><blockquote>
+<p>在真正处理之前，做一些事情</p>
+</blockquote>
+<p><strong>redux-logger</strong>：能够在控制台清晰地展示出，redux操作的流程和信息（原有状态，派发信息，修改后的状态）</p>
+<p><strong>redux-thunk</strong>：处理异步的dispatch派发</p>
+<p><strong>redux-promise</strong>：在dispatch派发的时候，可以使用Promise</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react-react-router/" rel="tag">#react,react-router</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/react/2018/react3/" rel="next" title="react之复合组件">
+                <i class="fa fa-chevron-left"></i> react之复合组件
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/NODE/2018/express/" rel="prev" title="express">
+                express <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments">
+        
+        
+        <script src="/lib/valine/av-min.js?v=3.0.4"></script>
+        <script src="/lib/valine/Valine.min.js"></script>
+<script>new Valine({el:'#comments',verify:true,notify:false,appId:'4QSMsROC8QxawtQM8Px85zd0-gzGzoHsz',appKey:'zfs08wcb14eEy6M5Bk5rAqSG',placeholder:'说点什么吧',avatar:'mm',pageSize:'10'||10,lang:'zh-cn'});</script>
+      
+    </div>
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="eva1963" />
+          <p class="site-author-name" itemprop="name">eva1963</p>
+          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/index.html">
+              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.mapan.win" title="马攀" target="_blank">马攀</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://juejin.im/user/57b28aec165abd00543511c6/posts" title="张玉凤" target="_blank">张玉凤</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <!-- <div class="copyright">
+<!--  
+  &copy;  2015 - 2018 
+-->
+  
+
+  <!-- 
+    Eva
+  </a>-->
+  <!--span class="author" itemprop="copyrightHolder">eva1963&nbsp;&nbsp;</span-->
+
+  
+
+  
+
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("GzoHsz4QSMsROC8QxawtQM8Px85zd0-gzGzoHsz", "zfs08wcb14eEy6M5Bk5rAqSG");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,789 @@
+<!doctype html>
+
+
+
+
+<!--html class="theme-next mist"-->
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta http-equiv="Cache-Control" content="max-age=7200" />
+
+<meta name="theme-color" content="">
+
+  <meta name="author" content="eva1963" />
+
+
+
+
+
+  <meta name="description" content="hexo,JavaScript,github，个人博客" />
+  <meta property="og:description" content="hexo,JavaScript,github，个人博客">
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eva">
+<meta property="og:url" content="http://eva1963.win/posts/.html ">
+<meta property="og:site_name" content="Eva">
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.0.2" />
+
+
+
+
+
+
+
+
+
+
+<script id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: false,
+    motion: false,
+  };
+</script>
+
+
+
+
+
+
+
+  <title> 对象数据类型的常规操作 | Eva </title>
+</head>
+
+<body itemscope itemtype="https://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="https://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta ">
+  
+  <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title" >Eva</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">程序媛上辈子都是折翼的天使</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-message">
+          <a href="/message.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-soccer-ball-o"></i> <br />
+            
+            寄言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="https://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                对象数据类型的常规操作
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-25T18:03:06+08:00" content="2016-06-25">
+              2016-06-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JS/index.html" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/JS/2016/Number/" class="leancloud_visitors" data-flag-title="对象数据类型的常规操作">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-text">
+                  <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="对象数据类型的常规操作"><a href="#对象数据类型的常规操作" class="headerlink" title="对象数据类型的常规操作"></a>对象数据类型的常规操作</h2><h3 id="Boolean类型"><a href="#Boolean类型" class="headerlink" title="Boolean类型"></a>Boolean类型</h3><blockquote>
+<p>只有两个值：true/false</p>
+</blockquote>
+<p>如何把其他类型的数据转化为Boolean类型？</p>
+<ul>
+<li>Boolean</li>
+<li>!</li>
+<li>!!</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">数字当中只有<span class="number">0</span>和<span class="literal">NaN</span>是<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">!<span class="string">'珠峰培训'</span> ==&gt;  !是先把其他数据转化为<span class="built_in">Boolean</span>，然后取反</span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">''</span>) ==&gt; <span class="literal">false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="number">0</span>) ==&gt; <span class="literal">false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">NaN</span>) ==&gt; <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h2 id="规律：-在Boolean类型中，只有以下五种的Boolean值为false：0-NaN-空字符串-null-undefined，其余都为true"><a href="#规律：-在Boolean类型中，只有以下五种的Boolean值为false：0-NaN-空字符串-null-undefined，其余都为true" class="headerlink" title="规律： 在Boolean类型中，只有以下五种的Boolean值为false：0/NaN/空字符串/null/undefined，其余都为true "></a><strong>规律： 在Boolean类型中，只有以下五种的Boolean值为false：<code>0/NaN/空字符串/null/undefined，其余都为true</code></strong> </h2><h3 id="null-amp-amp-undefined-都代表空"><a href="#null-amp-amp-undefined-都代表空" class="headerlink" title="null &amp;&amp; undefined 都代表空"></a>null &amp;&amp; undefined 都代表空</h3><blockquote>
+<ul>
+<li>null  表示空对象指针</li>
+<li>undefined   表示未定义</li>
+</ul>
+</blockquote>
+<p><strong>null一般都是意料之中的没有，通俗理解一般都是认为手动的先赋值为null，后面的程序当中会再次被赋值；</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="literal">null</span>;  <span class="comment">// null是手动赋值,预示着后面我会把num的值进行修改</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>undefined一般都不是认为手动控制的，大部分都是浏览器自主为空，后面可以赋值也可以不赋值；</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num;  <span class="comment">// 此时变量的值，浏览器会分配的就是undefined</span></span><br><span class="line">后面可以赋值也可以不赋值</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="object数据对象类"><a href="#object数据对象类" class="headerlink" title="object数据对象类"></a>object数据对象类</h3><blockquote>
+<p>普通对象<br>由大括号包裹起来<br>由0到多组键值对组成</p>
+</blockquote>
+<p><code>属性是用来描述当前对象特征的；属性名(键key)是当前具备的特征，属性值(值value)是对这个特征的描述,一组属性名+属性值成为键值对</code><br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line"><span class="string">name:</span> <span class="string">'liuhuan'</span>,</span><br><span class="line"><span class="string">age:</span> <span class="number">21</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="对象的操作，对键值对的增删改查；"><a href="#对象的操作，对键值对的增删改查；" class="headerlink" title="对象的操作，对键值对的增删改查；"></a>对象的操作，对键值对的增删改查；</h4><h5>【获取】</h5>
+
+<p>语法：对象.属性/对象[属性]<br>obj.name<br>obj[‘name’] 一般来说，对象的属性名都是字符串格式的，属性值是不固定的，任何格式都可以</p>
+<h5>【增/改】</h5>
+
+<p>js对象中属性名是不允许重复的，是<strong>唯一</strong>的；<br>boj.name = ‘eva’;原有对象中存在name属性，此处修改属性值；<br>boj.sex = ‘女’;原有对象中不存在sex属性，相当给当前对象新增属性；</p>
+<h5>【删除】</h5>
+
+<p>彻底删除：对象中不存在了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> obj[<span class="string">'age'</span>] <span class="comment">//对象中不存在此属性</span></span><br></pre></td></tr></table></figure>
+<p>假删除：并没有移除此属性，只是让当前属性的值为空</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.sex = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<p><code>也可以赋值为undefined，但是因为浏览器默认找不到一个属性的时候报错是undefined，如果我们赋值也是undefined的话导致我们无法区分是否有这个属性；</code></p>
+<p>如果当前对象在获取属性值得时候，如果有这个属性名可以正常获取到值，哪怕是null，但是如果没有这个属性名，则获取的结果是undefined；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//思考题：</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">name: <span class="string">'liuhuan'</span>,</span><br><span class="line">age: <span class="number">21</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj[<span class="string">'name'</span>]  <span class="comment">// liuhuan</span></span><br><span class="line">obj[name]  <span class="comment">//undefined   此处的name 是一个变量</span></span><br><span class="line"><span class="comment">//'name' 是一个字符串值，代表的是本身；</span></span><br><span class="line"><span class="comment">//name 是一个变量，代表的是是本身存储的值；</span></span><br></pre></td></tr></table></figure>
+<p>关于对象的一点细节知识<br>一个对象中的属性名不仅仅是字符串格式的还有可能是数字格式的；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'eva'</span>,</span><br><span class="line">	<span class="number">0</span>: <span class="number">100</span></span><br><span class="line">&#125;</span><br><span class="line">obj[<span class="number">0</span>] <span class="comment">// 100</span></span><br><span class="line">obj[<span class="string">'0'</span>] <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
+<p>当我们存储的属性名不是字符串也不是数字的时候，浏览器会把这个值转toString()换为字符串然后在进行存储</p>
+<p>obj[{}]=300 =&gt;  先把（{}）.toString()后的结果作为对象的属性名存储起来 obj[‘[object Object]’] = 300;<br>obj[{}]获取的时候也是先把对象转化为字符串然后在获取；</p>
+<hr>
+<p>数组对象（对象由键值对组成的）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ary = [<span class="number">12</span>,<span class="number">23</span>,<span class="number">23</span>];</span><br></pre></td></tr></table></figure>
+<p>通过观察结果，数组对象的属性名是数字，我们称之为索引；</p>
+<hr>
+<h3 id="浅析JS的运行机制"><a href="#浅析JS的运行机制" class="headerlink" title="浅析JS的运行机制"></a>浅析JS的运行机制</h3><ol>
+<li>当浏览器的内核/引擎渲染和解析JS的时候会提供一个供JS运行的环境，我们把这个环境称之为全局作用域(global scope);</li>
+<li>代码自上而下执行，在此之前还有一个变量提升阶段；<ol>
+<li>基本数据类型的值会存储在当前作用域下<h5 id="基本数据类型是按照值在操作的，把原有的值复制一份放到新的空间，和原来的值没关系了，你是你的，我是我的；"><a href="#基本数据类型是按照值在操作的，把原有的值复制一份放到新的空间，和原来的值没关系了，你是你的，我是我的；" class="headerlink" title="基本数据类型是按照值在操作的，把原有的值复制一份放到新的空间，和原来的值没关系了，你是你的，我是我的；"></a><code>基本数据类型</code>是按照值在操作的，把原有的值复制一份放到新的空间，和原来的值没关系了，你是你的，我是我的；</h5></li>
+</ol>
+</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> <span class="selector-tag">a</span> = <span class="number">12</span>有三部操作：</span><br><span class="line">  <span class="number">1</span>.首先开辟一个存储空间将<span class="number">12</span>放进去；</span><br><span class="line">  <span class="number">2</span>.在当前作用域中声明一个变量a；</span><br><span class="line">  <span class="number">3</span>.让声明的变量和存储的<span class="number">12</span>进行关联； （把存储的<span class="number">12</span>赋值给a，这一步复制操作叫做定义）</span><br></pre></td></tr></table></figure>
+<ol>
+<li>引用数据额类型的值不能直接存储到当前的作用域中（因为可能存储的内容过于复杂），我们需要先开辟一个新的空间（理解为仓库），把内容存储到这个空间中；</li>
+</ol>
+<h5 id="引用数据类型不是按值在操作的，他操作的是空间引用地址，把原来空间的地址赋值给新的变量，但是原来的空间没有被克隆，这样就会出现多个变量关联的是相同的空间，相互之间就会有影响了；"><a href="#引用数据类型不是按值在操作的，他操作的是空间引用地址，把原来空间的地址赋值给新的变量，但是原来的空间没有被克隆，这样就会出现多个变量关联的是相同的空间，相互之间就会有影响了；" class="headerlink" title="引用数据类型不是按值在操作的，他操作的是空间引用地址，把原来空间的地址赋值给新的变量，但是原来的空间没有被克隆，这样就会出现多个变量关联的是相同的空间，相互之间就会有影响了；"></a><code>引用数据类型</code>不是按值在操作的，他操作的是空间引用地址，把原来空间的地址赋值给新的变量，但是原来的空间没有被克隆，这样就会出现多个变量关联的是相同的空间，相互之间就会有影响了；</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> obj1 = &#123;n:<span class="number">100</span>&#125;</span><br><span class="line"><span class="number">1</span>.首先安开辟一个新的内存空间，把对象中的键值对一次存储起来（为了保证后来能够找到这个空间，从空间有个<span class="number">16</span>进制的地址）；</span><br><span class="line"><span class="number">2</span>.声明一个变量</span><br><span class="line"><span class="number">3</span>.让变量和地址关联在一起，把空间地址赋值给变量</span><br></pre></td></tr></table></figure>
+<ul>
+<li>栈内存： 本身就是一个供js代码执行的环境，所有的基本类型的值都会直接在这里面开辟一个位置进行存储</li>
+<li>堆内存： 用来存储引用类型中的信息值的，对象存储的是键值对，函数存储的是代码字符串</li>
+</ul>
+<hr>
+<h3 id="JS中的判断语句"><a href="#JS中的判断语句" class="headerlink" title="JS中的判断语句"></a>JS中的判断语句</h3><p>只要有一个判断条件成立了，不管后面是否还有成立的条件，都不在判断执行了</p>
+<blockquote>
+<p>不管if条件中写什么，最后总要将其计算出布尔类型的，来判断条件是否执行；<br>把其他值转换为Boolean值为false的只有五种：<code>0，NaN，null,undefined,控制符串；</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="string">'3px'</span>+<span class="number">3</span>)&#123;</span><br><span class="line">    <span class="comment">//在JS中，加减乘除都是数学运算，除"+"以外，其余的运算符在计算的饿时候遇到了非数字类型，首先会转换为数字类型（Number），然后再进行计算，</span></span><br><span class="line">    <span class="comment">//+ 在JS中除了数学相加，还有字符串拼接的作用，如果运算中遇到了字符串，则为字符串拼接；</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对象转为数字类型为NAN；字符也是；</p>
+<h3 id="typeof（运算符）"><a href="#typeof（运算符）" class="headerlink" title="typeof（运算符）"></a>typeof（运算符）</h3><p>在JS当中用来检测数据类型的方式之一，除此之外还有：</p>
+<ul>
+<li>instanceof   运算符</li>
+<li>constructor   方法</li>
+<li>Object.prototype.toString.call()    方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">语法 type [value]</span><br><span class="line"></span><br><span class="line">返回值： 使用<span class="keyword">typeof</span>检测出来的结果是一个字符串，字符串中包含着对应的数据类型，例如：<span class="string">'Number'</span>，</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> -&gt; <span class="comment">//'object'  因为null代表的是空对象指针，没有指向任何的内存空间</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> 检测数组、正则、对象，最后返回的都是<span class="string">'object'</span>，也就是基于这种方式无法细分对象；</span><br></pre></td></tr></table></figure>
+<ol>
+<li>三元运算符<blockquote>
+<p>语法： 条件？成立:不成立;  相当于简单的if，else语句</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>如果三元运算符当中的某一部分不需要做任何处理，我们用null或者undefined或者void 0…占位即可，但是不可不写，不写报错；<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num =<span class="number">12</span>;</span><br><span class="line">num&gt;<span class="number">10</span>?num++:num--;</span><br><span class="line">num&gt;<span class="number">10</span>?num++:<span class="literal">null</span>;</span><br><span class="line"><span class="comment">//如果需要执行多条语句，则用括号包起来，语句之间用逗号隔开</span></span><br><span class="line">num&gt;=<span class="number">10</span>?(num++,num*=<span class="number">10</span>):<span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li>switch case<blockquote>
+<p>JS中的一种判断方式<br>switch case应用于一个变量或者表达式在不同值情况下的不同操作，每种情况结束都要加break，结束整个判断；</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>特殊性：每一种case比较都是基于’===’绝对相等来完成的；</li>
+</ul>
+<p><strong>‘10’ == 10  –&gt;  相等比较，如果等号两边的值的类型不一样，先转换为同一种类型在进行比较，当前案例中就是把字符串’10’转化为数字10，然后再进行比较；</strong><br><strong>‘10’ === 10  –&gt;  绝对比较，如果等号两边的值的类型不一样，则直接不相等，他要求类型的值都完全一样才相等（真实项目中为了保护代码的严谨性，我们更应该更多的使用绝对比较）</strong></p>
+<p><code>不加break，后面的条件是否成立都会被执行，利用此机制，我们可以完成一些特殊的处理，例如如果num=10和等于5都要做同一件事情，那么我们就不用加break了</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">switch</span> (num) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">        num--;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    defalut:</span><br><span class="line">        num =<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag">#前端</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JS/2016/js/" rel="next" title="JS之什么是变量">
+                <i class="fa fa-chevron-left"></i> JS之什么是变量
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/JS/2016/ES6/" rel="prev" title="ES6新增的一些方法">
+                ES6新增的一些方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments">
+        
+        
+        <script src="/lib/valine/av-min.js?v=3.0.4"></script>
+        <script src="/lib/valine/Valine.min.js"></script>
+<script>new Valine({el:'#comments',verify:true,notify:false,appId:'4QSMsROC8QxawtQM8Px85zd0-gzGzoHsz',appKey:'zfs08wcb14eEy6M5Bk5rAqSG',placeholder:'说点什么吧',avatar:'mm',pageSize:'10'||10,lang:'zh-cn'});</script>
+      
+    </div>
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="eva1963" />
+          <p class="site-author-name" itemprop="name">eva1963</p>
+          <p class="site-description motion-element" itemprop="description">hexo,JavaScript,github，个人博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/index.html">
+              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/eva1963" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1431434742/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/sias_xg_eva/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liuhuan1963" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.mapan.win" title="马攀" target="_blank">马攀</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://juejin.im/user/57b28aec165abd00543511c6/posts" title="张玉凤" target="_blank">张玉凤</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.devashen.com" title="赵阿申" target="_blank">赵阿申</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <!-- <div class="copyright">
+<!--  
+  &copy;  2015 - 2018 
+-->
+  
+
+  <!-- 
+    Eva
+  </a>-->
+  <!--span class="author" itemprop="copyrightHolder">eva1963&nbsp;&nbsp;</span-->
+
+  
+
+  
+
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("GzoHsz4QSMsROC8QxawtQM8Px85zd0-gzGzoHsz", "zfs08wcb14eEy6M5Bk5rAqSG");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+
+
+</body>
+</html>
