@@ -261,12 +261,15 @@
       
 
       
-        <h3 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h3><blockquote>
+        <h3 id="生成秘钥"><a href="#生成秘钥" class="headerlink" title="生成秘钥"></a>生成秘钥</h3><p><code>ssh-keygen -t rsa -C &quot;sias_xg_217@126.com&quot;</code></p>
+<h3 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h3><blockquote>
 <p><code>git config -l</code>查看git的配置信息<br><code>git config --global user.name xxx</code><br><code>git config --global user.email 1710735731@qq.com</code><br>建议配置的用户名和邮箱和github用户名邮箱保持一致，这样以后向github推送的时候能够展示出是谁推荐的</p>
 </blockquote>
 <h3 id="查看ssh"><a href="#查看ssh" class="headerlink" title="查看ssh"></a>查看ssh</h3><ul>
 <li><code>cd ~/.ssh</code>文件夹中有一个public文件，其内容即为公钥</li>
 </ul>
+<h3 id="clone的时候会出现错误提示：-The-authenticity-of-host-‘gitlab-com-52-167-219-168-’-can’t-be-established"><a href="#clone的时候会出现错误提示：-The-authenticity-of-host-‘gitlab-com-52-167-219-168-’-can’t-be-established" class="headerlink" title="clone的时候会出现错误提示：(The authenticity of host ‘gitlab.com (52.167.219.168)’ can’t be established.)"></a>clone的时候会出现错误提示：(The authenticity of host ‘gitlab.com (52.167.219.168)’ can’t be established.)</h3><p>执行：<code>ssh -o StrictHostKeyChecking=no root@52.167.219.168</code>即可   （需要你的IP地址）</p>
+<p>### </p>
 
       
     </div>
@@ -367,7 +370,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/index.html">
-              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-count">64</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -375,7 +378,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -384,7 +387,7 @@
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -450,6 +453,10 @@
               
                 <li class="links-of-blogroll-item">
                   <a href="http://www.zhangxinxu.com" title="张鑫旭">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.ahonn.me" title="ahonn">ahonn</a>
                 </li>
               
                 <li class="links-of-blogroll-item">

@@ -262,8 +262,7 @@
 
       
         <p>window操作系统：DOS窗口和DOS命令<br>Linux服务器操作系统：Linux命令（Mac终端使用的也是）</p>
-<p>常用的lunix命令：</p>
-<pre><code>ls -l/-a: //查看当前目录结构(-a是可以看到所有的，包括隐藏的)
+<h3 id="常用的lunix命令："><a href="#常用的lunix命令：" class="headerlink" title="常用的lunix命令："></a>常用的lunix命令：</h3><pre><code>ls -l/-a: //查看当前目录结构(-a是可以看到所有的，包括隐藏的)
 cd xxx    //进入某个目录
 cd /    //返回根目录
 cd ../    //返回上级目录
@@ -284,6 +283,7 @@ cat   //查看内容
 rm //=&gt;删除文件    //一旦删除不可还原    
     -r    递归删除
     -f    强制删除
+`rm -rf [文件夹名]`//删除文件夹操作
 man XXX
     gg回到顶部
     G回到底部
@@ -295,7 +295,8 @@ find ./ -type f -name *.md
 cp 文件1 文件2；
 cp -rv 文件夹1 文件夹2；
 echo $PATH
-</code></pre><p>常用的git操作命令：<br> 1.如果是第一次使用git，生成历史版本的时候，需要提供身份认证<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  只需要在本地GIT全局环境下配置一些信息即可</span></span><br><span class="line">  $ git config -l</span><br><span class="line">  $ git config --global user.name <span class="string">'xxx'</span></span><br><span class="line">  $ git config --global user.eamil <span class="string">'xxx'</span></span><br></pre></td></tr></table></figure></p>
+</code></pre><h3 id="常用的git操作命令："><a href="#常用的git操作命令：" class="headerlink" title="常用的git操作命令："></a>常用的git操作命令：</h3><p> 1.如果是第一次使用git，生成历史版本的时候，需要提供身份认证</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  只需要在本地GIT全局环境下配置一些信息即可</span></span><br><span class="line">  $ git config -l</span><br><span class="line">  $ git config --global user.name <span class="string">'xxx'</span></span><br><span class="line">  $ git config --global user.eamil <span class="string">'xxx'</span></span><br></pre></td></tr></table></figure>
 <p><strong>git init</strong><br><strong>git rm —cached XXX.XX</strong>    //删除暂存区的某个文件的提交</p>
 <p><strong>git rm —cached . -f</strong>    // 删除暂存区的所有提交</p>
 <p><strong>git checkout XXX.XX</strong>     </p>
@@ -307,6 +308,10 @@ echo $PATH
 <p><strong>git reset —hard 版本号</strong>    强制吧工作区和暂存区都变成回退后的版本了</p>
 <p><strong>history &gt; XXX.txt</strong></p>
 <p><strong>npm root -g</strong></p>
+<h3 id="彻底撤销之前的commit："><a href="#彻底撤销之前的commit：" class="headerlink" title="彻底撤销之前的commit："></a>彻底撤销之前的commit：</h3><ol>
+<li><code>git reset --hard &lt;commit_id&gt;</code></li>
+<li><code>git push origin HEAD --force</code></li>
+</ol>
 
       
     </div>
@@ -407,7 +412,7 @@ echo $PATH
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/index.html">
-              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-count">64</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -415,7 +420,7 @@ echo $PATH
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -424,7 +429,7 @@ echo $PATH
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -490,6 +495,10 @@ echo $PATH
               
                 <li class="links-of-blogroll-item">
                   <a href="http://www.zhangxinxu.com" title="张鑫旭">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.ahonn.me" title="ahonn">ahonn</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
